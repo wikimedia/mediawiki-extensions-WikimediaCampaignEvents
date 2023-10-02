@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Claudio Melo"
+		]
+	},
+	"wikimediacampaignevents-desc": "Provides Wikimedia-specific features for the CampaignEvents extension."
+}

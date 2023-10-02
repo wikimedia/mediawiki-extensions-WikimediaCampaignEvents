@@ -1,0 +1,28 @@
+{
+	"name": "WikimediaCampaignEvents",
+	"author": [
+		"[https://meta.wikimedia.org/wiki/Campaigns/Foundation_Product_Team WMF Campaigns Team]"
+	],
+	"descriptionmsg": "wikimediacampaignevents-desc",
+	"url": "https://www.mediawiki.org/wiki/Extension:WikimediaCampaignEvents",
+	"license-name": "GPL-2.0-or-later",
+	"type": "specialpage",
+	"requires": {
+		"MediaWiki": ">= 1.41",
+		"extensions": {
+			"CampaignEvents": "*"
+		}
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\WikimediaCampaignEvents\\": "src/"
+	},
+	"MessagesDirs": {
+		"WikimediaCampaignEvents": [
+			"i18n"
+		]
+	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
+	},
+	"manifest_version": 2
+}
