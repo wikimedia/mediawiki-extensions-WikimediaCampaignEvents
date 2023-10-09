@@ -1,0 +1,49 @@
+[
+	{
+		"name": "wikimedia_campaign_events_grant",
+		"comment": "Stores the grant id for an event",
+		"columns": [
+			{
+				"name": "wceg_id",
+				"type": "bigint",
+				"options": {
+					"notnull": true,
+					"autoincrement": true,
+					"unsigned": true
+				}
+			},
+			{
+				"name": "wceg_event_id",
+				"type": "bigint",
+				"options": {
+					"notnull": true,
+					"unsigned": true
+				}
+			},
+			{
+				"name": "wceg_grant_id",
+				"type": "blob",
+				"options": {
+					"notnull": true,
+					"length": 255
+				}
+			},
+			{
+				"name": "wceg_grant_agreement_at",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": true
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "wceg_event_id",
+				"columns": [ "wceg_event_id" ],
+				"unique": true,
+				"comment": "Used when querying a grant ID by event ID."
+			}
+		],
+		"pk": [ "wceg_id" ]
+	}
+]
