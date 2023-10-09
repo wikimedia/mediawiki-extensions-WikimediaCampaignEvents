@@ -2,5 +2,8 @@
 	"@metadata": {
 		"authors": []
 	},
-	"wikimediacampaignevents-desc": "{{desc|name=WikimediaCampaignEvents|url=https://www.mediawiki.org/wiki/Extension:WikimediaCampaignEvents}}"
+	"wikimediacampaignevents-desc": "{{desc|name=WikimediaCampaignEvents|url=https://www.mediawiki.org/wiki/Extension:WikimediaCampaignEvents}}",
+	"wikimediacampaignevents-grant-id-input-label": "Label for the optional [[:m:Special:MyLanguage/Grants:Administration/Eligibility|Grant ID]] field displayed on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]]. These are special pages of the CampaignEvents extension",
+	"wikimediacampaignevents-grant-id-input-placeholder": "Placeholder for the optional Grant ID field ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) displayed on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]]. These are special pages of the CampaignEvents extension. The numbers in this message (like: 1201-3302) represent a Grant ID and should not be translated or formatted in any way.",
+	"wikimediacampaignevents-grant-id-input-help-message": "Help message for the optional Grant ID field ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) displayed on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]]. These are special pages of the CampaignEvents extension. The numbers in this message represent a Grant ID and should not be translated or formatted in any way."
 }

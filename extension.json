@@ -24,10 +24,14 @@
 	"HookHandlers": {
 		"SchemaChanges": {
 			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\SchemaChangesHandler"
+		},
+		"EventRegistrationFormHandler": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\EventRegistrationFormHandler"
 		}
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "SchemaChanges"
+		"LoadExtensionSchemaUpdates": "SchemaChanges",
+		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
