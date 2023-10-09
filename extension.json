@@ -31,7 +31,8 @@
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": "SchemaChanges",
-		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler"
+		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler",
+		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"

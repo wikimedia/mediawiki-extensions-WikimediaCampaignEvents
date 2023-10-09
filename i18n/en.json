@@ -7,5 +7,6 @@
 	"wikimediacampaignevents-desc": "Provides Wikimedia-specific features for the CampaignEvents extension.",
 	"wikimediacampaignevents-grant-id-input-label": "Grant ID",
 	"wikimediacampaignevents-grant-id-input-placeholder": "e.g. 1201-3302",
-	"wikimediacampaignevents-grant-id-input-help-message": "If this program or event is supported by a grant from the Wikimedia Foundation, please provide your Grant ID, which you can find in the [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Please enter the numbers and dashes in your grant ID, but exclude the letters. For example, if your grant ID is G-1111-1111, please enter 1111-1111."
+	"wikimediacampaignevents-grant-id-input-help-message": "If this program or event is supported by a grant from the Wikimedia Foundation, please provide your Grant ID, which you can find in the [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Please enter the numbers and dashes in your grant ID, but exclude the letters. For example, if your grant ID is G-1111-1111, please enter 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "The Grant ID you entered seems to be incorrect. Please double-check your Grant ID in the [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] and re-enter."
 }
