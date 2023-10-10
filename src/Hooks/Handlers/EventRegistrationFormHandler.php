@@ -7,7 +7,9 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsRegistrationFormLoadHook;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsRegistrationFormSubmitHook;
 use MediaWiki\Extension\CampaignEvents\Special\AbstractEventRegistrationSpecialPage;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore;
+use RuntimeException;
 use StatusValue;
 
 class EventRegistrationFormHandler implements
@@ -16,14 +18,19 @@ class EventRegistrationFormHandler implements
 {
 	/** @var GrantsStore */
 	private $grantsStore;
+	/** @var GrantIDLookup */
+	private $grantIDLookup;
 
 	/**
 	 * @param GrantsStore $grantsStore
+	 * @param GrantIDLookup $grantIDLookup
 	 */
 	public function __construct(
-		GrantsStore $grantsStore
+		GrantsStore $grantsStore,
+		GrantIDLookup $grantIDLookup
 	) {
 		$this->grantsStore = $grantsStore;
+		$this->grantIDLookup = $grantIDLookup;
 	}
 
 	/**
@@ -37,10 +44,14 @@ class EventRegistrationFormHandler implements
 			'placeholder-message' => 'wikimediacampaignevents-grant-id-input-placeholder',
 			'help-message' => 'wikimediacampaignevents-grant-id-input-help-message',
 			'section' => AbstractEventRegistrationSpecialPage::DETAILS_SECTION,
-			'validation-callback' => static function ( $grantID, $alldata ) {
-				$pattern = "/^\d+-\d+$/";
-				if ( preg_match( $pattern, $grantID ) || $grantID === '' ) {
+			'validation-callback' => function ( $grantID, $alldata ) {
+				if ( $grantID === '' ) {
 					return StatusValue::newGood();
+				}
+
+				$pattern = "/^\d+-\d+$/";
+				if ( preg_match( $pattern, $grantID ) ) {
+					return $this->grantIDLookup->doLookup( $grantID );
 				}
 
 				return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' );
@@ -54,9 +65,13 @@ class EventRegistrationFormHandler implements
 	 * @inheritDoc
 	 */
 	public function onCampaignEventsRegistrationFormSubmit( array $formFields, int $eventID ): bool {
-		if ( $formFields['GrantID'] ) {
-			// TODO - Get the real grant_agreement_at to send here for the third parameter
-			$this->grantsStore->updateGrantID( $formFields['GrantID'], $eventID, wfTimestampNow() );
+		$grantID = $formFields['GrantID'];
+		if ( $grantID ) {
+			$grantAgreementAtStatus = $this->grantIDLookup->getAgreementAt( $grantID );
+			if ( !$grantAgreementAtStatus->isGood() ) {
+				throw new RuntimeException( "Could not retrieve agreement_at: $grantAgreementAtStatus" );
+			}
+			$this->grantsStore->updateGrantID( $grantID, $eventID, $grantAgreementAtStatus->getValue() );
 		} else {
 			$this->grantsStore->deleteGrantID( $eventID );
 		}

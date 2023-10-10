@@ -21,6 +21,24 @@
 			"i18n"
 		]
 	},
+	"config": {
+		"WikimediaCampaignEventsFluxxOauthUrl": {
+			"description": "Oauth URL for the Fluxx API",
+			"value": "https://wmf.fluxx.io/oauth/token"
+		},
+		"WikimediaCampaignEventsFluxxBaseUrl": {
+			"description": "Base URL of the Fluxx API",
+			"value": "https://wmf.fluxx.io/api/rest/v2/"
+		},
+		"WikimediaCampaignEventsFluxxClientID": {
+			"description": "Client ID to use for the Fluxx API.",
+			"value": null
+		},
+		"WikimediaCampaignEventsFluxxClientSecret": {
+			"description": "Client secret to use for the Fluxx API.",
+			"value": null
+		}
+	},
 	"ServiceWiringFiles": [
 		"src/ServiceWiring.php"
 	],
@@ -31,7 +49,8 @@
 		"EventRegistrationFormHandler": {
 			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\EventRegistrationFormHandler",
 			"services": [
-				"WikimediaCampaignEventsGrantsStore"
+				"WikimediaCampaignEventsGrantsStore",
+				"WikimediaCampaignEventsGrantIDLookup"
 			]
 		}
 	},
