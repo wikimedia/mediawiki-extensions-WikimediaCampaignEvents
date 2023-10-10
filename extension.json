@@ -21,12 +21,18 @@
 			"i18n"
 		]
 	},
+	"ServiceWiringFiles": [
+		"src/ServiceWiring.php"
+	],
 	"HookHandlers": {
 		"SchemaChanges": {
 			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\SchemaChangesHandler"
 		},
 		"EventRegistrationFormHandler": {
-			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\EventRegistrationFormHandler"
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\EventRegistrationFormHandler",
+			"services": [
+				"WikimediaCampaignEventsGrantsStore"
+			]
 		}
 	},
 	"Hooks": {
