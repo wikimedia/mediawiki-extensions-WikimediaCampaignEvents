@@ -21,6 +21,14 @@
 			"i18n"
 		]
 	},
+	"HookHandlers": {
+		"SchemaChanges": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\SchemaChangesHandler"
+		}
+	},
+	"Hooks": {
+		"LoadExtensionSchemaUpdates": "SchemaChanges"
+	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
 	},
