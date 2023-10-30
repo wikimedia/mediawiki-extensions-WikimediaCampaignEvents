@@ -4,5 +4,9 @@
 			"Amire80"
 		]
 	},
-	"wikimediacampaignevents-desc": "אספקת תכונות ייחודיות לוויקימדיה להרחבה CampaignEvents."
+	"wikimediacampaignevents-desc": "אספקת תכונות ייחודיות לוויקימדיה להרחבה CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "מזהה המלגה",
+	"wikimediacampaignevents-grant-id-input-placeholder": "למשל 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "אם התוכנית הזאת או האירוע הזה נתמכים על־ידי מלגה מקרן ויקימדיה, נא לספק את מזהה המענק שלך, שאפשר למצוא ב-[https://wmf.fluxx.io/ פורטל המלגאים (Fluxx)]. נא להזין את המספרים והמקפים במזהה המלגה שלך, אך לא לכלול את האותיות. למשל, אם מזהה המלגה שלך הוא G-1111-1111, יש להזין 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "נראה שמזהה המלגה שהזנת שגוי. נא לבדוק שוב את מזהה המענק שלך ב-[https://wmf.fluxx.io/ פורטל המלגאים (Fluxx)] ולהיכנס מחדש."
 }

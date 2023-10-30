@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Римма"
+		]
+	},
+	"wikimediacampaignevents-grant-id-input-label": "Грантлӧн идентификатор",
+	"wikimediacampaignevents-grant-id-input-placeholder": "пример вылӧ 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Программаыс или мероприятиеыс нуӧтсьӧ кӧ Викимедия Фондлӧн грант вылӧ,иньдӧ грантнытлісь идентификатор, кӧдӧ адззатӧ[https://wmf.fluxx.io/ Grantee Portal (Fluxx)].Идентификатораныт пыртӧ лыдпассэз да тире,шыпассэз чапкӧ.Шуам,тіян кӧ грант идентификатор G-1111-1111, пыртӧ 1111-1111",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Ті пыртітӧ грантлісь лӧсявтӧм идентификатор. Корам,кыкись проверитӧ грантлісь идентификаторнытӧ [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]-ын да мӧдпырся пырӧ."
+}

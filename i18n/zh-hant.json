@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"wikimediacampaignevents-desc": "為 CampaignEvents 擴充套件提供 Wikimedia 特定功能。",
+	"wikimediacampaignevents-grant-id-input-label": "授權 ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "例如：1201-3302"
+}
