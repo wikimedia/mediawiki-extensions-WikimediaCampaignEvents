@@ -62,7 +62,7 @@ class GrantsStoreTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::updateGrantID
+	 * @covers ::deleteGrantID
 	 * @covers ::getGrantID
 	 */
 	public function testDeleteGrantID() {
