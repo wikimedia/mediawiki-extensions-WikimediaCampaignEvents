@@ -37,15 +37,19 @@ class EventRegistrationFormHandler implements
 	 * @inheritDoc
 	 */
 	public function onCampaignEventsRegistrationFormLoad( array &$formFields, ?int $eventID ) {
+		$currentGrantID = $eventID ? $this->grantsStore->getGrantID( $eventID ) : '';
 		$formFields['GrantID'] = [
 			'type' => 'text',
 			'label-message' => 'wikimediacampaignevents-grant-id-input-label',
-			'default' => $eventID ? $this->grantsStore->getGrantID( $eventID ) : '',
+			'default' => $currentGrantID,
 			'placeholder-message' => 'wikimediacampaignevents-grant-id-input-placeholder',
 			'help-message' => 'wikimediacampaignevents-grant-id-input-help-message',
 			'section' => AbstractEventRegistrationSpecialPage::DETAILS_SECTION,
-			'validation-callback' => function ( $grantID, $alldata ) {
-				if ( $grantID === '' ) {
+			'validation-callback' => function ( $grantID, $alldata ) use ( $currentGrantID ) {
+				if ( $grantID === '' || $grantID === $currentGrantID ) {
+					// Note that if a grant ID was once valid, we don't need to validate it again: it can only
+					// become "invalid" if it was granted too long ago, but that must have not been the case when the
+					// ID was first stored, so that's fine.
 					return StatusValue::newGood();
 				}
 
@@ -66,13 +70,14 @@ class EventRegistrationFormHandler implements
 	 */
 	public function onCampaignEventsRegistrationFormSubmit( array $formFields, int $eventID ): bool {
 		$grantID = $formFields['GrantID'];
-		if ( $grantID ) {
+		$previousGrantID = $this->grantsStore->getGrantID( $eventID );
+		if ( $grantID && $grantID !== $previousGrantID ) {
 			$grantAgreementAtStatus = $this->grantIDLookup->getAgreementAt( $grantID );
 			if ( !$grantAgreementAtStatus->isGood() ) {
 				throw new RuntimeException( "Could not retrieve agreement_at: $grantAgreementAtStatus" );
 			}
 			$this->grantsStore->updateGrantID( $grantID, $eventID, $grantAgreementAtStatus->getValue() );
-		} else {
+		} elseif ( !$grantID && $previousGrantID ) {
 			$this->grantsStore->deleteGrantID( $eventID );
 		}
 		return true;
