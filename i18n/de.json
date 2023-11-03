@@ -8,5 +8,6 @@
 	"wikimediacampaignevents-grant-id-input-label": "Grant-ID",
 	"wikimediacampaignevents-grant-id-input-placeholder": "z.&nbsp;B. 1201-3302",
 	"wikimediacampaignevents-grant-id-input-help-message": "Wenn dieses Programm oder diese Veranstaltung durch ein Stipendium der Wikimedia Foundation unterstützt wird, gib bitte deine Grant-ID an, die du im [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] findest. Bitte gib die Zahlen und Bindestriche in deiner Grant-ID ein, schließe jedoch die Buchstaben aus. Wenn die GrantFörder-ID beispielsweise G-1111-1111 lautet, gib bitte 1111-1111 ein.",
-	"wikimediacampaignevents-grant-id-invalid-error-message": "Die von dir eingegebene Grant-ID scheint falsch zu sein. Bitte überprüfe deine Grant-ID noch einmal im [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] und gib sie erneut ein."
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Die von dir eingegebene Grant-ID scheint falsch zu sein. Bitte überprüfe deine Grant-ID noch einmal im [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] und gib sie erneut ein.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Bei der Validierung deiner Grant-ID ist ein Problem aufgetreten. Du kannst in ein paar Minuten erneut versuchen, das Formular abzuschicken. Wenn das Problem weiterhin besteht, kannst du das Formular trotzdem ohne Grant-ID senden und es später hinzufügen, indem du die Veranstaltungsdetails bearbeitest."
 }
