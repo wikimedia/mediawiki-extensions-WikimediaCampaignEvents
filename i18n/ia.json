@@ -8,5 +8,6 @@
 	"wikimediacampaignevents-grant-id-input-label": "ID de subvention",
 	"wikimediacampaignevents-grant-id-input-placeholder": "p.ex. 1201-3302",
 	"wikimediacampaignevents-grant-id-input-help-message": "Si iste programma o evento es supportate per un subvention del Fundation Wikimedia, per favor forni tu ID de subvention, le qual tu pote trovar in le [https://wmf.fluxx.io/ Portal del Beneficiario (Fluxx)]. Per favor, insere le numeros e tractos de union in tu ID de subvention, ma exclude le litteras. Per exemplo, si tu ID de subvention es G-1111-1111, per favor insere 1111-1111.",
-	"wikimediacampaignevents-grant-id-invalid-error-message": "Le ID de subvention inserite pare esser incorrecte. Per favor reverifica tu ID de subvention in le [https://wmf.fluxx.io/ Portal del Beneficiario (Fluxx)] e re-insere lo."
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Le ID de subvention inserite pare esser incorrecte. Per favor reverifica tu ID de subvention in le [https://wmf.fluxx.io/ Portal del Beneficiario (Fluxx)] e re-insere lo.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Il habeva un problema con le validation de tu ID de subvention. Tu pote essayar submitter le formulario de novo in poc minutas. Si le problema continua, tu pote totevia submitter le formulario sin ID de subvention e adder lo plus tarde modificante le detalios del evento."
 }
