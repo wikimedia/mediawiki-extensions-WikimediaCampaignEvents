@@ -52,12 +52,19 @@
 				"WikimediaCampaignEventsGrantsStore",
 				"WikimediaCampaignEventsGrantIDLookup"
 			]
+		},
+		"EventDetailsHandler": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\EventDetailsHandler",
+			"services": [
+				"WikimediaCampaignEventsGrantsStore"
+			]
 		}
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": "SchemaChanges",
 		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler",
-		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler"
+		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler",
+		"CampaignEventsGetEventDetails": "EventDetailsHandler"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
