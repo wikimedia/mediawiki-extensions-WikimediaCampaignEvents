@@ -18,7 +18,8 @@
 	},
 	"MessagesDirs": {
 		"WikimediaCampaignEvents": [
-			"i18n"
+			"i18n",
+			"i18n/rest"
 		]
 	},
 	"config": {
@@ -69,5 +70,28 @@
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
 	},
+	"RestRoutes": [
+		{
+			"path": "/wikimediacampaignevents/v0/event_registration/{id}/grant_id",
+			"method": "PUT",
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Rest\\UpdateGrantIdHandler",
+			"services": [
+				"CampaignEventsEventLookup",
+				"WikimediaCampaignEventsGrantIDLookup",
+				"CampaignEventsPermissionChecker",
+				"WikimediaCampaignEventsGrantsStore"
+			]
+		},
+		{
+			"path": "/wikimediacampaignevents/v0/event_registration/{id}/grant_id",
+			"method": "DELETE",
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Rest\\DeleteGrantIdHandler",
+			"services": [
+				"CampaignEventsEventLookup",
+				"CampaignEventsPermissionChecker",
+				"WikimediaCampaignEventsGrantsStore"
+			]
+		}
+	],
 	"manifest_version": 2
 }

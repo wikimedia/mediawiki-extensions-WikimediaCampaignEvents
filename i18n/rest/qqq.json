@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Error message used when an unauthorized user is attempting to edit or delete a grant ID.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "Error message used when the user provided an empty grant ID.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Error message used when the user provided an empty grant ID.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Error message used when the Fluxx service is not responding properly to validation requests."
+}
