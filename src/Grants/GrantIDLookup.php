@@ -5,7 +5,8 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants;
 
 use BagOStuff;
-use LogicException;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use StatusValue;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
@@ -32,53 +33,49 @@ class GrantIDLookup {
 
 	/**
 	 * @param string $grantID
-	 * @return StatusValue Good if the ID is valid, fatal with errors otherwise.
+	 * @return StatusValue Always good
+	 * @throws InvalidGrantIDException
+	 * @throws FluxxRequestException
 	 */
 	public function doLookup( string $grantID ): StatusValue {
-		$status = $this->getGrantData( $grantID );
-		if ( $status->isGood() ) {
-			return StatusValue::newGood();
-		}
-		return $status;
+		$this->getGrantData( $grantID );
+		return StatusValue::newGood();
 	}
 
 	/**
 	 * @param string $grantID
-	 * @return StatusValue If the ID is valid, a good Status whose value is the agreement_at timestamp. A fatal
-	 * Status with errors otherwise.
+	 * @return string The agreement_at timestamp
+	 * @throws InvalidGrantIDException
+	 * @throws FluxxRequestException
 	 */
-	public function getAgreementAt( string $grantID ): StatusValue {
-		$status = $this->getGrantData( $grantID );
-		if ( $status->isGood() ) {
-			$grantAgreementAt = $status->getValue()['grant_agreement_at'];
-			return StatusValue::newGood( $grantAgreementAt );
-		}
-		return $status;
+	public function getAgreementAt( string $grantID ): string {
+		return $this->getGrantData( $grantID )['grant_agreement_at'];
 	}
 
-	private function getGrantData( string $grantID ): StatusValue {
-		$grantStatus = null;
-		$cachedData = $this->cache->getWithSetCallback(
+	/**
+	 * @param string $grantID
+	 * @return array
+	 * @throws FluxxRequestException
+	 * @throws InvalidGrantIDException
+	 */
+	private function getGrantData( string $grantID ): array {
+		return $this->cache->getWithSetCallback(
 			$this->cache->makeKey( 'WikimediaCampaignEvents', 'GrantData', $grantID ),
 			ExpirationAwareness::TTL_PROC_LONG,
 			function () use ( $grantID, &$grantStatus )  {
-				$grantStatus = $this->requestGrantData( $grantID );
-				if ( $grantStatus->isGood() ) {
-					return $grantStatus->getValue();
-				}
 				// TODO Cache failures due to invalid grant ID, but NOT network issues
-				return false;
-			} );
-		if ( $cachedData !== false ) {
-			return StatusValue::newGood( $cachedData );
-		}
-		if ( $grantStatus !== null ) {
-			return $grantStatus;
-		}
-		throw new LogicException( '$grantStatus should not be null' );
+				return $this->requestGrantData( $grantID );
+			}
+		);
 	}
 
-	private function requestGrantData( string $grantID ): StatusValue {
+	/**
+	 * @param string $grantID
+	 * @return array
+	 * @throws FluxxRequestException
+	 * @throws InvalidGrantIDException
+	 */
+	private function requestGrantData( string $grantID ): array {
 		$cols = $this->getColsParam();
 		$filters = $this->getFiltersParam( $grantID );
 		$postData = [
@@ -86,26 +83,21 @@ class GrantIDLookup {
 			'filter' => json_encode( $filters ),
 		];
 
-		$response = $this->fluxxClient->makePostRequest( self::ENDPOINT, $postData );
+		$responseData = $this->fluxxClient->makePostRequest( self::ENDPOINT, $postData );
 
-		if ( !$response->isGood() ) {
-			return $response;
-		}
-
-		$responseData = $response->getValue();
 		if (
 			isset( $responseData[ 'records' ][ 'grant_request' ][ 0 ][ 'base_request_id' ] ) &&
 			$responseData[ 'records' ][ 'grant_request' ][ 0 ][ 'base_request_id' ] === $grantID
 		) {
-			return StatusValue::newGood( [
+			return [
 				'grant_agreement_at' => wfTimestamp(
 					TS_MW,
 					$responseData[ 'records' ][ 'grant_request' ][ 0 ][ 'grant_agreement_at' ]
 				)
-			] );
+			];
 		}
 
-		return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' );
+		throw new InvalidGrantIDException();
 	}
 
 	/**

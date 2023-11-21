@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception;
 use Exception;
 
 /**
- * Exception thrown when we cannot authenticate with Fluxx.
+ * Generic exception thrown when HTTP requests to Fluxx fail.
  */
-class AuthenticationException extends Exception {
+class FluxxRequestException extends Exception {
 
 }

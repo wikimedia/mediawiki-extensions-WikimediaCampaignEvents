@@ -5,8 +5,11 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\Grants;
 
 use EmptyBagOStuff;
+use Exception;
 use Generator;
 use HashBagOStuff;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup;
 use MediaWikiUnitTestCase;
@@ -17,11 +20,19 @@ use StatusValue;
  * @covers ::__construct
  */
 class GrantIDLookupTest extends MediaWikiUnitTestCase {
+	/**
+	 * @param array|null $fluxxResponse Null indicates that the request should throw an exception
+	 * @return GrantIDLookup
+	 */
 	private function getLookup(
-		StatusValue $fluxxResponse
+		?array $fluxxResponse
 	): GrantIDLookup {
 		$fluxxClient = $this->createMock( FluxxClient::class );
-		$fluxxClient->method( 'makePostRequest' )->willReturn( $fluxxResponse );
+		if ( $fluxxResponse !== null ) {
+			$fluxxClient->method( 'makePostRequest' )->willReturn( $fluxxResponse );
+		} else {
+			$fluxxClient->method( 'makePostRequest' )->willThrowException( new FluxxRequestException() );
+		}
 
 		return new GrantIDLookup(
 			$fluxxClient,
@@ -31,8 +42,8 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @param string $grantID
-	 * @param StatusValue $responseStatus
-	 * @param StatusValue $expected
+	 * @param array|null $fluxxResponse
+	 * @param StatusValue|Exception $expected
 	 * @covers ::doLookup
 	 * @covers ::getGrantData
 	 * @covers ::requestGrantData
@@ -40,30 +51,32 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 	 * @covers ::getFiltersParam
 	 * @dataProvider provideDoLookup
 	 */
-	public function testDoLookup( string $grantID, StatusValue $responseStatus, StatusValue $expected ) {
-		$lookup = $this->getLookup( $responseStatus );
+	public function testDoLookup( string $grantID, ?array $fluxxResponse, $expected ) {
+		$lookup = $this->getLookup( $fluxxResponse );
+		if ( $expected instanceof Exception ) {
+			$this->expectExceptionObject( $expected );
+		}
 		$actual = $lookup->doLookup( $grantID );
 		$this->assertEquals( $expected, $actual );
 	}
 
 	public static function provideUnexpectedResponses(): Generator {
-		$requestErrorMsg = 'some-request-error';
 		yield 'Request error' => [
 			'123-123',
-			StatusValue::newFatal( $requestErrorMsg ),
-			StatusValue::newFatal( $requestErrorMsg ),
+			null,
+			new FluxxRequestException(),
 		];
 
 		yield 'Empty response' => [
 			'123-123',
-			StatusValue::newGood( [] ),
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' ),
+			[],
+			new InvalidGrantIDException(),
 		];
 
 		yield 'Response lacks expected fields' => [
 			'123-123',
-			StatusValue::newGood( [ 'records' => [ 'grant_request' => [ 'base_request_id' => '999-999' ] ] ] ),
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' ),
+			[ 'records' => [ 'grant_request' => [ 'base_request_id' => '999-999' ] ] ],
+			new InvalidGrantIDException(),
 		];
 	}
 
@@ -72,15 +85,15 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 
 		yield 'Successful' => [
 			'123-123',
-			self::getGoodResponseStatus( '123-123', '20000101000000' ),
+			self::getValidResponse( '123-123', '20000101000000' ),
 			StatusValue::newGood(),
 		];
 	}
 
 	/**
 	 * @param string $grantID
-	 * @param StatusValue $responseStatus
-	 * @param StatusValue $expected
+	 * @param array|null $fluxxResponse
+	 * @param StatusValue|Exception $expected
 	 * @covers ::getAgreementAt
 	 * @covers ::getGrantData
 	 * @covers ::requestGrantData
@@ -88,8 +101,11 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 	 * @covers ::getFiltersParam
 	 * @dataProvider provideGetAgreementAt
 	 */
-	public function testGetAgreementAt( string $grantID, StatusValue $responseStatus, StatusValue $expected ) {
-		$lookup = $this->getLookup( $responseStatus );
+	public function testGetAgreementAt( string $grantID, ?array $fluxxResponse, $expected ) {
+		$lookup = $this->getLookup( $fluxxResponse );
+		if ( $expected instanceof Exception ) {
+			$this->expectExceptionObject( $expected );
+		}
 		$actual = $lookup->getAgreementAt( $grantID );
 		$this->assertEquals( $expected, $actual );
 	}
@@ -100,8 +116,8 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		$timestamp = '20230101000000';
 		yield 'Successful' => [
 			'123-123',
-			self::getGoodResponseStatus( '123-123', $timestamp ),
-			StatusValue::newGood( $timestamp ),
+			self::getValidResponse( '123-123', $timestamp ),
+			$timestamp,
 		];
 	}
 
@@ -120,7 +136,7 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		];
 		$fluxxClient->expects( $this->exactly( 2 ) )
 			->method( 'makePostRequest' )
-			->willReturnCallback( function ( string $endpoint, array $data ) use ( &$seenIDs ): StatusValue {
+			->willReturnCallback( function ( string $endpoint, array $data ) use ( &$seenIDs ): array {
 				$this->assertArrayHasKey( 'filter', $data );
 				$filterData = json_decode( $data['filter'], true, JSON_THROW_ON_ERROR );
 				$this->assertArrayHasKey( 'conditions', $filterData );
@@ -133,7 +149,7 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 				$this->assertNotNull( $grantID, 'Cannot extract grant ID from request params' );
 				$this->assertFalse( $seenIDs[$grantID], "Duplicate request for ID $grantID" );
 				$seenIDs[$grantID] = true;
-				return self::getGoodResponseStatus( $grantID, '20230606060606' );
+				return self::getValidResponse( $grantID, '20230606060606' );
 			} );
 		$lookup = new GrantIDLookup( $fluxxClient, new HashBagOStuff() );
 
@@ -145,8 +161,8 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		$lookup->doLookup( $firstGrantID );
 
 		// This should be a cache miss
-		$otherGrantStatus = $lookup->getAgreementAt( $secondGrantID );
-		$this->assertStatusGood( $otherGrantStatus, 'Precondition: second grant ID is valid' );
+		$otherGrantTimestamp = $lookup->getAgreementAt( $secondGrantID );
+		$this->assertIsString( $otherGrantTimestamp, 'Precondition: second grant ID is valid' );
 		// But these two must be cache hits
 		$lookup->getAgreementAt( $secondGrantID );
 		$lookup->doLookup( $secondGrantID );
@@ -154,12 +170,16 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		$lookup->doLookup( $firstGrantID );
 	}
 
-	private static function getGoodResponseStatus( string $grantID, string $timestamp ): StatusValue {
-		return StatusValue::newGood( [ 'records' => [ 'grant_request' => [
-			[
-				'base_request_id' => $grantID,
-				'grant_agreement_at' => $timestamp
+	private static function getValidResponse( string $grantID, string $timestamp ): array {
+		return [
+			'records' => [
+				'grant_request' => [
+					[
+						'base_request_id' => $grantID,
+						'grant_agreement_at' => $timestamp
+					]
+				]
 			]
-		] ] ] );
+		];
 	}
 }

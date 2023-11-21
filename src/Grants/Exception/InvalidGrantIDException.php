@@ -6,8 +6,8 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception;
 use Exception;
 
 /**
- * Exception thrown when we cannot authenticate with Fluxx.
+ * Exception thrown when a grant ID cannot be found in Fluxx.
  */
-class AuthenticationException extends Exception {
+class InvalidGrantIDException extends Exception {
 
 }

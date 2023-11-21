@@ -9,6 +9,7 @@ use EmptyBagOStuff;
 use Generator;
 use HashBagOStuff;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MainConfigNames;
@@ -53,9 +54,9 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	 */
 	public function testMissingConfig( array $configOverrides ) {
 		$client = $this->getClient( null, $configOverrides );
+		$this->expectException( FluxxRequestException::class );
+		$this->expectExceptionMessage( 'Authentication error' );
 		$status = $client->makePostRequest( 'endpoint' );
-		$this->assertStatusNotGood( $status );
-		$this->assertStatusMessage( 'wikimediacampaignevents-grant-id-api-fails-error-message', $status );
 	}
 
 	public static function provideMissingConfig(): array {
@@ -73,7 +74,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	 * @param array $tokenReqData
 	 * @param array|null $mainReqData If null, it means that we are expecting the token request to fail, and the
 	 * main request should not be executed at all.
-	 * @param StatusValue $expected
+	 * @param array|null $expected Null means we're expecting an exception.
 	 * @covers ::makePostRequest
 	 * @covers ::makePostRequestInternal
 	 * @covers ::getToken
@@ -84,7 +85,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	public function testMakePostRequest(
 		array $tokenReqData,
 		?array $mainReqData,
-		StatusValue $expected
+		?array $expected
 	) {
 		$httpRequestFactory = $this->createMock( HttpRequestFactory::class );
 		$httpRequestFactory
@@ -100,38 +101,42 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 				return $this->mockHttpRequest( ...$mainReqData );
 			} );
 		$client = $this->getClient( $httpRequestFactory );
-		$this->assertEquals( $expected, $client->makePostRequest( 'some-endpoint' ) );
+		if ( $expected === null ) {
+			$this->expectException( FluxxRequestException::class );
+		}
+		$actual = $client->makePostRequest( 'some-endpoint' );
+		$this->assertEquals( $expected, $actual );
 	}
 
 	public static function provideMakePostRequest(): Generator {
 		yield 'Token request generic fail' => [
 			[ StatusValue::newFatal( 'some-token-error' ) ],
 			null,
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Token response has no Content-Type' => [
 			[ StatusValue::newGood(), null, null ],
 			null,
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Token response is not JSON' => [
 			[ StatusValue::newGood(), null, 'definitely-not-json' ],
 			null,
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Token response is JSON but it is invalid' => [
 			[ StatusValue::newGood(), '{[' ],
 			null,
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Token response does not contain expected data' => [
 			[ StatusValue::newGood(), json_encode( [] ) ],
 			null,
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		$validTokenResponse = json_encode( [
@@ -141,31 +146,31 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 		yield 'Valid token, generic request error' => [
 			[ StatusValue::newGood(), $validTokenResponse ],
 			[ StatusValue::newFatal( 'some-request-error' ), null ],
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Valid token, main response has no Content-Type' => [
 			[ StatusValue::newGood(), $validTokenResponse ],
 			[ StatusValue::newGood(), null, null ],
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Valid token, main response is not JSON' => [
 			[ StatusValue::newGood(), $validTokenResponse ],
 			[ StatusValue::newGood(), null, 'definitely-not-json' ],
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Valid token, main response is JSON but it is invalid' => [
 			[ StatusValue::newGood(), $validTokenResponse ],
 			[ StatusValue::newGood(), '{' ],
-			StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' ),
+			null,
 		];
 
 		yield 'Successful' => [
 			[ StatusValue::newGood(), $validTokenResponse ],
 			[ StatusValue::newGood(), json_encode( [] ) ],
-			StatusValue::newGood( [] ),
+			[],
 		];
 	}
 
