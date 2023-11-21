@@ -15,9 +15,6 @@ use MediaWikiIntegrationTestCase;
  * @group Database
  */
 class GrantsStoreTest extends MediaWikiIntegrationTestCase {
-	/** @inheritDoc */
-	protected $tablesUsed = [ 'wikimedia_campaign_events_grant' ];
-
 	private GrantsStore $grantsStore;
 
 	protected function setUp(): void {
