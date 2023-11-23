@@ -7,6 +7,8 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsRegistrationFormLoadHook;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsRegistrationFormSubmitHook;
 use MediaWiki\Extension\CampaignEvents\Special\AbstractEventRegistrationSpecialPage;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore;
 use RuntimeException;
@@ -54,11 +56,17 @@ class EventRegistrationFormHandler implements
 				}
 
 				$pattern = "/^\d+-\d+$/";
-				if ( preg_match( $pattern, $grantID ) ) {
-					return $this->grantIDLookup->doLookup( $grantID );
+				if ( !preg_match( $pattern, $grantID ) ) {
+					return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' );
 				}
 
-				return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' );
+				try {
+					return $this->grantIDLookup->doLookup( $grantID );
+				} catch ( InvalidGrantIDException $_ ) {
+					return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' );
+				} catch ( FluxxRequestException $_ ) {
+					return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' );
+				}
 			},
 		];
 
@@ -72,11 +80,12 @@ class EventRegistrationFormHandler implements
 		$grantID = $formFields['GrantID'];
 		$previousGrantID = $this->grantsStore->getGrantID( $eventID );
 		if ( $grantID && $grantID !== $previousGrantID ) {
-			$grantAgreementAtStatus = $this->grantIDLookup->getAgreementAt( $grantID );
-			if ( !$grantAgreementAtStatus->isGood() ) {
-				throw new RuntimeException( "Could not retrieve agreement_at: $grantAgreementAtStatus" );
+			try {
+				$grantAgreementAt = $this->grantIDLookup->getAgreementAt( $grantID );
+			} catch ( FluxxRequestException | InvalidGrantIDException $e ) {
+				throw new RuntimeException( "Could not retrieve agreement_at: $e" );
 			}
-			$this->grantsStore->updateGrantID( $grantID, $eventID, $grantAgreementAtStatus->getValue() );
+			$this->grantsStore->updateGrantID( $grantID, $eventID, $grantAgreementAt );
 		} elseif ( !$grantID && $previousGrantID ) {
 			$this->grantsStore->deleteGrantID( $eventID );
 		}

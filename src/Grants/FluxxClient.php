@@ -8,11 +8,11 @@ use BagOStuff;
 use JsonException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\AuthenticationException;
+use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MainConfigNames;
 use MWHttpRequest;
 use Psr\Log\LoggerInterface;
-use StatusValue;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
@@ -79,16 +79,17 @@ class FluxxClient {
 	/**
 	 * @param string $endpoint
 	 * @param array $postData
-	 * @return StatusValue Fatal with errors, or a good Status whose value is the (decoded) response we got from Fluxx.
+	 * @return array The (decoded) response we got from Fluxx.
+	 * @throws FluxxRequestException
 	 */
-	public function makePostRequest( string $endpoint, array $postData = [] ): StatusValue {
+	public function makePostRequest( string $endpoint, array $postData = [] ): array {
 		$headers = [
 			'Content-Type' => 'application/json',
 		];
 		try {
 			$headers['Authorization'] = 'Bearer ' . $this->getToken();
 		} catch ( AuthenticationException $exception ) {
-			return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' );
+			throw new FluxxRequestException( 'Authentication error' );
 		}
 
 		$url = $this->fluxxBaseUrl . $endpoint;
@@ -99,9 +100,10 @@ class FluxxClient {
 	 * @param string $url
 	 * @param array $postData
 	 * @param array $headers
-	 * @return StatusValue Fatal with errors, or a good Status whose value is the (decoded) response we got from Fluxx.
+	 * @return array The (decoded) response we got from Fluxx.
+	 * @throws FluxxRequestException
 	 */
-	private function makePostRequestInternal( string $url, array $postData, array $headers ): StatusValue {
+	private function makePostRequestInternal( string $url, array $postData, array $headers ): array {
 		$options = [
 			'method' => 'POST',
 			'timeout' => 5,
@@ -127,7 +129,7 @@ class FluxxClient {
 				'Error in Fluxx api call: {error_status}',
 				[ 'error_status' => $status->__toString() ]
 			);
-			return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' );
+			throw new FluxxRequestException( 'Error in Fluxx API call' );
 		}
 
 		$parsedResponse = $this->parseResponseJSON( $req );
@@ -140,10 +142,10 @@ class FluxxClient {
 					'response_content' => $req->getContent()
 				]
 			);
-			return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' );
+			throw new FluxxRequestException( 'Invalid Fluxx response' );
 		}
 
-		return StatusValue::newGood( $parsedResponse );
+		return $parsedResponse;
 	}
 
 	private function parseResponseJSON( MWHttpRequest $request ): ?array {
@@ -186,13 +188,11 @@ class FluxxClient {
 			'Content-Type' => 'application/json'
 		];
 
-		$responseStatus = $this->makePostRequestInternal( $this->fluxxOauthUrl, $data, $headers );
-
-		if ( !$responseStatus->isGood() ) {
-			throw new AuthenticationException( 'Response status is not good' );
+		try {
+			$responseData = $this->makePostRequestInternal( $this->fluxxOauthUrl, $data, $headers );
+		} catch ( FluxxRequestException $_ ) {
+			throw new AuthenticationException( 'Authentication error' );
 		}
-
-		$responseData = $responseStatus->getValue();
 
 		if ( !isset( $responseData['access_token'] ) || !isset( $responseData['expires_in'] ) ) {
 			throw new AuthenticationException( 'Response does not contain token' );
