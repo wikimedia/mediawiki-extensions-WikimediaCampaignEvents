@@ -91,6 +91,16 @@
 				"CampaignEventsPermissionChecker",
 				"WikimediaCampaignEventsGrantsStore"
 			]
+		},
+		{
+			"path": "/wikimediacampaignevents/v0/event_registration/{id}/grant_id",
+			"method": "GET",
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Rest\\GetGrantIdHandler",
+			"services": [
+				"CampaignEventsEventLookup",
+				"CampaignEventsPermissionChecker",
+				"WikimediaCampaignEventsGrantsStore"
+			]
 		}
 	],
 	"manifest_version": 2
