@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Tu non es autorisate a cambiar le ID de concession pro iste evento.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "Le ID de concession non pote esser vacue.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Le ID de concession que tu ha inserite non es valide.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx es actualmente incapace de validar iste ID de concession. Tenta lo de novo in poc minutas.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Tu non es autorisate a vider le ID de concession pro iste evento."
+}
