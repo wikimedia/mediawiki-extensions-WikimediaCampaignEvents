@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zakawer2"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Du er ikke autoriseret til at ændre denne begivenheds bevillings-id.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "Bevillings-id'et må ikke være tomt.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Bevillings-id'et som du har indtastet er ugyldigt.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx er i øjeblikket ikke i stand til at validere dette bevillings-id. Prøv igen om nogle minutter.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Du er ikke autoriseret til at se denne begivenheds bevillings-id."
+}
