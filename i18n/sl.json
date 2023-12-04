@@ -4,5 +4,11 @@
 			"Eleassar"
 		]
 	},
-	"wikimediacampaignevents-desc": "Zagotavlja funkcije, specifične za Wikimedio, za razširitev CampaignEvents."
+	"wikimediacampaignevents-desc": "Zagotavlja funkcije, specifične za Wikimedio, za razširitev CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "ID donacije",
+	"wikimediacampaignevents-grant-id-input-placeholder": "npr. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Če je ta program ali dogodek podprt z donacijo Fundacije Wikimedia, navedite ID donacije, ki ga najdete na [https://wmf.fluxx.io/ Portalu za štipendije (Fluxx)]. V ID donacije vnesite številke in pomišljaje, vendar izključite črke. Če je vaš ID donacije npr. G-1111-1111, vnesite 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Zdi se, da ste vnesli napačen ID donacije. Še enkrat preverite svoj ID donacije na [https://wmf.fluxx.io/ portalu za pridobitelje sredstev (Fluxx)] in ga vnesite znova.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Pri preverjanju vašega ID-ja donacije je prišlo do težave. Obrazec lahko poskusite znova oddati čez nekaj minut. Če se bo težava ponovila, lahko še vedno oddate obrazec brez ID-ja donacije in ga dodate pozneje tako, da uredite podatke o dogodku.",
+	"wikimediacampaignevents-grant-id-event-details-label": "ID donacije"
 }
