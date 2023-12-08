@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "U bent niet bevoegd om de subsidie-ID voor dit evenement te wijzigen.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "De subsidie-ID mag niet leeg zijn.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "De door u ingevoerde subsidie-ID is ongeldig.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx is momenteel niet in staat om deze subsidie-ID te valideren. Probeer het over een paar minuten weer.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "U bent niet gemachtigd om de subsidie-ID voor dit evenement te bekijken."
+}

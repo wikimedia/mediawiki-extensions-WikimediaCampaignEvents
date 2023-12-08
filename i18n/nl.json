@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
-	"wikimediacampaignevents-grant-id-input-placeholder": "bijv. 1201-3302"
+	"wikimediacampaignevents-desc": "Biedt Wikimedia-specifieke functies voor de uitbreiding CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "Subsidie-ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "bijv. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Als dit programma of evenement wordt ondersteund door een subsidie van de Wikimedia Foundation, geef dan uw Subsidie-ID op, die u kunt vinden in het [https://wmf.fluxx.io/ portaal voor begunstigden (Fluxx)]. Voer de cijfers en streepjes in uw subsidie-ID in, maar laat de letters weg. Als uw subsidie-ID bijvoorbeeld G-1111-1111 is, voert u 1111-1111 in.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "De subsidie-ID die u heeft ingevoerd lijkt onjuist. Controleer uw subsidie-ID nogmaals in de [https://wmf.fluxx.io/ portaal voor begunstigden (Fluxx)] en voer hem opnieuw in.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Er is een probleem opgetreden bij het valideren van uw subsidie-ID. U kunt proberen het formulier over enkele minuten opnieuw te verzenden. Als het probleem zich blijft voordoen, kunt u het formulier ook zonder subsidie-ID indienen. Voeg de ID dan later toe door de gebeurtenisdetails te bewerken.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Subsidie-ID"
 }
