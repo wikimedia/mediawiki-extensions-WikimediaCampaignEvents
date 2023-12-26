@@ -7,6 +7,6 @@
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "אין לך הרשאה לשנות את מזהה המלגה עבור האירוע הזה.",
 	"wikimediacampaignevents-rest-grant-id-edit-empty": "מזהה המלגה לא יכול להיות ריק.",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "מזהה המלגה שהזנת אינו תקין.",
-	"wikimediacampaignevents-rest-grant-id-edit-api-error": "שירות Fluxx אינו יכול לאמת כרגע את מזהה המלגה הזה. נא לנסות שוב בעוד כמה דקות.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "שירות Fluxx אינו יכול לבדוק כרגע את תקינות מזהה המלגה הזה. נא לנסות שוב בעוד כמה דקות.",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "אין לך הרשאה לצפות במזהה המלגה עבור האירוע הזה."
 }
