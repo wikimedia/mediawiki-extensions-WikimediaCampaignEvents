@@ -4,7 +4,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\CampaignEvents\Tests\Unit\Rest;
 
-use Generator;
 use MediaWiki\Extension\CampaignEvents\Event\ExistingEventRegistration;
 use MediaWiki\Extension\CampaignEvents\Event\Store\EventNotFoundException;
 use MediaWiki\Extension\CampaignEvents\Event\Store\IEventLookup;
@@ -75,10 +74,7 @@ class GetGrantIdHandlerTest extends MediaWikiUnitTestCase {
 		}
 	}
 
-	/**
-	 * @return Generator
-	 */
-	public static function provideRequestDataWithErrors(): Generator {
+	public static function provideRequestDataWithErrors() {
 		yield 'Event does not exist' => [
 			404,
 			'campaignevents-rest-event-not-found',

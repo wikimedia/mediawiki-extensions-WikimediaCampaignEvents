@@ -18,15 +18,9 @@ class EventRegistrationFormHandler implements
 	CampaignEventsRegistrationFormLoadHook,
 	CampaignEventsRegistrationFormSubmitHook
 {
-	/** @var GrantsStore */
-	private $grantsStore;
-	/** @var GrantIDLookup */
-	private $grantIDLookup;
+	private GrantsStore $grantsStore;
+	private GrantIDLookup $grantIDLookup;
 
-	/**
-	 * @param GrantsStore $grantsStore
-	 * @param GrantIDLookup $grantIDLookup
-	 */
 	public function __construct(
 		GrantsStore $grantsStore,
 		GrantIDLookup $grantIDLookup

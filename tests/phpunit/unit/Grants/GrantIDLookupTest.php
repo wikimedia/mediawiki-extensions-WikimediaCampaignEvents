@@ -16,8 +16,7 @@ use MediaWikiUnitTestCase;
 use StatusValue;
 
 /**
- * @coversDefaultClass \MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup
- * @covers ::__construct
+ * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup
  */
 class GrantIDLookupTest extends MediaWikiUnitTestCase {
 	/**
@@ -44,11 +43,6 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 	 * @param string $grantID
 	 * @param array|null $fluxxResponse
 	 * @param StatusValue|Exception $expected
-	 * @covers ::doLookup
-	 * @covers ::getGrantData
-	 * @covers ::requestGrantData
-	 * @covers ::getColsParam
-	 * @covers ::getFiltersParam
 	 * @dataProvider provideDoLookup
 	 */
 	public function testDoLookup( string $grantID, ?array $fluxxResponse, $expected ) {
@@ -60,7 +54,7 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public static function provideUnexpectedResponses(): Generator {
+	public static function provideUnexpectedResponses() {
 		yield 'Request error' => [
 			'123-123',
 			null,
@@ -80,7 +74,7 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	public static function provideDoLookup(): Generator {
+	public static function provideDoLookup() {
 		yield from self::provideUnexpectedResponses();
 
 		yield 'Successful' => [
@@ -94,11 +88,6 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 	 * @param string $grantID
 	 * @param array|null $fluxxResponse
 	 * @param StatusValue|Exception $expected
-	 * @covers ::getAgreementAt
-	 * @covers ::getGrantData
-	 * @covers ::requestGrantData
-	 * @covers ::getColsParam
-	 * @covers ::getFiltersParam
 	 * @dataProvider provideGetAgreementAt
 	 */
 	public function testGetAgreementAt( string $grantID, ?array $fluxxResponse, $expected ) {
@@ -121,9 +110,6 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	/**
-	 * @covers ::getGrantData
-	 */
 	public function testCaching() {
 		$firstGrantID = '123-123';
 		$secondGrantID = '200-200';

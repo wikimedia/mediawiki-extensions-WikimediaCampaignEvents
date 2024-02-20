@@ -6,7 +6,6 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\Grants;
 
 use BagOStuff;
 use EmptyBagOStuff;
-use Generator;
 use HashBagOStuff;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
@@ -19,8 +18,7 @@ use Psr\Log\NullLogger;
 use StatusValue;
 
 /**
- * @coversDefaultClass \MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient
- * @covers ::__construct
+ * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient
  */
 class FluxxClientTest extends MediaWikiUnitTestCase {
 	private const FLUXX_BASE_URL = 'https://fluxx-base.example.org/';
@@ -49,7 +47,6 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers ::requestToken
 	 * @dataProvider provideMissingConfig
 	 */
 	public function testMissingConfig( array $configOverrides ) {
@@ -75,11 +72,6 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	 * @param array|null $mainReqData If null, it means that we are expecting the token request to fail, and the
 	 * main request should not be executed at all.
 	 * @param array|null $expected Null means we're expecting an exception.
-	 * @covers ::makePostRequest
-	 * @covers ::makePostRequestInternal
-	 * @covers ::getToken
-	 * @covers ::requestToken
-	 * @covers ::parseResponseJSON
 	 * @dataProvider provideMakePostRequest
 	 */
 	public function testMakePostRequest(
@@ -108,7 +100,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $actual );
 	}
 
-	public static function provideMakePostRequest(): Generator {
+	public static function provideMakePostRequest() {
 		yield 'Token request generic fail' => [
 			[ StatusValue::newFatal( 'some-token-error' ) ],
 			null,
@@ -174,9 +166,6 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 		];
 	}
 
-	/**
-	 * @covers ::getToken
-	 */
 	public function testTokenCache() {
 		$tokenRequestSent = false;
 		$httpRequestFactory = $this->createMock( HttpRequestFactory::class );

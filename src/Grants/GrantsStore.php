@@ -4,18 +4,13 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants;
 
-use IDBAccessObject;
 use MediaWiki\Extension\CampaignEvents\Database\CampaignsDatabaseHelper;
 
-class GrantsStore implements IDBAccessObject {
+class GrantsStore {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsGrantsStore';
 
-	/** @var CampaignsDatabaseHelper */
-	private $dbHelper;
+	private CampaignsDatabaseHelper $dbHelper;
 
-	/**
-	 * @param CampaignsDatabaseHelper $dbHelper
-	 */
 	public function __construct( CampaignsDatabaseHelper $dbHelper ) {
 		$this->dbHelper = $dbHelper;
 	}
@@ -64,10 +59,6 @@ class GrantsStore implements IDBAccessObject {
 			[ 'wceg_event_id' => $eventID ]
 		);
 
-		if ( !$grantID ) {
-			return null;
-		}
-
-		return $grantID;
+		return $grantID ?: null;
 	}
 }

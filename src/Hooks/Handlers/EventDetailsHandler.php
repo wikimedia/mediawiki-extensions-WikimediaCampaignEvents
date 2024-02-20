@@ -11,12 +11,8 @@ use OOUI\Tag;
 use OutputPage;
 
 class EventDetailsHandler implements CampaignEventsGetEventDetailsHook {
-	/** @var GrantsStore */
-	private $grantsStore;
+	private GrantsStore $grantsStore;
 
-	/**
-	 * @param GrantsStore $grantsStore
-	 */
 	public function __construct(
 		GrantsStore $grantsStore
 	) {

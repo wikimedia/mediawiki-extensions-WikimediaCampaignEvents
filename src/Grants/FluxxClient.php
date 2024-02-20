@@ -13,7 +13,6 @@ use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MainConfigNames;
 use MWHttpRequest;
 use Psr\Log\LoggerInterface;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
  * This class implements an interface to the Fluxx API
@@ -34,7 +33,6 @@ class FluxxClient {
 	public const WIKIMEDIA_CAMPAIGN_EVENTS_FLUXX_CLIENT_ID = 'WikimediaCampaignEventsFluxxClientID';
 	public const WIKIMEDIA_CAMPAIGN_EVENTS_FLUXX_CLIENT_SECRET = 'WikimediaCampaignEventsFluxxClientSecret';
 
-	/** @var HttpRequestFactory */
 	private HttpRequestFactory $httpRequestFactory;
 
 	protected string $fluxxBaseUrl;
@@ -68,8 +66,8 @@ class FluxxClient {
 	 */
 	private function getToken(): string {
 		return $this->cache->getWithSetCallback(
-			$this->cache->makeKey( 'WikimediaCampaignEvents', 'FluxxToken' ),
-			ExpirationAwareness::TTL_PROC_LONG,
+			$this->cache->makeKey( 'WikimediaCampaignEvents-FluxxToken' ),
+			BagOStuff::TTL_MINUTE,
 			function ( int &$ttl ) {
 				[ 'token' => $token, 'expiry' => $ttl ] = $this->requestToken();
 				return $token;

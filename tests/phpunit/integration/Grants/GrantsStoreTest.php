@@ -10,8 +10,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikimediaCampaignEventsServices;
 use MediaWikiIntegrationTestCase;
 
 /**
- * @coversDefaultClass \MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore
- * @covers ::__construct
+ * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore
  * @group Database
  */
 class GrantsStoreTest extends MediaWikiIntegrationTestCase {
@@ -41,8 +40,6 @@ class GrantsStoreTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::updateGrantID
-	 * @covers ::getGrantID
 	 * @dataProvider provideUpdateGrantID
 	 */
 	public function testUpdateGrantID( int $eventID ) {
@@ -58,10 +55,6 @@ class GrantsStoreTest extends MediaWikiIntegrationTestCase {
 		yield 'update grant ID' => [ 1 ];
 	}
 
-	/**
-	 * @covers ::deleteGrantID
-	 * @covers ::getGrantID
-	 */
 	public function testDeleteGrantID() {
 		$eventID = 2;
 		$this->grantsStore->deleteGrantID( $eventID );

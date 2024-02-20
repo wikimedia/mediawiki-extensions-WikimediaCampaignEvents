@@ -8,7 +8,6 @@ use BagOStuff;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use StatusValue;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
  * This class is responsible for looking up information about grant IDs (e.g., whether they exist, when they were
@@ -60,8 +59,8 @@ class GrantIDLookup {
 	 */
 	private function getGrantData( string $grantID ): array {
 		return $this->cache->getWithSetCallback(
-			$this->cache->makeKey( 'WikimediaCampaignEvents', 'GrantData', $grantID ),
-			ExpirationAwareness::TTL_PROC_LONG,
+			$this->cache->makeKey( 'WikimediaCampaignEvents-GrantData', $grantID ),
+			BagOStuff::TTL_MINUTE,
 			function () use ( $grantID, &$grantStatus )  {
 				// TODO Cache failures due to invalid grant ID, but NOT network issues
 				return $this->requestGrantData( $grantID );
@@ -84,15 +83,13 @@ class GrantIDLookup {
 		];
 
 		$responseData = $this->fluxxClient->makePostRequest( self::ENDPOINT, $postData );
+		$grant = $responseData[ 'records' ][ 'grant_request' ][ 0 ] ?? null;
 
-		if (
-			isset( $responseData[ 'records' ][ 'grant_request' ][ 0 ][ 'base_request_id' ] ) &&
-			$responseData[ 'records' ][ 'grant_request' ][ 0 ][ 'base_request_id' ] === $grantID
-		) {
+		if ( $grant !== null && $grant[ 'base_request_id' ] === $grantID ) {
 			return [
 				'grant_agreement_at' => wfTimestamp(
 					TS_MW,
-					$responseData[ 'records' ][ 'grant_request' ][ 0 ][ 'grant_agreement_at' ]
+					$grant[ 'grant_agreement_at' ]
 				)
 			];
 		}

@@ -33,12 +33,6 @@ class UpdateGrantIdHandler extends SimpleHandler {
 	private GrantsStore $grantsStore;
 	private GrantIDLookup $grantIDLookup;
 
-	/**
-	 * @param IEventLookup $eventLookup
-	 * @param GrantIDLookup $grantIDLookup
-	 * @param PermissionChecker $permissionChecker
-	 * @param GrantsStore $grantsStore
-	 */
 	public function __construct(
 		IEventLookup $eventLookup,
 		GrantIDLookup $grantIDLookup,
@@ -59,15 +53,11 @@ class UpdateGrantIdHandler extends SimpleHandler {
 		$this->validateToken();
 	}
 
-	/**
-	 * @param int $eventID
-	 * @return Response
-	 */
 	protected function run( int $eventID ): Response {
 		$this->getRegistrationOrThrow( $this->eventLookup, $eventID );
 
 		$body = $this->getValidatedBody();
-		$grantID = $body['grant_id'];
+		$grantID = $body['grant_id'] ?? null;
 		if ( !$grantID ) {
 			throw new LocalizedHttpException(
 				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-empty' ),
@@ -112,10 +102,6 @@ class UpdateGrantIdHandler extends SimpleHandler {
 			] + $this->getTokenParamDefinition() );
 	}
 
-	/**
-	 * @param string $grantID
-	 * @param int $eventID
-	 */
 	private function tryUpdateGrantId( string $grantID, int $eventID ): void {
 		// TODO Avoid duplicating EventRegistrationFormHandler.
 		$pattern = "/^\d+-\d+$/";

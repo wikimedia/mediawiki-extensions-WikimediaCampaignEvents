@@ -23,16 +23,10 @@ class DeleteGrantIdHandler extends SimpleHandler {
 	use EventIDParamTrait;
 	use TokenAwareHandlerTrait;
 
-	/** @var IEventLookup */
 	private IEventLookup $eventLookup;
 	private PermissionChecker $permissionChecker;
 	private GrantsStore $grantsStore;
 
-	/**
-	 * @param IEventLookup $eventLookup
-	 * @param PermissionChecker $permissionChecker
-	 * @param GrantsStore $grantsStore
-	 */
 	public function __construct(
 		IEventLookup $eventLookup,
 		PermissionChecker $permissionChecker,
