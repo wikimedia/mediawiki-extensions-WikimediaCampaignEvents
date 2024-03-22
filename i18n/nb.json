@@ -4,5 +4,6 @@
 			"Jon Harald Søby"
 		]
 	},
-	"wikimediacampaignevents-desc": "Tilbyr Wikimedia-spesifikke funksjoner til CampaignEvents-utvidelsen."
+	"wikimediacampaignevents-desc": "Tilbyr Wikimedia-spesifikke funksjoner til CampaignEvents-utvidelsen.",
+	"wikimediacampaignevents-grant-id-input-placeholder": "f.eks. 1201-3302"
 }
