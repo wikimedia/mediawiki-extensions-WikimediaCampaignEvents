@@ -4,10 +4,10 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants;
 
-use BagOStuff;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use StatusValue;
+use WANObjectCache;
 
 /**
  * This class is responsible for looking up information about grant IDs (e.g., whether they exist, when they were
@@ -20,11 +20,11 @@ class GrantIDLookup {
 	private const GRANTS_FILTER_PERIOD_MONTHS = 24;
 
 	private FluxxClient $fluxxClient;
-	private BagOStuff $cache;
+	private WANObjectCache $cache;
 
 	public function __construct(
 		FluxxClient $fluxxClient,
-		BagOStuff $cache
+		WANObjectCache $cache
 	) {
 		$this->fluxxClient = $fluxxClient;
 		$this->cache = $cache;
@@ -60,11 +60,12 @@ class GrantIDLookup {
 	private function getGrantData( string $grantID ): array {
 		return $this->cache->getWithSetCallback(
 			$this->cache->makeKey( 'WikimediaCampaignEvents-GrantData', $grantID ),
-			BagOStuff::TTL_MINUTE,
+			WANObjectCache::TTL_HOUR,
 			function () use ( $grantID, &$grantStatus )  {
 				// TODO Cache failures due to invalid grant ID, but NOT network issues
 				return $this->requestGrantData( $grantID );
-			}
+			},
+			[ 'pcTTL' => WANObjectCache::TTL_PROC_LONG ]
 		);
 	}
 

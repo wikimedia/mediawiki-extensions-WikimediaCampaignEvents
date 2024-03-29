@@ -4,7 +4,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\Grants;
 
-use EmptyBagOStuff;
 use Exception;
 use Generator;
 use HashBagOStuff;
@@ -14,6 +13,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup;
 use MediaWikiUnitTestCase;
 use StatusValue;
+use WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup
@@ -35,7 +35,7 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 
 		return new GrantIDLookup(
 			$fluxxClient,
-			new EmptyBagOStuff()
+			WANObjectCache::newEmpty()
 		);
 	}
 
@@ -137,7 +137,7 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 				$seenIDs[$grantID] = true;
 				return self::getValidResponse( $grantID, '20230606060606' );
 			} );
-		$lookup = new GrantIDLookup( $fluxxClient, new HashBagOStuff() );
+		$lookup = new GrantIDLookup( $fluxxClient, new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 
 		// Warm up the cache
 		$lookupStatus = $lookup->doLookup( $firstGrantID );

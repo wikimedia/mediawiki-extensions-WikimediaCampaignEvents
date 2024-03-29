@@ -4,8 +4,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\Grants;
 
-use BagOStuff;
-use EmptyBagOStuff;
 use HashBagOStuff;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
@@ -16,6 +14,7 @@ use MediaWikiUnitTestCase;
 use MWHttpRequest;
 use Psr\Log\NullLogger;
 use StatusValue;
+use WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient
@@ -27,7 +26,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	private function getClient(
 		?HttpRequestFactory $requestFactory,
 		array $configOverrides = [],
-		BagOStuff $cache = null
+		WANObjectCache $cache = null
 	): FluxxClient {
 		return new FluxxClient(
 			$requestFactory ?? $this->createMock( HttpRequestFactory::class ),
@@ -41,7 +40,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 					MainConfigNames::CopyUploadProxy => null,
 				]
 			),
-			$cache ?? new EmptyBagOStuff(),
+			$cache ?? WANObjectCache::newEmpty(),
 			new NullLogger()
 		);
 	}
@@ -184,7 +183,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 					] )
 				);
 			} );
-		$client = $this->getClient( $httpRequestFactory, [], new HashBagOStuff() );
+		$client = $this->getClient( $httpRequestFactory, [], new WANObjectCache( [ 'cache' => new HashBagOStuff() ] ) );
 
 		// Warm-up
 		$client->makePostRequest( 'endpoint1' );

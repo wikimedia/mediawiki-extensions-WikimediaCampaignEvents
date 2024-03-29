@@ -26,14 +26,14 @@ return [
 				FluxxClient::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getLocalServerObjectCache(),
+			$services->getMainWANObjectCache(),
 			LoggerFactory::getInstance( 'CampaignEvents' ),
 		);
 	},
 	GrantIDLookup::SERVICE_NAME => static function ( MediaWikiServices $services ): GrantIDLookup {
 		return new GrantIDLookup(
 			$services->get( FluxxClient::SERVICE_NAME ),
-			$services->getLocalServerObjectCache()
+			$services->getMainWANObjectCache()
 		);
 	},
 ];
