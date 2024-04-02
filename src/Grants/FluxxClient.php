@@ -4,7 +4,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants;
 
-use BagOStuff;
 use JsonException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\AuthenticationException;
@@ -13,6 +12,7 @@ use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\MainConfigNames;
 use MWHttpRequest;
 use Psr\Log\LoggerInterface;
+use WANObjectCache;
 
 /**
  * This class implements an interface to the Fluxx API
@@ -40,13 +40,13 @@ class FluxxClient {
 	private string $fluxxClientID;
 	private string $fluxxClientSecret;
 	private ?string $requestProxy;
-	protected BagOStuff $cache;
+	protected WANObjectCache $cache;
 	private LoggerInterface $logger;
 
 	public function __construct(
 		HttpRequestFactory $httpRequestFactory,
 		ServiceOptions $options,
-		BagOStuff $cache,
+		WANObjectCache $cache,
 		LoggerInterface $logger
 	) {
 		$this->httpRequestFactory = $httpRequestFactory;
@@ -67,11 +67,13 @@ class FluxxClient {
 	private function getToken(): string {
 		return $this->cache->getWithSetCallback(
 			$this->cache->makeKey( 'WikimediaCampaignEvents-FluxxToken' ),
-			BagOStuff::TTL_MINUTE,
-			function ( int &$ttl ) {
+			WANObjectCache::TTL_HOUR,
+			function ( $oldValue, int &$ttl ) {
 				[ 'token' => $token, 'expiry' => $ttl ] = $this->requestToken();
 				return $token;
-			} );
+			},
+			[ 'pcTTL' => WANObjectCache::TTL_PROC_LONG ]
+		);
 	}
 
 	/**
