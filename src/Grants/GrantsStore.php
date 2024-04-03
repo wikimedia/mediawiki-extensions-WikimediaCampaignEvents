@@ -34,7 +34,8 @@ class GrantsStore {
 			[
 				'wceg_grant_id' => $grantID,
 				'wceg_grant_agreement_at' => $dbw->timestamp( $grantAgreementAt )
-			]
+			],
+			__METHOD__
 		);
 	}
 
@@ -44,7 +45,7 @@ class GrantsStore {
 	 */
 	public function deleteGrantID( int $eventID ): void {
 		$dbw = $this->dbHelper->getDBConnection( DB_PRIMARY );
-		$dbw->delete( 'wikimedia_campaign_events_grant', [ 'wceg_event_id' => $eventID ] );
+		$dbw->delete( 'wikimedia_campaign_events_grant', [ 'wceg_event_id' => $eventID ], __METHOD__ );
 	}
 
 	/**
@@ -56,7 +57,8 @@ class GrantsStore {
 		$grantID = $dbr->selectField(
 			'wikimedia_campaign_events_grant',
 			'wceg_grant_id',
-			[ 'wceg_event_id' => $eventID ]
+			[ 'wceg_event_id' => $eventID ],
+			__METHOD__
 		);
 
 		return $grantID ?: null;
