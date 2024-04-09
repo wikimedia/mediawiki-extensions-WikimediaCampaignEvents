@@ -28,9 +28,9 @@ class EventDetailsHandler implements CampaignEventsGetEventDetailsHook {
 		int $eventID,
 		bool $isOrganizer,
 		OutputPage $outputPage
-	): bool {
+	): void {
 		if ( !$isOrganizer ) {
-			return true;
+			return;
 		}
 		$grantID = $this->grantsStore->getGrantID( $eventID );
 		if ( $grantID ) {
@@ -44,7 +44,5 @@ class EventDetailsHandler implements CampaignEventsGetEventDetailsHook {
 
 			$organizersColumn->appendContent( $grantIDElement );
 		}
-
-		return true;
 	}
 }

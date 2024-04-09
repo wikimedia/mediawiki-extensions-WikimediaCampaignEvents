@@ -32,7 +32,7 @@ class EventRegistrationFormHandler implements
 	/**
 	 * @inheritDoc
 	 */
-	public function onCampaignEventsRegistrationFormLoad( array &$formFields, ?int $eventID ) {
+	public function onCampaignEventsRegistrationFormLoad( array &$formFields, ?int $eventID ): void {
 		$currentGrantID = $eventID ? $this->grantsStore->getGrantID( $eventID ) : '';
 		$formFields['GrantID'] = [
 			'type' => 'text',
@@ -63,14 +63,12 @@ class EventRegistrationFormHandler implements
 				}
 			},
 		];
-
-		return true;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function onCampaignEventsRegistrationFormSubmit( array $formFields, int $eventID ): bool {
+	public function onCampaignEventsRegistrationFormSubmit( array $formFields, int $eventID ): void {
 		$grantID = $formFields['GrantID'];
 		$previousGrantID = $this->grantsStore->getGrantID( $eventID );
 		if ( $grantID && $grantID !== $previousGrantID ) {
@@ -83,6 +81,5 @@ class EventRegistrationFormHandler implements
 		} elseif ( !$grantID && $previousGrantID ) {
 			$this->grantsStore->deleteGrantID( $eventID );
 		}
-		return true;
 	}
 }
