@@ -36,7 +36,11 @@ class GrantsStoreTest extends MediaWikiIntegrationTestCase {
 				'wceg_grant_agreement_at' => $grantAgreementAt,
 			]
 		];
-		$dbw->insert( 'wikimedia_campaign_events_grant', $rows, __METHOD__ );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'wikimedia_campaign_events_grant' )
+			->rows( $rows )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
