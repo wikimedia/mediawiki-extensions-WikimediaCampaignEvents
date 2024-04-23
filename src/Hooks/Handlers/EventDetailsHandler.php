@@ -27,9 +27,10 @@ class EventDetailsHandler implements CampaignEventsGetEventDetailsHook {
 		Tag $organizersColumn,
 		int $eventID,
 		bool $isOrganizer,
-		OutputPage $outputPage
+		OutputPage $outputPage,
+		bool $isLocalWiki
 	): void {
-		if ( !$isOrganizer ) {
+		if ( !$isOrganizer || !$isLocalWiki ) {
 			return;
 		}
 		$grantID = $this->grantsStore->getGrantID( $eventID );
