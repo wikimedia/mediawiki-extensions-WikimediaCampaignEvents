@@ -59,12 +59,12 @@ class GrantsStore {
 	 */
 	public function getGrantID( int $eventID ): ?string {
 		$dbr = $this->dbHelper->getDBConnection( DB_REPLICA );
-		$grantID = $dbr->selectField(
-			'wikimedia_campaign_events_grant',
-			'wceg_grant_id',
-			[ 'wceg_event_id' => $eventID ],
-			__METHOD__
-		);
+		$grantID = $dbr->newSelectQueryBuilder()
+			->select( 'wceg_grant_id' )
+			->from( 'wikimedia_campaign_events_grant' )
+			->where( [ 'wceg_event_id' => $eventID ] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return $grantID ?: null;
 	}
