@@ -42,10 +42,10 @@ class GetGrantIdHandler extends SimpleHandler {
 	 * @return Response
 	 */
 	protected function run( int $eventID ): Response {
-		$this->getRegistrationOrThrow( $this->eventLookup, $eventID );
+		$registration = $this->getRegistrationOrThrow( $this->eventLookup, $eventID );
 
 		$performer = new MWAuthorityProxy( $this->getAuthority() );
-		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $eventID ) ) {
+		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $registration ) ) {
 			throw new LocalizedHttpException(
 				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-get-permission-denied' ),
 				403

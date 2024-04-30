@@ -54,7 +54,7 @@ class UpdateGrantIdHandler extends SimpleHandler {
 	}
 
 	protected function run( int $eventID ): Response {
-		$this->getRegistrationOrThrow( $this->eventLookup, $eventID );
+		$registration = $this->getRegistrationOrThrow( $this->eventLookup, $eventID );
 
 		$body = $this->getValidatedBody();
 		$grantID = $body['grant_id'] ?? null;
@@ -66,7 +66,7 @@ class UpdateGrantIdHandler extends SimpleHandler {
 		}
 
 		$performer = new MWAuthorityProxy( $this->getAuthority() );
-		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $eventID ) ) {
+		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $registration ) ) {
 			throw new LocalizedHttpException(
 				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-permission-denied' ),
 				403
