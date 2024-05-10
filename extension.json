@@ -1,5 +1,6 @@
 {
 	"name": "WikimediaCampaignEvents",
+	"namemsg": "wikimediacampaignevents-extensionname",
 	"author": [
 		"[https://meta.wikimedia.org/wiki/Campaigns/Foundation_Product_Team WMF Campaigns Team]"
 	],

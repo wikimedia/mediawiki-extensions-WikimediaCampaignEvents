@@ -4,6 +4,7 @@
 			"Claudio Melo"
 		]
 	},
+	"wikimediacampaignevents-extensionname": "Wikimedia&shy;Campaign&shy;Events",
 	"wikimediacampaignevents-desc": "Provides Wikimedia-specific features for the CampaignEvents extension.",
 	"wikimediacampaignevents-grant-id-input-label": "Grant ID",
 	"wikimediacampaignevents-grant-id-input-placeholder": "e.g. 1201-3302",
