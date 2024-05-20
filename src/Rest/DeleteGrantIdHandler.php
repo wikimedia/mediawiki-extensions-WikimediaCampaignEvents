@@ -13,9 +13,6 @@ use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use MediaWiki\Rest\TokenAwareHandlerTrait;
-use MediaWiki\Rest\Validator\BodyValidator;
-use MediaWiki\Rest\Validator\JsonBodyValidator;
-use MediaWiki\Rest\Validator\UnsupportedContentTypeBodyValidator;
 use MediaWiki\Rest\Validator\Validator;
 use Wikimedia\Message\MessageValue;
 
@@ -73,11 +70,7 @@ class DeleteGrantIdHandler extends SimpleHandler {
 	/**
 	 * @inheritDoc
 	 */
-	public function getBodyValidator( $contentType ): BodyValidator {
-		if ( $contentType !== 'application/json' ) {
-			return new UnsupportedContentTypeBodyValidator( $contentType );
-		}
-
-		return new JsonBodyValidator( $this->getTokenParamDefinition() );
+	public function getBodyParamSettings(): array {
+		return $this->getTokenParamDefinition();
 	}
 }

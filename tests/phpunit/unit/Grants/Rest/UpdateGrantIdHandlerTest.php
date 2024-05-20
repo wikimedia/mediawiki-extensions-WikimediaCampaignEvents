@@ -132,7 +132,7 @@ class UpdateGrantIdHandlerTest extends MediaWikiUnitTestCase {
 
 		yield 'Empty grant ID' => [
 			400,
-			'wikimediacampaignevents-rest-grant-id-edit-empty',
+			'rest-body-validation-error',
 			self::getRequestData( '' ),
 		];
 

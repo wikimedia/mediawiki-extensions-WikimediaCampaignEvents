@@ -16,9 +16,6 @@ use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\Response;
 use MediaWiki\Rest\SimpleHandler;
 use MediaWiki\Rest\TokenAwareHandlerTrait;
-use MediaWiki\Rest\Validator\BodyValidator;
-use MediaWiki\Rest\Validator\JsonBodyValidator;
-use MediaWiki\Rest\Validator\UnsupportedContentTypeBodyValidator;
 use MediaWiki\Rest\Validator\Validator;
 use RuntimeException;
 use Wikimedia\Message\MessageValue;
@@ -58,12 +55,6 @@ class UpdateGrantIdHandler extends SimpleHandler {
 
 		$body = $this->getValidatedBody();
 		$grantID = $body['grant_id'] ?? null;
-		if ( !$grantID ) {
-			throw new LocalizedHttpException(
-				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-empty' ),
-				400
-			);
-		}
 
 		$performer = new MWAuthorityProxy( $this->getAuthority() );
 		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $eventID ) ) {
@@ -88,18 +79,14 @@ class UpdateGrantIdHandler extends SimpleHandler {
 	/**
 	 * @inheritDoc
 	 */
-	public function getBodyValidator( $contentType ): BodyValidator {
-		if ( $contentType !== 'application/json' ) {
-			return new UnsupportedContentTypeBodyValidator( $contentType );
-		}
-
-		return new JsonBodyValidator( [
+	public function getBodyParamSettings(): array {
+		return [
 				'grant_id' => [
 					ParamValidator::PARAM_REQUIRED => true,
 					ParamValidator::PARAM_TYPE => 'string',
 					static::PARAM_SOURCE => 'body'
 				],
-			] + $this->getTokenParamDefinition() );
+			] + $this->getTokenParamDefinition();
 	}
 
 	private function tryUpdateGrantId( string $grantID, int $eventID ): void {
