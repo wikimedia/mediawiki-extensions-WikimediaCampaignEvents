@@ -5,7 +5,6 @@
 		]
 	},
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "You are not authorized to change the grant ID for this event.",
-	"wikimediacampaignevents-rest-grant-id-edit-empty": "The grant ID cannot be empty.",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "The Grant ID you entered is invalid.",
 	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx is currently unable to validate this Grant ID. Try again in a few minutes.",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "You are not authorized to view the grant ID for this event."
