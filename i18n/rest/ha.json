@@ -5,7 +5,6 @@
 		]
 	},
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Ba ku da izinin canza ID na kyauta na wannan taron.",
-	"wikimediacampaignevents-rest-grant-id-edit-empty": "ID ɗin tallafin ba zai iya zama komai ba.",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "ID ɗin Grant da kuka shigar ba shi da inganci.",
 	"wikimediacampaignevents-rest-grant-id-edit-api-error": "A halin yanzu Fluxx ba zai iya tabbatar da wannan ID na Grant ba. Sake gwadawa a cikin 'yan mintuna kaɗan.",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Ba ku da izinin duba ID ɗin kyauta na wannan taron."

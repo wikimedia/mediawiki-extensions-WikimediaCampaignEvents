@@ -5,7 +5,6 @@
 		]
 	},
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "您無權更改此活動的授權 ID。",
-	"wikimediacampaignevents-rest-grant-id-edit-empty": "授權 ID 不可為空。",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "您輸入的授權 ID 無效。",
 	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx 目前無法驗證此授權 ID。請稍待幾分鐘後重試。",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "您無權查看此活動的授權 ID。"
