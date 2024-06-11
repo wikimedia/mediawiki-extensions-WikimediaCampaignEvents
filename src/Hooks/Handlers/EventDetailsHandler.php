@@ -7,8 +7,8 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 use MediaWiki\Extension\CampaignEvents\FrontendModules\EventDetailsModule;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetEventDetailsHook;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore;
+use MediaWiki\Output\OutputPage;
 use OOUI\Tag;
-use OutputPage;
 
 class EventDetailsHandler implements CampaignEventsGetEventDetailsHook {
 	private GrantsStore $grantsStore;
