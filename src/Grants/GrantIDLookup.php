@@ -17,7 +17,7 @@ class GrantIDLookup {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsGrantIDLookup';
 
 	private const ENDPOINT = 'grant_request/list';
-	private const GRANTS_FILTER_PERIOD_MONTHS = 24;
+	private const GRANTS_FILTER_PERIOD_DAYS = 730;
 
 	private FluxxClient $fluxxClient;
 	private WANObjectCache $cache;
@@ -120,7 +120,8 @@ class GrantIDLookup {
 			"conditions" => [
 				[ "base_request_id", "eq", $grantID ],
 				[ "granted", "eq", true ],
-				[ "grant_agreement_at", "last-n-months", self::GRANTS_FILTER_PERIOD_MONTHS ],
+				// last-n-months does not include the current month T367465
+				[ "grant_agreement_at", "last-n-days", self::GRANTS_FILTER_PERIOD_DAYS ],
 			],
 		];
 	}
