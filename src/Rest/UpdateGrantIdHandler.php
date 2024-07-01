@@ -55,6 +55,12 @@ class UpdateGrantIdHandler extends SimpleHandler {
 
 		$body = $this->getValidatedBody();
 		$grantID = $body['grant_id'] ?? null;
+		if ( !$grantID ) {
+			throw new LocalizedHttpException(
+				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-empty' ),
+				400
+			);
+		}
 
 		$performer = new MWAuthorityProxy( $this->getAuthority() );
 		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $registration ) ) {
