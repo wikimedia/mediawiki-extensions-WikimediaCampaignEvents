@@ -5,6 +5,7 @@
 		]
 	},
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Você não está autorizado a alterar o ID da concessão deste evento.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "O ID da concessão não pode estar vazio.",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "O Grant ID inserido é inválido.",
 	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Atualmente, o Fluxx não consegue validar este Grant ID. Tente novamente em alguns minutos.",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Você não está autorizado a visualizar o ID da concessão deste evento."

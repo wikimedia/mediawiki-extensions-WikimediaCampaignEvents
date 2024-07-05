@@ -5,6 +5,7 @@
 		]
 	},
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Za spremembo ID-ja dotacije za ta dogodek niste pooblaščeni.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "ID dotacije ne sme biti prazen.",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "ID dotacije, ki ste ga vnesli, je neveljaven.",
 	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx trenutno ne more potrditi tega ID-ja dotacije. Poskusite znova čez nekaj minut.",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Za ogled ID-ja dotacije za ta dogodek niste pooblaščeni."

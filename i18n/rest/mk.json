@@ -5,6 +5,7 @@
 		]
 	},
 	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Не сте овластени да ја менувате назнаката на доделбата за овој настан.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "Назнаката на доделбата не може да стои празна.",
 	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Внесената назнака на доделбата е неважечка.",
 	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx во моментов не може да ја провери оваа назнака на доделба. Обидете се за неколку минути.",
 	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Не сте овластени да ја гледате назнаката на доделбата за овој настан."
