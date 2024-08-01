@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "غير مصرح لك بتغيير معرف منحة هذه الفعالية.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "لا يمكن أن يكون معرّف المنحة فارغاً.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "معرف المنحة الذي أدخلته غير صالح.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "يتعذر على فلوكس حالياً التحقق من صحة معرف المنحة هذا. حاول مرة أخرى بعد بضع دقائق.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "غير مصرح لك بعرض معرّف المنحة لهذه الفعالية."
+}
