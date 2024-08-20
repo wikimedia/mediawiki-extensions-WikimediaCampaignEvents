@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nemoralis"
+		]
+	},
+	"wikimediacampaignevents-desc": "CampaignEvents uzantısı üçün Vikimediaya xas funksiyalar təqdim edir.",
+	"wikimediacampaignevents-grant-id-input-label": "Qrant ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "məsələn 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Əgər bu proqram və ya tədbir Vikimedia Fondunun qrantı ilə dəstəklənirsə [https://wmf.fluxx.io/ Qrant Alıcı Portalında (Fluxx)] tapa biləcəyiniz Qrant ID-nizi təqdim edin. Qrant ID-də rəqəmləri və tireləri daxil edin, lakin hərfləri qeyd etməyin. Məsələn, qrant ID-niz G-1111-1111-dirsə, lütfən, 1111-1111 daxil edin."
+}
