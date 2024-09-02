@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Claudio Melo"
+			"Claudio Melo",
+			"Michelle Horsey"
 		]
 	},
 	"wikimediacampaignevents-extensionname": "Wikimedia&shy;Campaign&shy;Events",
@@ -11,5 +12,11 @@
 	"wikimediacampaignevents-grant-id-input-help-message": "If this program or event is supported by a grant from the Wikimedia Foundation, please provide your Grant ID, which you can find in the [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Please enter the numbers and dashes in your grant ID, but exclude the letters. For example, if your grant ID is G-1111-1111, please enter 1111-1111.",
 	"wikimediacampaignevents-grant-id-invalid-error-message": "The Grant ID you entered seems to be incorrect. Please double-check your Grant ID in the [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] and re-enter.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "There was an issue with validating your Grant ID. You can try submitting the form again in a few minutes. If the issue persists, you can still submit the form without a Grant ID and add it later by editing the event details.",
-	"wikimediacampaignevents-grant-id-event-details-label": "Grant ID"
+	"wikimediacampaignevents-grant-id-event-details-label": "Grant ID",
+	"wikimediacampaignevents-communitylist-title": "Community list",
+	"wikimediacampaignevents-communitylist-no-events-title": "No WikiProjects found.",
+	"wikimediacampaignevents-communitylist-no-events-text": "There are no WikiProjects on this wiki.",
+	"wikimediacampaignevents-communitylist-header-text": "Discover WikiProjects - groups of contributors focused on specific topics, areas of Wikipedia, or tasks.",
+	"wikimediacampaignevents-communitylist-events-tab-heading": "Events",
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "Communities"
 }

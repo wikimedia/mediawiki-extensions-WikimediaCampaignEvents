@@ -39,6 +39,10 @@
 		"WikimediaCampaignEventsFluxxClientSecret": {
 			"description": "Client secret to use for the Fluxx API.",
 			"value": null
+		},
+		"WikimediaCampaignEventsEnableCommunityList": {
+			"description": "Flag to enable community list feature on a wiki",
+			"value": false
 		}
 	},
 	"ServiceWiringFiles": [
@@ -60,13 +64,18 @@
 			"services": [
 				"WikimediaCampaignEventsGrantsStore"
 			]
+		},
+		"CommunityListHandler": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\CommunityListHandler",
+			"services": []
 		}
 	},
 	"Hooks": {
 		"LoadExtensionSchemaUpdates": "SchemaChanges",
 		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler",
 		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler",
-		"CampaignEventsGetEventDetails": "EventDetailsHandler"
+		"CampaignEventsGetEventDetails": "EventDetailsHandler",
+		"CampaignEventsGetCommunityList": "CommunityListHandler"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"

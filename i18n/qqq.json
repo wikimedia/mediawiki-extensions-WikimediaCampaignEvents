@@ -9,5 +9,12 @@
 	"wikimediacampaignevents-grant-id-input-help-message": "Help message for the optional Grant ID field ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) displayed on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]]. These are special pages of the CampaignEvents extension. The numbers in this message represent a Grant ID and should not be translated or formatted in any way.",
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Error message shown on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]] in case the provided grant ID field ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) is invalid",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Error message shown on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]] in case the API call to validate the grant ID ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) fails.",
-	"wikimediacampaignevents-grant-id-event-details-label": "Label for [[:m:Special:MyLanguage/Grants:Administration/Eligibility|Grant ID]] displayed on [[Special:EventDetails]], this is a special page of the CampaignEvents extension"
+	"wikimediacampaignevents-grant-id-event-details-label": "Label for [[:m:Special:MyLanguage/Grants:Administration/Eligibility|Grant ID]] displayed on [[Special:EventDetails]], this is a special page of the CampaignEvents extension",
+	"wikimediacampaignevents-communitylist-title": "Description of the community list tab on [[Special:AllEvents]]",
+	"wikimediacampaignevents-communitylist-no-events-title": "Notice title used on [[Special:AllEvents]] to alert that no wikiprojects have been found.",
+	"wikimediacampaignevents-communitylist-no-events-text": "Notice text used on [[Special:AllEvents]] to alert that no wikiprojects have been found.",
+	"wikimediacampaignevents-communitylist-header-text": "Header text used on [[Special:AllEvents]] to explain the use of the communities tab.",
+	"wikimediacampaignevents-communitylist-events-tab-heading": "Events tab label used on [[Special:AllEvents]].",
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "Communities tab label used on [[Special:AllEvents]]."
+
 }
