@@ -7,6 +7,8 @@ use MediaWiki\Extension\CampaignEvents\Database\CampaignsDatabaseHelper;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore;
+use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
+use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectIDLookup;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -34,6 +36,19 @@ return [
 		return new GrantIDLookup(
 			$services->get( FluxxClient::SERVICE_NAME ),
 			$services->getMainWANObjectCache()
+		);
+	},
+	WikiProjectIDLookup::SERVICE_NAME => static function ( MediaWikiServices $services ): WikiProjectIDLookup {
+		return new WikiProjectIDLookup(
+			$services->getMainObjectStash(),
+			$services->getHttpRequestFactory()
+		);
+	},
+	WikiProjectFullLookup::SERVICE_NAME => static function ( MediaWikiServices $services ): WikiProjectFullLookup {
+		return new WikiProjectFullLookup(
+			$services->get( WikiProjectIDLookup::SERVICE_NAME ),
+			$services->getMainWANObjectCache(),
+			$services->getHttpRequestFactory()
 		);
 	},
 ];
