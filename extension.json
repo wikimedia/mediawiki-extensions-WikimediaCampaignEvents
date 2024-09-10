@@ -67,7 +67,9 @@
 		},
 		"CommunityListHandler": {
 			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\CommunityListHandler",
-			"services": []
+			"services": [
+				"WikimediaCampaignEventsWikiProjectFullLookup"
+			]
 		}
 	},
 	"Hooks": {
