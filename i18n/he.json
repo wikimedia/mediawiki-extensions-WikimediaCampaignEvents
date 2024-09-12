@@ -10,5 +10,11 @@
 	"wikimediacampaignevents-grant-id-input-help-message": "אם התוכנית הזאת או האירוע הזה נתמכים על־ידי מלגה מקרן ויקימדיה, נא לספק את מזהה המענק שלך, שאפשר למצוא ב-[https://wmf.fluxx.io/ פורטל המלגאים (Fluxx)]. נא להזין את המספרים והמקפים במזהה המלגה שלך, אך לא לכלול את האותיות. למשל, אם מזהה המלגה שלך הוא G-1111-1111, יש להזין 1111-1111.",
 	"wikimediacampaignevents-grant-id-invalid-error-message": "נראה שמזהה המלגה שהזנת שגוי. נא לבדוק שוב את מזהה המענק שלך ב-[https://wmf.fluxx.io/ פורטל המלגאים (Fluxx)] ולהיכנס מחדש.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "אירעה תקלה בבדיקת תקינות מזהה המלגה שלך. באפשרותך לנסות לשלוח את הטופס שוב בעוד כמה דקות. אם הבעיה נמשכת, אפשר עדיין לשלוח את הטופס ללא מזהה מלגה ולהוסיף אותו מאוחר יותר על־ידי עריכת פרטי האירוע.",
-	"wikimediacampaignevents-grant-id-event-details-label": "מזהה המלגה"
+	"wikimediacampaignevents-grant-id-event-details-label": "מזהה המלגה",
+	"wikimediacampaignevents-communitylist-title": "רשימת קהילה",
+	"wikimediacampaignevents-communitylist-no-events-title": "לא נמצאו מיזמי ויקי.",
+	"wikimediacampaignevents-communitylist-no-events-text": "אין מיזמי ויקי בוויקי הזה.",
+	"wikimediacampaignevents-communitylist-header-text": "גלה WikiProjects - קבוצות של תורמים המתמקדים בנושאים, תחומים של ויקיפדיה או סוגי משימות מסוימים.",
+	"wikimediacampaignevents-communitylist-events-tab-heading": "אירועים",
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "קהילות"
 }

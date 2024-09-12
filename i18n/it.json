@@ -4,5 +4,9 @@
 			"Beta16"
 		]
 	},
-	"wikimediacampaignevents-grant-id-input-placeholder": "ad esempio 1201-3302"
+	"wikimediacampaignevents-grant-id-input-placeholder": "ad esempio 1201-3302",
+	"wikimediacampaignevents-communitylist-no-events-title": "Nessun WikiProgetto trovato.",
+	"wikimediacampaignevents-communitylist-no-events-text": "Non ci sono WikiProgetti su questo wiki.",
+	"wikimediacampaignevents-communitylist-events-tab-heading": "Eventi",
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "Comunità"
 }
