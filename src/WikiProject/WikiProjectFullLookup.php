@@ -6,6 +6,7 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\WikiProject;
 
 use JsonException;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\WikiMap\WikiMap;
 use WANObjectCache;
 
 /**
@@ -35,7 +36,7 @@ class WikiProjectFullLookup {
 	 * @param int $limit
 	 * @param string|null $lastEntity When paginating results, this is the ID of the last entity on the previous page
 	 * @return array[]
-	 * @phan-return array<string,array{label:string,description:string}>
+	 * @phan-return array<string,array{label:string,description:string,sitelink:string}>
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	public function getWikiProjects( string $languageCode, int $limit, string $lastEntity = null ): array {
@@ -54,7 +55,7 @@ class WikiProjectFullLookup {
 	 * @param array $entityIDs
 	 * @param string $languageCode
 	 * @return array[]
-	 * @phan-return array<string,array{label:string,description:string}>
+	 * @phan-return array<string,array{label:string,description:string,sitelink:string}>
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	private function getDataForEntities( array $entityIDs, string $languageCode ): array {
@@ -71,7 +72,7 @@ class WikiProjectFullLookup {
 	 * @param string[] $entityIDs
 	 * @param string $languageCode
 	 * @return array[]
-	 * @phan-return array<string,array{label:string,description:string}>
+	 * @phan-return array<string,array{label:string,description:string,sitelink:string}>
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	private function computeDataForEntities( array $entityIDs, string $languageCode ): array {
@@ -82,10 +83,14 @@ class WikiProjectFullLookup {
 				// No label available, skip.
 				continue;
 			}
-			$wikiProjects[$id] = [
-				'label' => $entity['labels'][$languageCode]['value'],
-				'description' => $entity['descriptions'][$languageCode]['value'] ?? '',
-			];
+			$siteLink = $this->buildEntitySiteLink( $entity );
+			if ( $siteLink ) {
+				$wikiProjects[$id] = [
+					'label' => $entity['labels'][$languageCode]['value'],
+					'description' => $entity['descriptions'][$languageCode]['value'] ?? '',
+					'sitelink' => $siteLink,
+				];
+			}
 		}
 		return $wikiProjects;
 	}
@@ -114,8 +119,8 @@ class WikiProjectFullLookup {
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	private function queryWikidataAPIBatch( array $entityIDs, string $languageCode ): array {
-		// 'claims' and 'sitelinks' to be added for more data.
-		$props = [ 'labels', 'descriptions' ];
+		// 'claims' to be added for more data.
+		$props = [ 'labels', 'descriptions', 'sitelinks/urls' ];
 		$params = [
 			'action' => 'wbgetentities',
 			'format' => 'json',
@@ -129,7 +134,6 @@ class WikiProjectFullLookup {
 		$options = [
 			'method' => 'GET'
 		];
-
 		$req = $this->httpRequestFactory->create( $url, $options, __METHOD__ );
 
 		$status = $req->execute();
@@ -144,5 +148,14 @@ class WikiProjectFullLookup {
 		}
 
 		return $parsedResponse;
+	}
+
+	/**
+	 * @param array $entity
+	 * @return string|null
+	 */
+	private function buildEntitySiteLink( array $entity ): ?string {
+		$siteId = WikiMap::getCurrentWikiId();
+		return array_key_exists( $siteId, $entity['sitelinks'] ) ? $entity['sitelinks'][$siteId]['url'] : null;
 	}
 }

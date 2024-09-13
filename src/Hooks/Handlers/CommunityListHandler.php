@@ -5,6 +5,8 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetCommunityListHook;
+use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
+use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Html\TemplateParser;
 use OOUI\Tag;
 use OutputPage;
@@ -12,6 +14,11 @@ use OutputPage;
 class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	private TemplateParser $templateParser;
 	private string $activeTab;
+	private WikiProjectFullLookup $wikiProjectLookup;
+
+	public function __construct( WikiProjectFullLookup $wikiProjectLookup ) {
+		$this->wikiProjectLookup = $wikiProjectLookup;
+	}
 
 	/**
 	 * @inheritDoc
@@ -53,15 +60,38 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	 * @return string
 	 */
 	private function getCommunityListContent( OutputPage $outputPage ): string {
-		return $this->templateParser->processTemplate(
-			'Message',
-			[
-				'Classes' => 'ext-campaignevents-community-list-empty-state',
-				'IconClass' => 'page',
-				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
-				'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->text()
-			]
-		);
+		try {
+			$wikiProjects = $this->wikiProjectLookup->getWikiProjects( $outputPage->getLanguage()->getCode(), 10 );
+		} catch ( CannotQueryWikiProjectsException $cannotQueryWikiProjectsException ) {
+			// Todo:display error to user
+			$wikiProjects = [];
+		}
+		$cards = [];
+		if ( count( $wikiProjects ) === 0 ) {
+			return $this->templateParser->processTemplate(
+				'Message',
+				[
+					'Classes' => 'ext-campaignevents-community-list-empty-state',
+					'IconClass' => 'page',
+					'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
+					'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->text()
+				]
+			);
+		} else {
+			foreach ( $wikiProjects as $wikiProject ) {
+				$properties = [
+					'Classes' => 'ext-campaignevents-community-list-wikiproject',
+					'Title' => $wikiProject['label'],
+					'Description' => $wikiProject['description'],
+					'Url' => $wikiProject['sitelink'],
+				];
+				$cards[] = $this->templateParser->processTemplate(
+					'Card',
+					$properties
+				);
+			}
+			return implode( '', $cards );
+		}
 	}
 
 	/**
