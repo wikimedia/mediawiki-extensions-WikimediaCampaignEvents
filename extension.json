@@ -70,6 +70,12 @@
 			"services": [
 				"WikimediaCampaignEventsWikiProjectFullLookup"
 			]
+		},
+		"PageCollectionHook": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\PageCollectionHookHandler",
+			"services": [
+				"WikiPageFactory"
+			]
 		}
 	},
 	"Hooks": {
@@ -77,7 +83,18 @@
 		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler",
 		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler",
 		"CampaignEventsGetEventDetails": "EventDetailsHandler",
-		"CampaignEventsGetAllEventsContent": "CollaborationListHandler"
+		"CampaignEventsGetAllEventsContent": "CollaborationListHandler",
+		"ParserFirstCallInit": "PageCollectionHook"
+	},
+	"APIListModules": {
+		"pagecollectionsmetadata": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\ActionApi\\ApiQueryPageCollectionsMetadata",
+			"services": [
+				"ParserFactory",
+				"WikiPageFactory",
+				"TitleFactory"
+			]
+		}
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
@@ -114,6 +131,9 @@
 				"WikimediaCampaignEventsGrantsStore"
 			]
 		}
+	],
+	"TrackingCategories": [
+		"page-collection-tracking-category"
 	],
 	"manifest_version": 2
 }
