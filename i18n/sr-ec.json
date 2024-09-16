@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kizule",
 			"Milicevic01"
 		]
 	},
-	"wikimediacampaignevents-grant-id-input-placeholder": "нпр. 1201-3302"
+	"wikimediacampaignevents-grant-id-input-placeholder": "нпр. 1201-3302",
+	"wikimediacampaignevents-communitylist-events-tab-heading": "Догађаји",
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "Заједнице"
 }
