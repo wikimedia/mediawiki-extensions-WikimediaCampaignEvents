@@ -35,7 +35,7 @@ class WikiProjectIDLookup {
 
 	/**
 	 * @return string[]
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWDQSException
 	 */
 	public function getWikiProjectIDs(): array {
 		if ( $this->cachedIDs !== null ) {
@@ -51,9 +51,8 @@ class WikiProjectIDLookup {
 		// but we still regenerate them more frequently to serve fresh data.
 		$cachedData = $this->cache->get( $cacheKey );
 		if ( $cachedData === false ) {
-			// No cached value... We hope this won't ever happen in practice (this code being a POC).
-			$list = [];
-			$lastUpdate = 0;
+			$this->updateWikiProjectIDsCache( $cacheKey );
+			throw new CannotQueryWDQSException();
 		} else {
 			$list = $cachedData['list'];
 			$lastUpdate = (int)$cachedData['lastUpdate'];
@@ -61,16 +60,7 @@ class WikiProjectIDLookup {
 
 		// Schedule regeneration if the value is older than 1 hour.
 		if ( (int)ConvertibleTimestamp::now( TS_UNIX ) - $lastUpdate >= 60 * 60 ) {
-			DeferredUpdates::addCallableUpdate( function () use ( $cacheKey ) {
-				$this->cache->set(
-					$cacheKey,
-					[
-						'list' => $this->computeWikiProjectIDs(),
-						'lastUpdate' => (int)ConvertibleTimestamp::now( TS_UNIX ),
-					],
-					BagOStuff::TTL_WEEK
-				);
-			} );
+			$this->updateWikiProjectIDsCache( $cacheKey );
 		}
 
 		$this->cachedIDs = $list;
@@ -79,7 +69,7 @@ class WikiProjectIDLookup {
 
 	/**
 	 * @return string[]
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWDQSException
 	 */
 	private function computeWikiProjectIDs(): array {
 		$sparqlResponse = $this->runSPARQLQuery();
@@ -95,7 +85,7 @@ class WikiProjectIDLookup {
 
 	/**
 	 * @return array
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWDQSException
 	 */
 	private function runSPARQLQuery(): array {
 		$curWiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
@@ -134,15 +124,32 @@ EOT;
 		$status = $req->execute();
 
 		if ( !$status->isGood() ) {
-			throw new CannotQueryWikiProjectsException( "Bad status from WDQS: $status" );
+			throw new CannotQueryWDQSException( "Bad status from WDQS: $status" );
 		}
 
 		try {
 			$parsedResponse = json_decode( $req->getContent(), true, 512, JSON_THROW_ON_ERROR );
 		} catch ( JsonException $e ) {
-			throw new CannotQueryWikiProjectsException( "Invalid JSON from WDQS", 0, $e );
+			throw new CannotQueryWDQSException( "Invalid JSON from WDQS", 0, $e );
 		}
 
 		return $parsedResponse;
+	}
+
+	/**
+	 * @param string $cacheKey
+	 * @return void
+	 */
+	public function updateWikiProjectIDsCache( string $cacheKey ): void {
+		DeferredUpdates::addCallableUpdate( function () use ( $cacheKey ) {
+			$this->cache->set(
+				$cacheKey,
+				[
+					'list' => $this->computeWikiProjectIDs(),
+					'lastUpdate' => (int)ConvertibleTimestamp::now( TS_UNIX ),
+				],
+				BagOStuff::TTL_WEEK
+			);
+		} );
 	}
 }

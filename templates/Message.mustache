@@ -1,11 +1,11 @@
 <!-- Root element with layout and type classes, and additional attribute(s). -->
 <div
-	class="cdx-message cdx-message--block cdx-message--notice {{Classes}}"
+	class="cdx-message cdx-message--block cdx-message--{{Type}} {{Classes}}"
 	aria-live="polite"
 >
 	<span class="cdx-message__icon cdx-css-icon--{{IconClass}}"></span>
 	<div class="cdx-message__content">
 		<strong>{{Title}}</strong>
-		<p>{{Text}}</p>
+		<p>{{{Text}}}</p>
 	</div>
 </div>

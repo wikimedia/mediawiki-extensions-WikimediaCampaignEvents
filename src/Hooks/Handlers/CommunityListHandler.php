@@ -4,8 +4,11 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 
+use LogicException;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetCommunityListHook;
 use MediaWiki\Extension\CampaignEvents\Special\SpecialAllEvents;
+use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWDQSException;
+use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikibaseException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Html\TemplateParser;
@@ -64,9 +67,8 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	private function getCommunityListContent( OutputPage $outputPage ): string {
 		try {
 			$hasWikiProjects = $this->wikiProjectLookup->hasWikiProjects();
-		} catch ( CannotQueryWikiProjectsException $cannotQueryWikiProjectsException ) {
-			// Todo:display error to user
-			$hasWikiProjects = false;
+		} catch ( CannotQueryWDQSException $cannotQueryWikiProjectsException ) {
+			return $this->getErrorTemplate( $outputPage, $cannotQueryWikiProjectsException );
 		}
 
 		if ( !$hasWikiProjects ) {
@@ -75,9 +77,8 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 
 		try {
 			$wikiProjects = $this->wikiProjectLookup->getWikiProjects( $outputPage->getLanguage()->getCode(), 10 );
-		} catch ( CannotQueryWikiProjectsException $cannotQueryWikiProjectsException ) {
-			// Todo:display error to user
-			$wikiProjects = [];
+		} catch ( CannotQueryWDQSException | CannotQueryWikibaseException $cannotQueryWikiProjectsException ) {
+			return $this->getErrorTemplate( $outputPage, $cannotQueryWikiProjectsException );
 		}
 
 		return $this->getWikiProjectsHTML( $wikiProjects );
@@ -89,8 +90,9 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 			[
 				'Classes' => 'ext-campaignevents-community-list-empty-state',
 				'IconClass' => 'page',
+				'Type' => 'notice',
 				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
-				'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->text()
+				'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->parse()
 			]
 		);
 	}
@@ -133,5 +135,29 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 
 		}
 		return $this->templateParser->processTemplate( 'TabLayout', $data );
+	}
+
+	/**
+	 * @param OutputPage $outputPage
+	 * @return string
+	 */
+	public function getErrorTemplate( OutputPage $outputPage, CannotQueryWikiProjectsException $exception ): string {
+		if ( $exception instanceof CannotQueryWikibaseException ) {
+			$messageKey = 'wikimediacampaignevents-communitylist-wikidata-api-error-text';
+		} elseif ( $exception instanceof CannotQueryWDQSException ) {
+			$messageKey = 'wikimediacampaignevents-communitylist-wdqs-api-error-text';
+		} else {
+			throw new LogicException( 'Unexpected exception type: ' . get_class( $exception ) );
+		}
+
+		return $this->templateParser->processTemplate(
+			'Message',
+			[
+				'Type' => 'error',
+				'Classes' => 'ext-campaignevents-community-list-api-error',
+				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-api-error-title' )->text(),
+				'Text' => $outputPage->msg( $messageKey )->parse()
+			]
+		);
 	}
 }

@@ -44,7 +44,8 @@ class WikiProjectFullLookup {
 	 * null if there is no sitelink for the current wiki (might happen when the sitelink is removed after the WDQS query
 	 * was last run). QIDs are used as array keys, even for null elements.
 	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWDQSException
+	 * @throws CannotQueryWikibaseException
 	 */
 	public function getWikiProjects(
 		string $languageCode,
@@ -75,7 +76,7 @@ class WikiProjectFullLookup {
 
 	/**
 	 * @return bool Whether any WikiProjects exist on the current wiki.
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWDQSException
 	 */
 	public function hasWikiProjects(): bool {
 		return $this->wikiProjectIDLookup->getWikiProjectIDs() !== [];
@@ -86,7 +87,7 @@ class WikiProjectFullLookup {
 	 * @param string $languageCode
 	 * @return array<array|null>
 	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWikibaseException
 	 */
 	private function getDataForEntities( array $entityIDs, string $languageCode ): array {
 		$entitiesHash = sha1( implode( ',', $entityIDs ) );
@@ -103,7 +104,7 @@ class WikiProjectFullLookup {
 	 * @param string $languageCode
 	 * @return array<array|null>
 	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWikibaseException
 	 */
 	private function computeDataForEntities( array $entityIDs, string $languageCode ): array {
 		$entities = $this->queryWikidataAPI( $entityIDs, $languageCode );
@@ -128,7 +129,7 @@ class WikiProjectFullLookup {
 	 * @param string $languageCode
 	 * @return array[]
 	 * @phan-return array<string,array{labels:array,descriptions:array}>
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWikibaseException
 	 */
 	private function queryWikidataAPI( array $entityIDs, string $languageCode ): array {
 		$batches = array_chunk( $entityIDs, 50 );
@@ -144,7 +145,7 @@ class WikiProjectFullLookup {
 	 * @param string[] $entityIDs
 	 * @param string $languageCode
 	 * @return array
-	 * @throws CannotQueryWikiProjectsException
+	 * @throws CannotQueryWikibaseException
 	 */
 	private function queryWikidataAPIBatch( array $entityIDs, string $languageCode ): array {
 		// 'claims' to be added for more data.
@@ -166,13 +167,13 @@ class WikiProjectFullLookup {
 
 		$status = $req->execute();
 		if ( !$status->isGood() ) {
-			throw new CannotQueryWikiProjectsException( "Bad status from WD API: $status" );
+			throw new CannotQueryWikibaseException( "Bad status from WD API: $status" );
 		}
 
 		try {
 			$parsedResponse = json_decode( $req->getContent(), true, 512, JSON_THROW_ON_ERROR );
 		} catch ( JsonException $e ) {
-			throw new CannotQueryWikiProjectsException( "Invalid JSON from WD API", 0, $e );
+			throw new CannotQueryWikibaseException( "Invalid JSON from WD API", 0, $e );
 		}
 
 		return $parsedResponse;
