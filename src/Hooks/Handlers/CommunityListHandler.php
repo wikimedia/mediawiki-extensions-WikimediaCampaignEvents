@@ -61,37 +61,53 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	 */
 	private function getCommunityListContent( OutputPage $outputPage ): string {
 		try {
+			$hasWikiProjects = $this->wikiProjectLookup->hasWikiProjects();
+		} catch ( CannotQueryWikiProjectsException $cannotQueryWikiProjectsException ) {
+			// Todo:display error to user
+			$hasWikiProjects = false;
+		}
+
+		if ( !$hasWikiProjects ) {
+			return $this->getEmptyStateContent( $outputPage );
+		}
+
+		try {
 			$wikiProjects = $this->wikiProjectLookup->getWikiProjects( $outputPage->getLanguage()->getCode(), 10 );
 		} catch ( CannotQueryWikiProjectsException $cannotQueryWikiProjectsException ) {
 			// Todo:display error to user
 			$wikiProjects = [];
 		}
+
+		return $this->getWikiProjectsHTML( $wikiProjects );
+	}
+
+	private function getEmptyStateContent( OutputPage $outputPage ): string {
+		return $this->templateParser->processTemplate(
+			'Message',
+			[
+				'Classes' => 'ext-campaignevents-community-list-empty-state',
+				'IconClass' => 'page',
+				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
+				'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->text()
+			]
+		);
+	}
+
+	private function getWikiProjectsHTML( array $wikiProjects ): string {
 		$cards = [];
-		if ( count( $wikiProjects ) === 0 ) {
-			return $this->templateParser->processTemplate(
-				'Message',
-				[
-					'Classes' => 'ext-campaignevents-community-list-empty-state',
-					'IconClass' => 'page',
-					'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
-					'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->text()
-				]
+		foreach ( $wikiProjects as $wikiProject ) {
+			$properties = [
+				'Classes' => 'ext-campaignevents-community-list-wikiproject',
+				'Title' => $wikiProject['label'],
+				'Description' => $wikiProject['description'],
+				'Url' => $wikiProject['sitelink'],
+			];
+			$cards[] = $this->templateParser->processTemplate(
+				'Card',
+				$properties
 			);
-		} else {
-			foreach ( $wikiProjects as $wikiProject ) {
-				$properties = [
-					'Classes' => 'ext-campaignevents-community-list-wikiproject',
-					'Title' => $wikiProject['label'],
-					'Description' => $wikiProject['description'],
-					'Url' => $wikiProject['sitelink'],
-				];
-				$cards[] = $this->templateParser->processTemplate(
-					'Card',
-					$properties
-				);
-			}
-			return implode( '', $cards );
 		}
+		return implode( '', $cards );
 	}
 
 	/**
