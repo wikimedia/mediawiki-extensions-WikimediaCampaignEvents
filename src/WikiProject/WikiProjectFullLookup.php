@@ -17,6 +17,9 @@ use WANObjectCache;
 class WikiProjectFullLookup {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsWikiProjectFullLookup';
 
+	public const DIR_FORWARDS = 1;
+	public const DIR_BACKWARDS = 2;
+
 	private WikiProjectIDLookup $wikiProjectIDLookup;
 	private WANObjectCache $cache;
 	private HttpRequestFactory $httpRequestFactory;
@@ -34,22 +37,39 @@ class WikiProjectFullLookup {
 	/**
 	 * @param string $languageCode
 	 * @param int $limit
-	 * @param string|null $lastEntity When paginating results, this is the ID of the last entity on the previous page
+	 * @param string|null $lastEntity When paginating results, this is the ID of the last entity shown to the user
+	 * (i.e., the last row when going forwards, and the first row when going backwards).
+	 * @param int $direction In which direction to scan, self::DIR_FORWARDS or self::DIR_BACKWARDS
 	 * @return array<array|null> An array of arrays with information about the requested WikiProjects. Elements might be
 	 * null if there is no sitelink for the current wiki (might happen when the sitelink is removed after the WDQS query
 	 * was last run). QIDs are used as array keys, even for null elements.
 	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
 	 * @throws CannotQueryWikiProjectsException
 	 */
-	public function getWikiProjects( string $languageCode, int $limit, string $lastEntity = null ): array {
+	public function getWikiProjects(
+		string $languageCode,
+		int $limit,
+		string $lastEntity = null,
+		int $direction = self::DIR_FORWARDS
+	): array {
 		$allIDs = $this->wikiProjectIDLookup->getWikiProjectIDs();
+		$lastPos = false;
 		if ( $lastEntity !== null ) {
 			$lastPos = array_search( $lastEntity, $allIDs, true );
-			$sliceStart = $lastPos !== false ? $lastPos + 1 : 0;
-		} else {
-			$sliceStart = 0;
 		}
-		$wantedIDs = array_slice( $allIDs, $sliceStart, $limit );
+
+		if ( $lastPos !== false ) {
+			if ( $direction === self::DIR_FORWARDS ) {
+				$wantedIDs = array_slice( $allIDs, $lastPos + 1, $limit );
+			} elseif ( $lastPos > $limit ) {
+				$wantedIDs = array_slice( $allIDs, $lastPos - $limit, $limit );
+			} else {
+				$wantedIDs = array_slice( $allIDs, 0, $lastPos );
+			}
+		} else {
+			$offset = $direction === self::DIR_FORWARDS ? 0 : -$limit;
+			$wantedIDs = array_slice( $allIDs, $offset, $limit );
+		}
 		return $this->getDataForEntities( $wantedIDs, $languageCode );
 	}
 
@@ -112,12 +132,12 @@ class WikiProjectFullLookup {
 	 */
 	private function queryWikidataAPI( array $entityIDs, string $languageCode ): array {
 		$batches = array_chunk( $entityIDs, 50 );
-		$entityIDs = [];
+		$entities = [];
 		foreach ( $batches as $batch ) {
 			$batchResponse = $this->queryWikidataAPIBatch( $batch, $languageCode );
-			$entityIDs = array_merge( $entityIDs, $batchResponse['entities'] );
+			$entities = array_merge( $entities, $batchResponse['entities'] );
 		}
-		return $entityIDs;
+		return $entities;
 	}
 
 	/**
