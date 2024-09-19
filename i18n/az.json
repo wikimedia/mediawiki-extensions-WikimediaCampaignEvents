@@ -7,5 +7,8 @@
 	"wikimediacampaignevents-desc": "CampaignEvents uzantısı üçün Vikimediaya xas funksiyalar təqdim edir.",
 	"wikimediacampaignevents-grant-id-input-label": "Qrant ID",
 	"wikimediacampaignevents-grant-id-input-placeholder": "məsələn 1201-3302",
-	"wikimediacampaignevents-grant-id-input-help-message": "Əgər bu proqram və ya tədbir Vikimedia Fondunun qrantı ilə dəstəklənirsə [https://wmf.fluxx.io/ Qrant Alıcı Portalında (Fluxx)] tapa biləcəyiniz Qrant ID-nizi təqdim edin. Qrant ID-də rəqəmləri və tireləri daxil edin, lakin hərfləri qeyd etməyin. Məsələn, qrant ID-niz G-1111-1111-dirsə, lütfən, 1111-1111 daxil edin."
+	"wikimediacampaignevents-grant-id-input-help-message": "Əgər bu proqram və ya tədbir Vikimedia Fondunun qrantı ilə dəstəklənirsə [https://wmf.fluxx.io/ Qrant Alıcı Portalında (Fluxx)] tapa biləcəyiniz Qrant ID-nizi təqdim edin. Qrant ID-də rəqəmləri və tireləri daxil edin, lakin hərfləri qeyd etməyin. Məsələn, qrant ID-niz G-1111-1111-dirsə, lütfən, 1111-1111 daxil edin.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Daxil etdiyiniz Qrant ID-si yanlış görünür. Zəhmət olmasa, [https://wmf.fluxx.io/ Qrant Portalında (Fluxx)] Qrant ID-nizi təkrar yoxlayın və yenidən daxil edin.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Qrant ID-nizin doğrulanması ilə bağlı problem baş verdi. Bir neçə dəqiqədən sonra formanı yenidən təqdim etməyə cəhd edə bilərsiniz. Problem davam edərsə, siz hələ də formanı Qrant ID-si olmadan təqdim edə və daha sonra tədbir təfərrüatlarını redaktə edərək əlavə edə bilərsiniz.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Qrant ID"
 }
