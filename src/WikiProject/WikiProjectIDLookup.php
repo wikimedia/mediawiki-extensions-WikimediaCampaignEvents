@@ -23,6 +23,8 @@ class WikiProjectIDLookup {
 	private BagOStuff $cache;
 	private HttpRequestFactory $httpRequestFactory;
 
+	private ?array $cachedIDs = null;
+
 	public function __construct(
 		BagOStuff $cache,
 		HttpRequestFactory $httpRequestFactory
@@ -36,6 +38,10 @@ class WikiProjectIDLookup {
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	public function getWikiProjectIDs(): array {
+		if ( $this->cachedIDs !== null ) {
+			return $this->cachedIDs;
+		}
+
 		// Note, this needs to be cached per-wiki (the SPARQL query used below is filtered by wiki)
 		$cacheKey = $this->cache->makeKey( 'WikimediaCampaignEvents-WikiProjectIDs' );
 
@@ -66,6 +72,8 @@ class WikiProjectIDLookup {
 				);
 			} );
 		}
+
+		$this->cachedIDs = $list;
 		return $list;
 	}
 

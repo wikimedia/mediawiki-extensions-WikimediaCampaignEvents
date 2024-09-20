@@ -52,6 +52,14 @@ class WikiProjectFullLookup {
 	}
 
 	/**
+	 * @return bool Whether any WikiProjects exist on the current wiki.
+	 * @throws CannotQueryWikiProjectsException
+	 */
+	public function hasWikiProjects(): bool {
+		return $this->wikiProjectIDLookup->getWikiProjectIDs() !== [];
+	}
+
+	/**
 	 * @param array $entityIDs
 	 * @param string $languageCode
 	 * @return array[]
