@@ -4,7 +4,7 @@
 			"Kly"
 		]
 	},
-	"wikimediacampaignevents-desc": "為 CampaignEvents 擴充套件提供 Wikimedia 特定功能。",
+	"wikimediacampaignevents-desc": "為 CampaignEvents 擴充套件提供特定的維基媒體功能。",
 	"wikimediacampaignevents-grant-id-input-label": "授予 ID",
 	"wikimediacampaignevents-grant-id-input-placeholder": "例如：1201-3302",
 	"wikimediacampaignevents-grant-id-input-help-message": "如果此計劃或活動得到維基媒體基金會的資助，請提供您的授予 ID，您可以在[https://wmf.fluxx.io/ 受贈入口網頁（Fluxx）]中找到該 ID。請輸入您的授予 ID 中的數字和短劃線，但不要包含字母。例如，如果您的授予 ID 為 G-1111-1111，請輸入 1111-1111。",
