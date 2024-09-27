@@ -35,8 +35,10 @@ class WikiProjectFullLookup {
 	 * @param string $languageCode
 	 * @param int $limit
 	 * @param string|null $lastEntity When paginating results, this is the ID of the last entity on the previous page
-	 * @return array[]
-	 * @phan-return array<string,array{label:string,description:string,sitelink:string}>
+	 * @return array<array|null> An array of arrays with information about the requested WikiProjects. Elements might be
+	 * null if there is no sitelink for the current wiki (might happen when the sitelink is removed after the WDQS query
+	 * was last run). QIDs are used as array keys, even for null elements.
+	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	public function getWikiProjects( string $languageCode, int $limit, string $lastEntity = null ): array {
@@ -62,8 +64,8 @@ class WikiProjectFullLookup {
 	/**
 	 * @param array $entityIDs
 	 * @param string $languageCode
-	 * @return array[]
-	 * @phan-return array<string,array{label:string,description:string,sitelink:string}>
+	 * @return array<array|null>
+	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	private function getDataForEntities( array $entityIDs, string $languageCode ): array {
@@ -79,8 +81,8 @@ class WikiProjectFullLookup {
 	/**
 	 * @param string[] $entityIDs
 	 * @param string $languageCode
-	 * @return array[]
-	 * @phan-return array<string,array{label:string,description:string,sitelink:string}>
+	 * @return array<array|null>
+	 * @phan-return array<string,array{label:string,description:string,sitelink:string}|null>
 	 * @throws CannotQueryWikiProjectsException
 	 */
 	private function computeDataForEntities( array $entityIDs, string $languageCode ): array {
@@ -88,13 +90,15 @@ class WikiProjectFullLookup {
 		$wikiProjects = [];
 		foreach ( $entities as $id => $entity ) {
 			$siteLink = $this->buildEntitySiteLink( $entity );
+			$wikiProjectData = null;
 			if ( $siteLink ) {
-				$wikiProjects[$id] = [
+				$wikiProjectData = [
 					'label' => $entity['labels'][$languageCode]['value'] ?? '',
 					'description' => $entity['descriptions'][$languageCode]['value'] ?? '',
 					'sitelink' => $siteLink,
 				];
 			}
+			$wikiProjects[$id] = $wikiProjectData;
 		}
 		return $wikiProjects;
 	}
