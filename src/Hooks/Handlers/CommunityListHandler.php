@@ -5,9 +5,11 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetCommunityListHook;
+use MediaWiki\Extension\CampaignEvents\Special\SpecialAllEvents;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Html\TemplateParser;
+use MediaWiki\SpecialPage\SpecialPage;
 use OOUI\Tag;
 use OutputPage;
 
@@ -110,12 +112,11 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 		return implode( '', $cards );
 	}
 
-	/**
-	 * @param array $tabs
-	 * @return string
-	 */
-	private function getLayout( array $tabs ) {
-		$data = [];
+	private function getLayout( array $tabs ): string {
+		$data = [
+			'url' => SpecialPage::getTitleFor( SpecialAllEvents::PAGE_NAME )->getLocalURL(),
+			'pageTitle' => 'Special:' . SpecialAllEvents::PAGE_NAME,
+		];
 		foreach ( $tabs as $i => $tab ) {
 			$active = $this->activeTab === "form-tabs-$i";
 			$data['tabs'][] =
