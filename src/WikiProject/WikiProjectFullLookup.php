@@ -87,14 +87,10 @@ class WikiProjectFullLookup {
 		$entities = $this->queryWikidataAPI( $entityIDs, $languageCode );
 		$wikiProjects = [];
 		foreach ( $entities as $id => $entity ) {
-			if ( !isset( $entity['labels'][$languageCode] ) ) {
-				// No label available, skip.
-				continue;
-			}
 			$siteLink = $this->buildEntitySiteLink( $entity );
 			if ( $siteLink ) {
 				$wikiProjects[$id] = [
-					'label' => $entity['labels'][$languageCode]['value'],
+					'label' => $entity['labels'][$languageCode]['value'] ?? '',
 					'description' => $entity['descriptions'][$languageCode]['value'] ?? '',
 					'sitelink' => $siteLink,
 				];
