@@ -98,6 +98,9 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	private function getWikiProjectsHTML( array $wikiProjects ): string {
 		$cards = [];
 		foreach ( $wikiProjects as $qid => $wikiProject ) {
+			if ( $wikiProject === null ) {
+				continue;
+			}
 			$properties = [
 				'Classes' => 'ext-campaignevents-community-list-wikiproject',
 				'Title' => $wikiProject['label'] !== '' ? $wikiProject['label'] : $qid,
