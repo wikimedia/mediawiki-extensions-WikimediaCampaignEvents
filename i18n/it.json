@@ -8,5 +8,6 @@
 	"wikimediacampaignevents-communitylist-no-events-title": "Nessun WikiProgetto trovato.",
 	"wikimediacampaignevents-communitylist-no-events-text": "Non ci sono WikiProgetti su questo wiki.",
 	"wikimediacampaignevents-communitylist-events-tab-heading": "Eventi",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Comunità"
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "Comunità",
+	"wikimediacampaignevents-communitylist-api-error-title": "Errore"
 }

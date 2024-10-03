@@ -16,5 +16,8 @@
 	"wikimediacampaignevents-communitylist-no-events-text": "Es gibt keine WikiProjekte auf diesem Wiki.",
 	"wikimediacampaignevents-communitylist-header-text": "Entdecke WikiProjekte – Gruppen von Mitwirkenden, die sich auf bestimmte Themen, Bereiche der Wikipedia oder Aufgaben konzentrieren.",
 	"wikimediacampaignevents-communitylist-events-tab-heading": "Veranstaltungen",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Gemeinschaften"
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "Gemeinschaften",
+	"wikimediacampaignevents-communitylist-api-error-title": "Fehler",
+	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Wir können WikiProjects aufgrund von Verbindungsproblemen mit dem [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] nicht anzeigen. Bitte versuche es später erneut.",
+	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Wir können aufgrund von Verbindungsproblemen mit der [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] keine WikiProject-Informationen anzeigen. Bitte versuche es später erneut."
 }
