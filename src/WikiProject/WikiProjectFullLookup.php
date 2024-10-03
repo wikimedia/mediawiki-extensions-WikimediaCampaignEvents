@@ -4,6 +4,7 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\WikiProject;
 
+use InvalidArgumentException;
 use JsonException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\WikiMap\WikiMap;
@@ -80,6 +81,32 @@ class WikiProjectFullLookup {
 	 */
 	public function hasWikiProjects(): bool {
 		return $this->wikiProjectIDLookup->getWikiProjectIDs() !== [];
+	}
+
+	/**
+	 * @param string $lastID Entity ID to check. The caller must verify that this is a valid ID, or an exception
+	 * will be thrown.
+	 * @param int $direction self::DIR_FORWARDS or self::DIR_BACKWARDS
+	 * @return bool Whether any WikiProjects exist after the specified offset in the given direction (for pagination).
+	 */
+	public function hasWikiProjectsAfter( string $lastID, int $direction ): bool {
+		$allIDs = $this->wikiProjectIDLookup->getWikiProjectIDs();
+		$offsetKey = array_search( $lastID, $allIDs, true );
+		if ( $offsetKey === false ) {
+			throw new InvalidArgumentException( "Entity $lastID not found." );
+		}
+		return $direction === self::DIR_FORWARDS
+			? $offsetKey < array_key_last( $allIDs )
+			: $offsetKey > 0;
+	}
+
+	/**
+	 * @param string $entityID
+	 * @return bool Whether the given ID corresponds to a known entity.
+	 * @throws CannotQueryWikiProjectsException
+	 */
+	public function isKnownEntity( string $entityID ): bool {
+		return in_array( $entityID, $this->wikiProjectIDLookup->getWikiProjectIDs(), true );
 	}
 
 	/**
@@ -186,5 +213,9 @@ class WikiProjectFullLookup {
 	private function buildEntitySiteLink( array $entity ): ?string {
 		$siteId = WikiMap::getCurrentWikiId();
 		return array_key_exists( $siteId, $entity['sitelinks'] ) ? $entity['sitelinks'][$siteId]['url'] : null;
+	}
+
+	public static function invertDirection( int $direction ): int {
+		return $direction === self::DIR_FORWARDS ? self::DIR_BACKWARDS : self::DIR_FORWARDS;
 	}
 }

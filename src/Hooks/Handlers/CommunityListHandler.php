@@ -5,6 +5,7 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 
 use LogicException;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetCommunityListHook;
 use MediaWiki\Extension\CampaignEvents\Special\SpecialAllEvents;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWDQSException;
@@ -12,6 +13,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikibaseE
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Html\TemplateParser;
+use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\SpecialPage\SpecialPage;
 use OOUI\Tag;
 use OutputPage;
@@ -31,7 +33,6 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	public function onCampaignEventsGetCommunityList(
 		OutputPage $outputPage,
 		string &$eventsContent
-
 	): void {
 		if ( $outputPage->getConfig()->get( 'WikimediaCampaignEventsEnableCommunityList' ) ) {
 			$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
@@ -75,13 +76,34 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 			return $this->getEmptyStateContent( $outputPage );
 		}
 
+		$request = $outputPage->getRequest();
+		// Don't allow a limit > 50, as that would require at least two Wikidata API calls. The code supports that,
+		// but it might be too slow.
+		$limit = min( $request->getInt( 'limit', 20 ), 50 );
+		$offset = $request->getVal( 'offset' );
+		$direction = $request->getInt( 'dir' );
+		// Make sure it's a recognised value, and go forwards by default.
+		if (
+			$direction !== WikiProjectFullLookup::DIR_FORWARDS &&
+			$direction !== WikiProjectFullLookup::DIR_BACKWARDS
+		) {
+			$direction = WikiProjectFullLookup::DIR_FORWARDS;
+		}
+
 		try {
-			$wikiProjects = $this->wikiProjectLookup->getWikiProjects( $outputPage->getLanguage()->getCode(), 10 );
-		} catch ( CannotQueryWDQSException | CannotQueryWikibaseException $cannotQueryWikiProjectsException ) {
+			$wikiProjects = $this->wikiProjectLookup->getWikiProjects(
+				$outputPage->getLanguage()->getCode(),
+				$limit,
+				$offset,
+				$direction
+			);
+		} catch ( CannotQueryWDQSException $cannotQueryWikiProjectsException ) {
 			return $this->getErrorTemplate( $outputPage, $cannotQueryWikiProjectsException );
 		}
 
-		return $this->getWikiProjectsHTML( $wikiProjects );
+		$navBuilder = $this->getNavigationBuilder( $outputPage, $offset, $limit, $direction, $wikiProjects );
+
+		return $navBuilder->getHtml() . $this->getWikiProjectsHTML( $wikiProjects );
 	}
 
 	private function getEmptyStateContent( OutputPage $outputPage ): string {
@@ -159,5 +181,78 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 				'Text' => $outputPage->msg( $messageKey )->parse()
 			]
 		);
+	}
+
+	private function getNavigationBuilder(
+		IContextSource $context,
+		?string $offset,
+		int $limit,
+		int $direction,
+		array $wikiProjects
+	): PagerNavigationBuilder {
+		// Figure out what pagination links we need to show. For the previous page, there's no other way but to run a
+		// query in the opposite direction. For the next page, we could in theory query $limit + 1 entities and see if
+		// we get all $limit + 1 of them. However, that would prevent us from allowing the standard limit of 50
+		// elements in the UI, because we would need to query 51 items from Wikidata, which can only be done in two
+		// Wikidata API calls instead of just one (which is not ideal for performance).
+		$hasMoreWikiProjectsInOppositeDirection = false;
+		if ( $offset !== null && $this->wikiProjectLookup->isKnownEntity( $offset ) ) {
+			$hasMoreWikiProjectsInOppositeDirection = $this->wikiProjectLookup->hasWikiProjectsAfter(
+				$offset,
+				WikiProjectFullLookup::invertDirection( $direction )
+			);
+		}
+		if ( $direction === WikiProjectFullLookup::DIR_FORWARDS ) {
+			$isLastPage = !$this->wikiProjectLookup->hasWikiProjectsAfter(
+				array_key_last( $wikiProjects ),
+				$direction
+			);
+			$isFirstPage = !$hasMoreWikiProjectsInOppositeDirection;
+		} else {
+			$isFirstPage = !$this->wikiProjectLookup->hasWikiProjectsAfter(
+				array_key_first( $wikiProjects ),
+				$direction
+			);
+			$isLastPage = !$hasMoreWikiProjectsInOppositeDirection;
+		}
+
+		$navBuilder = new PagerNavigationBuilder( $context );
+		$navBuilder
+			->setPage( $context->getTitle() )
+			->setLinkQuery( [
+				'tab' => $this->activeTab,
+				'dir' => null,
+				'offset' => null,
+				'limit' => null,
+			] )
+			->setFirstMsg( 'page_first' )
+			->setLastMsg( 'page_last' )
+			->setLimits( [ 10, 20, 50 ] )
+			->setCurrentLimit( $limit );
+
+		// TODO: Remove string casts when I5c6b8ad8075d295666a6a04d8c95398dfd9f4060 is merged.
+		if ( !$isFirstPage ) {
+			$navBuilder->setPrevLinkQuery( [
+				'offset' => (string)array_key_first( $wikiProjects ),
+				'dir' => (string)WikiProjectFullLookup::DIR_BACKWARDS,
+				'limit' => (string)$limit,
+			] );
+			$navBuilder->setFirstLinkQuery( [
+				'dir' => (string)WikiProjectFullLookup::DIR_FORWARDS,
+				'limit' => (string)$limit,
+			] );
+		}
+		if ( !$isLastPage ) {
+			$navBuilder->setNextLinkQuery( [
+				'offset' => (string)array_key_last( $wikiProjects ),
+				'dir' => (string)WikiProjectFullLookup::DIR_FORWARDS,
+				'limit' => (string)$limit,
+			] );
+			$navBuilder->setLastLinkQuery( [
+				'dir' => (string)WikiProjectFullLookup::DIR_BACKWARDS,
+				'limit' => (string)$limit,
+			] );
+		}
+		return $navBuilder;
 	}
 }
