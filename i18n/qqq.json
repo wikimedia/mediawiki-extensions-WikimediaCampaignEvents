@@ -12,13 +12,13 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Error message shown on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]] in case the provided grant ID field ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) is invalid",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Error message shown on [[Special:EditEventRegistration]] and [[Special:EnableEventRegistration]] in case the API call to validate the grant ID ({{msg-mw|wikimediacampaignevents-grant-id-input-label}}) fails.",
 	"wikimediacampaignevents-grant-id-event-details-label": "Label for [[:m:Special:MyLanguage/Grants:Administration/Eligibility|Grant ID]] displayed on [[Special:EventDetails]], this is a special page of the CampaignEvents extension",
-	"wikimediacampaignevents-communitylist-title": "Description of the community list tab on [[Special:AllEvents]]",
-	"wikimediacampaignevents-communitylist-no-events-title": "Notice title used on [[Special:AllEvents]] to notify that no wikiprojects have been found.",
-	"wikimediacampaignevents-communitylist-no-events-text": "Notice text used on [[Special:AllEvents]] to notify that no wikiprojects have been found.",
-	"wikimediacampaignevents-communitylist-header-text": "Header text used on [[Special:AllEvents]] to explain the use of the communities tab.",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Events tab label used on [[Special:AllEvents]].",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Communities tab label used on [[Special:AllEvents]].",
-	"wikimediacampaignevents-communitylist-api-error-title": "Error title used on [[Special:AllEvents]] to alert that an API error has occurred.",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Error text used on [[Special:AllEvents]] to alert that a WDQS API error has occurred.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Error text used on [[Special:AllEvents]] to alert that a wikibase API error has occurred. Indicates that no WikiProjects information will be available at all."
+	"wikimediacampaignevents-collaboration-list-title": "Description of the collaboration list tab on [[Special:AllEvents]]. This is a list of ways in which users can collaborate, such as events and WikiProjects.",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Notice title used on [[Special:AllEvents]] to notify that no wikiprojects have been found.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Notice text used on [[Special:AllEvents]] to notify that no wikiprojects have been found.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Header text used on [[Special:AllEvents]] to explain the use of the communities tab.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Events tab label used on [[Special:AllEvents]].",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Communities tab label used on [[Special:AllEvents]].",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Error title used on [[Special:AllEvents]] to alert that an API error has occurred.",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Error text used on [[Special:AllEvents]] to alert that a WDQS API error has occurred.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Error text used on [[Special:AllEvents]] to alert that a wikibase API error has occurred. Indicates that no WikiProjects information will be available at all."
 }
