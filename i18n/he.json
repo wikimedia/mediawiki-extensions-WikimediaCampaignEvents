@@ -16,5 +16,8 @@
 	"wikimediacampaignevents-communitylist-no-events-text": "אין מיזמי ויקי בוויקי הזה.",
 	"wikimediacampaignevents-communitylist-header-text": "גלה WikiProjects - קבוצות של תורמים המתמקדים בנושאים, תחומים של ויקיפדיה או סוגי משימות מסוימים.",
 	"wikimediacampaignevents-communitylist-events-tab-heading": "אירועים",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "קהילות"
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "קהילות",
+	"wikimediacampaignevents-communitylist-api-error-title": "שגיאה",
+	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "איננו יכולים להציג את מיזמי ויקי עקב בעיות חיבור עם [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service שירות השאילתות של ויקינתונים]. נא לנסות שוב מאוחר יותר.",
+	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "איננו יכולים להציג מידע על מיזמי ויקי עקב בעיות חיבור עם [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? ה־API של ויקינתונים]. נא לנסות שוב מאוחר יותר."
 }

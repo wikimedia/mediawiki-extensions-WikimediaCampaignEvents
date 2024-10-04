@@ -16,5 +16,8 @@
 	"wikimediacampaignevents-communitylist-no-events-text": "Bu vikidə heç bir VikiLayihə yoxdur.",
 	"wikimediacampaignevents-communitylist-header-text": "VikiLayihələri - xüsusi mövzulara, Vikipediya sahələrinə və ya tapşırıqlara yönəlmiş redaktor qruplarını - kəşf edin",
 	"wikimediacampaignevents-communitylist-events-tab-heading": "Tədbirlər",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "İcmalar"
+	"wikimediacampaignevents-communitylist-communities-tab-heading": "İcmalar",
+	"wikimediacampaignevents-communitylist-api-error-title": "Xəta",
+	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin.",
+	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin."
 }

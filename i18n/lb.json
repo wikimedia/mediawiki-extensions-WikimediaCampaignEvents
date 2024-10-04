@@ -7,5 +7,6 @@
 	"wikimediacampaignevents-grant-id-input-placeholder": "z. B. 1201-3302",
 	"wikimediacampaignevents-communitylist-no-events-title": "Keng WikiProjete fonnt.",
 	"wikimediacampaignevents-communitylist-no-events-text": "Et gëtt keng WikiProjeten op dëser Wiki.",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Evenementer"
+	"wikimediacampaignevents-communitylist-events-tab-heading": "Evenementer",
+	"wikimediacampaignevents-communitylist-api-error-title": "Feeler"
 }
