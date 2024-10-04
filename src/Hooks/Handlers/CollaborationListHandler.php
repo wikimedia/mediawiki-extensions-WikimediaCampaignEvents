@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 
 use LogicException;
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetCommunityListHook;
+use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetAllEventsContentHook;
 use MediaWiki\Extension\CampaignEvents\Special\SpecialAllEvents;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWDQSException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikibaseException;
@@ -18,7 +18,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use OOUI\Tag;
 use OutputPage;
 
-class CommunityListHandler implements CampaignEventsGetCommunityListHook {
+class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook {
 	private TemplateParser $templateParser;
 	private string $activeTab;
 	private WikiProjectFullLookup $wikiProjectLookup;
@@ -30,7 +30,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	/**
 	 * @inheritDoc
 	 */
-	public function onCampaignEventsGetCommunityList(
+	public function onCampaignEventsGetAllEventsContent(
 		OutputPage $outputPage,
 		string &$eventsContent
 	): void {
@@ -39,7 +39,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 			$outputPage->addModuleStyles( 'codex-styles' );
 			$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-communitylist-title' ) );
 			$this->activeTab = $outputPage->getRequest()->getVal( 'tab', 'form-tabs-0' );
-			$communityContent = $this->getCommunityListContent( $outputPage );
+			$collaborationListContent = $this->getCollaborationListContent( $outputPage );
 			$eventsContent = $this->getLayout(
 				[
 					[
@@ -52,7 +52,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 						'content' => ( new Tag( 'p' ) )
 								->appendContent( $outputPage->msg(
 									'wikimediacampaignevents-communitylist-header-text' )->text()
-								) . $communityContent,
+								) . $collaborationListContent,
 						'label' => $outputPage->msg(
 							'wikimediacampaignevents-communitylist-communities-tab-heading' )->text()
 					]
@@ -65,7 +65,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 	 * @param OutputPage $outputPage
 	 * @return string
 	 */
-	private function getCommunityListContent( OutputPage $outputPage ): string {
+	private function getCollaborationListContent( OutputPage $outputPage ): string {
 		try {
 			$hasWikiProjects = $this->wikiProjectLookup->hasWikiProjects();
 		} catch ( CannotQueryWDQSException $cannotQueryWikiProjectsException ) {
@@ -110,7 +110,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 		return $this->templateParser->processTemplate(
 			'Message',
 			[
-				'Classes' => 'ext-campaignevents-community-list-empty-state',
+				'Classes' => 'ext-campaignevents-collaboration-list-empty-state',
 				'IconClass' => 'page',
 				'Type' => 'notice',
 				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
@@ -126,7 +126,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 				continue;
 			}
 			$properties = [
-				'Classes' => 'ext-campaignevents-community-list-wikiproject',
+				'Classes' => 'ext-campaignevents-collaboration-list-wikiproject',
 				'Title' => $wikiProject['label'] !== '' ? $wikiProject['label'] : $qid,
 				'Description' => $wikiProject['description'],
 				'Url' => $wikiProject['sitelink'],
@@ -176,7 +176,7 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 			'Message',
 			[
 				'Type' => 'error',
-				'Classes' => 'ext-campaignevents-community-list-api-error',
+				'Classes' => 'ext-campaignevents-collaboration-list-api-error',
 				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-api-error-title' )->text(),
 				'Text' => $outputPage->msg( $messageKey )->parse()
 			]
@@ -254,11 +254,5 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 			] );
 		}
 		return $navBuilder;
-	}
-
-	public function onCampaignEventsGetAllEventsContent(
-		OutputPage $outputPage,
-		string &$eventsContent
-	): void {
 	}
 }
