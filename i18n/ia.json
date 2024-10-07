@@ -17,5 +17,7 @@
 	"wikimediacampaignevents-communitylist-header-text": "Discoperi WikiProjectos - gruppos de contributores focalisate sur topicos specific, areas de Wikipedia, o cosas a facer.",
 	"wikimediacampaignevents-communitylist-events-tab-heading": "Eventos",
 	"wikimediacampaignevents-communitylist-communities-tab-heading": "Communitates",
-	"wikimediacampaignevents-communitylist-api-error-title": "Error"
+	"wikimediacampaignevents-communitylist-api-error-title": "Error",
+	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Non es possibile monstrar WikiProjectos a causa de problemas de connexion con le [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service servicio de consulta Wikidata]. Per favor tenta lo de novo plus tarde.",
+	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Non es possibile monstrar information de WikiProjectos a causa de problemas de connexion con le [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API de Wikidata]. Per favor essaya lo de novo plus tarde."
 }
