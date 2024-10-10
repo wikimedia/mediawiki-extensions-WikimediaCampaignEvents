@@ -255,4 +255,10 @@ class CommunityListHandler implements CampaignEventsGetCommunityListHook {
 		}
 		return $navBuilder;
 	}
+
+	public function onCampaignEventsGetAllEventsContent(
+		OutputPage $outputPage,
+		string &$eventsContent
+	): void {
+	}
 }
