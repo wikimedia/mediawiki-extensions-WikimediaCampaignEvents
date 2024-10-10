@@ -65,8 +65,8 @@
 				"WikimediaCampaignEventsGrantsStore"
 			]
 		},
-		"CommunityListHandler": {
-			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\CommunityListHandler",
+		"CollaborationListHandler": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\CollaborationListHandler",
 			"services": [
 				"WikimediaCampaignEventsWikiProjectFullLookup"
 			]
@@ -77,7 +77,7 @@
 		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler",
 		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler",
 		"CampaignEventsGetEventDetails": "EventDetailsHandler",
-		"CampaignEventsGetCommunityList": "CommunityListHandler"
+		"CampaignEventsGetAllEventsContent": "CollaborationListHandler"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
