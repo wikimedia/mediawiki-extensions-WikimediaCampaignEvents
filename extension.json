@@ -41,7 +41,7 @@
 			"value": null
 		},
 		"WikimediaCampaignEventsEnableCommunityList": {
-			"description": "Flag to enable community list feature on a wiki",
+			"description": "Flag to enable Collaboration List feature on a wiki",
 			"value": false
 		}
 	},

@@ -37,7 +37,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 		if ( $outputPage->getConfig()->get( 'WikimediaCampaignEventsEnableCommunityList' ) ) {
 			$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
 			$outputPage->addModuleStyles( 'codex-styles' );
-			$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-communitylist-title' ) );
+			$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
 			$this->activeTab = $outputPage->getRequest()->getVal( 'tab', 'form-tabs-0' );
 			$collaborationListContent = $this->getCollaborationListContent( $outputPage );
 			$eventsContent = $this->getLayout(
@@ -45,16 +45,16 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 					[
 						'content' => $eventsContent,
 						'label' => $outputPage->msg(
-							'wikimediacampaignevents-communitylist-events-tab-heading'
+							'wikimediacampaignevents-collaboration-list-events-tab-heading'
 						)->text()
 					],
 					[
 						'content' => ( new Tag( 'p' ) )
 								->appendContent( $outputPage->msg(
-									'wikimediacampaignevents-communitylist-header-text' )->text()
+									'wikimediacampaignevents-collaboration-list-header-text' )->text()
 								) . $collaborationListContent,
 						'label' => $outputPage->msg(
-							'wikimediacampaignevents-communitylist-communities-tab-heading' )->text()
+							'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
 					]
 				]
 			);
@@ -113,8 +113,8 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 				'Classes' => 'ext-campaignevents-collaboration-list-empty-state',
 				'IconClass' => 'page',
 				'Type' => 'notice',
-				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-title' )->text(),
-				'Text' => $outputPage->msg( 'wikimediacampaignevents-communitylist-no-events-text' )->parse()
+				'Title' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-no-events-title' )->text(),
+				'Text' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-no-events-text' )->parse()
 			]
 		);
 	}
@@ -165,9 +165,9 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 	 */
 	public function getErrorTemplate( OutputPage $outputPage, CannotQueryWikiProjectsException $exception ): string {
 		if ( $exception instanceof CannotQueryWikibaseException ) {
-			$messageKey = 'wikimediacampaignevents-communitylist-wikidata-api-error-text';
+			$messageKey = 'wikimediacampaignevents-collaboration-list-wikidata-api-error-text';
 		} elseif ( $exception instanceof CannotQueryWDQSException ) {
-			$messageKey = 'wikimediacampaignevents-communitylist-wdqs-api-error-text';
+			$messageKey = 'wikimediacampaignevents-collaboration-list-wdqs-api-error-text';
 		} else {
 			throw new LogicException( 'Unexpected exception type: ' . get_class( $exception ) );
 		}
@@ -177,7 +177,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 			[
 				'Type' => 'error',
 				'Classes' => 'ext-campaignevents-collaboration-list-api-error',
-				'Title' => $outputPage->msg( 'wikimediacampaignevents-communitylist-api-error-title' )->text(),
+				'Title' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-api-error-title' )->text(),
 				'Text' => $outputPage->msg( $messageKey )->parse()
 			]
 		);
