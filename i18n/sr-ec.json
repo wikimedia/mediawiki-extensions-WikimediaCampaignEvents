@@ -6,7 +6,7 @@
 		]
 	},
 	"wikimediacampaignevents-grant-id-input-placeholder": "нпр. 1201-3302",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Догађаји",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Заједнице",
-	"wikimediacampaignevents-communitylist-api-error-title": "Грешка"
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Догађаји",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Заједнице",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Грешка"
 }

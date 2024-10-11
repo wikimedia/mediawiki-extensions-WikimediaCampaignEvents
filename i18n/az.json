@@ -11,13 +11,12 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Daxil etdiyiniz Qrant ID-si yanlış görünür. Zəhmət olmasa, [https://wmf.fluxx.io/ Qrant Portalında (Fluxx)] Qrant ID-nizi təkrar yoxlayın və yenidən daxil edin.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Qrant ID-nizin doğrulanması ilə bağlı problem baş verdi. Bir neçə dəqiqədən sonra formanı yenidən təqdim etməyə cəhd edə bilərsiniz. Problem davam edərsə, siz hələ də formanı Qrant ID-si olmadan təqdim edə və daha sonra tədbir təfərrüatlarını redaktə edərək əlavə edə bilərsiniz.",
 	"wikimediacampaignevents-grant-id-event-details-label": "Qrant ID",
-	"wikimediacampaignevents-communitylist-title": "İcma siyahısı",
-	"wikimediacampaignevents-communitylist-no-events-title": "Heç bir VikiLayihə tapılmadı.",
-	"wikimediacampaignevents-communitylist-no-events-text": "Bu vikidə heç bir VikiLayihə yoxdur.",
-	"wikimediacampaignevents-communitylist-header-text": "VikiLayihələri - xüsusi mövzulara, Vikipediya sahələrinə və ya tapşırıqlara yönəlmiş redaktor qruplarını - kəşf edin",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Tədbirlər",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "İcmalar",
-	"wikimediacampaignevents-communitylist-api-error-title": "Xəta",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin."
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Heç bir VikiLayihə tapılmadı.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Bu vikidə heç bir VikiLayihə yoxdur.",
+	"wikimediacampaignevents-collaboration-list-header-text": "VikiLayihələri - xüsusi mövzulara, Vikipediya sahələrinə və ya tapşırıqlara yönəlmiş redaktor qruplarını - kəşf edin",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Tədbirlər",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "İcmalar",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Xəta",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin."
 }

@@ -11,13 +11,13 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Die von dir eingegebene Grant-ID scheint falsch zu sein. Bitte überprüfe deine Grant-ID noch einmal im [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] und gib sie erneut ein.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Bei der Validierung deiner Grant-ID ist ein Problem aufgetreten. Du kannst in ein paar Minuten erneut versuchen, das Formular abzuschicken. Wenn das Problem weiterhin besteht, kannst du das Formular trotzdem ohne Grant-ID senden und es später hinzufügen, indem du die Veranstaltungsdetails bearbeitest.",
 	"wikimediacampaignevents-grant-id-event-details-label": "Grant-ID",
-	"wikimediacampaignevents-communitylist-title": "Community-Liste",
-	"wikimediacampaignevents-communitylist-no-events-title": "Keine WikiProjekte gefunden.",
-	"wikimediacampaignevents-communitylist-no-events-text": "Es gibt keine WikiProjekte auf diesem Wiki.",
-	"wikimediacampaignevents-communitylist-header-text": "Entdecke WikiProjekte – Gruppen von Mitwirkenden, die sich auf bestimmte Themen, Bereiche der Wikipedia oder Aufgaben konzentrieren.",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Veranstaltungen",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Gemeinschaften",
-	"wikimediacampaignevents-communitylist-api-error-title": "Fehler",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Wir können WikiProjects aufgrund von Verbindungsproblemen mit dem [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] nicht anzeigen. Bitte versuche es später erneut.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Wir können aufgrund von Verbindungsproblemen mit der [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] keine WikiProject-Informationen anzeigen. Bitte versuche es später erneut."
+	"wikimediacampaignevents-collaboration-list-title": "Kollaborationsliste",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Keine WikiProjekte gefunden.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Es gibt keine WikiProjekte auf diesem Wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Entdecke WikiProjekte – Gruppen von Mitwirkenden, die sich auf bestimmte Themen, Bereiche der Wikipedia oder Aufgaben konzentrieren.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Veranstaltungen",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemeinschaften",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Fehler",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Wir können WikiProjects aufgrund von Verbindungsproblemen mit dem [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] nicht anzeigen. Bitte versuche es später erneut.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Wir können aufgrund von Verbindungsproblemen mit der [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] keine WikiProject-Informationen anzeigen. Bitte versuche es später erneut."
 }

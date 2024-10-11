@@ -11,13 +11,12 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "נראה שמזהה המלגה שהזנת שגוי. נא לבדוק שוב את מזהה המענק שלך ב-[https://wmf.fluxx.io/ פורטל המלגאים (Fluxx)] ולהיכנס מחדש.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "אירעה תקלה בבדיקת תקינות מזהה המלגה שלך. באפשרותך לנסות לשלוח את הטופס שוב בעוד כמה דקות. אם הבעיה נמשכת, אפשר עדיין לשלוח את הטופס ללא מזהה מלגה ולהוסיף אותו מאוחר יותר על־ידי עריכת פרטי האירוע.",
 	"wikimediacampaignevents-grant-id-event-details-label": "מזהה המלגה",
-	"wikimediacampaignevents-communitylist-title": "רשימת קהילה",
-	"wikimediacampaignevents-communitylist-no-events-title": "לא נמצאו מיזמי ויקי.",
-	"wikimediacampaignevents-communitylist-no-events-text": "אין מיזמי ויקי בוויקי הזה.",
-	"wikimediacampaignevents-communitylist-header-text": "גלה WikiProjects - קבוצות של תורמים המתמקדים בנושאים, תחומים של ויקיפדיה או סוגי משימות מסוימים.",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "אירועים",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "קהילות",
-	"wikimediacampaignevents-communitylist-api-error-title": "שגיאה",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "איננו יכולים להציג את מיזמי ויקי עקב בעיות חיבור עם [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service שירות השאילתות של ויקינתונים]. נא לנסות שוב מאוחר יותר.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "איננו יכולים להציג מידע על מיזמי ויקי עקב בעיות חיבור עם [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? ה־API של ויקינתונים]. נא לנסות שוב מאוחר יותר."
+	"wikimediacampaignevents-collaboration-list-no-events-title": "לא נמצאו מיזמי ויקי.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "אין מיזמי ויקי בוויקי הזה.",
+	"wikimediacampaignevents-collaboration-list-header-text": "גלה WikiProjects - קבוצות של תורמים המתמקדים בנושאים, תחומים של ויקיפדיה או סוגי משימות מסוימים.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "אירועים",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "קהילות",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "שגיאה",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "איננו יכולים להציג את מיזמי ויקי עקב בעיות חיבור עם [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service שירות השאילתות של ויקינתונים]. נא לנסות שוב מאוחר יותר.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "איננו יכולים להציג מידע על מיזמי ויקי עקב בעיות חיבור עם [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? ה־API של ויקינתונים]. נא לנסות שוב מאוחר יותר."
 }

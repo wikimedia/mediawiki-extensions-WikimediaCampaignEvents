@@ -6,9 +6,8 @@
 	},
 	"wikimediacampaignevents-grant-id-input-label": "گرانٹ آئی ڈی",
 	"wikimediacampaignevents-grant-id-event-details-label": "گرانٹ آئی ڈی",
-	"wikimediacampaignevents-communitylist-title": "برادری تندیر",
-	"wikimediacampaignevents-communitylist-no-events-title": "کوئی وکی منصوبے کائنی لبھے۔",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "ایونٹ",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "برادریاں",
-	"wikimediacampaignevents-communitylist-api-error-title": "خرابی"
+	"wikimediacampaignevents-collaboration-list-no-events-title": "کوئی وکی منصوبے کائنی لبھے۔",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "ایونٹ",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "برادریاں",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "خرابی"
 }

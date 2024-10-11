@@ -11,13 +11,12 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Le ID de subvention inserite pare esser incorrecte. Per favor reverifica tu ID de subvention in le [https://wmf.fluxx.io/ Portal del Beneficiario (Fluxx)] e re-insere lo.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Il habeva un problema con le validation de tu ID de subvention. Tu pote essayar submitter le formulario de novo in poc minutas. Si le problema continua, tu pote totevia submitter le formulario sin ID de subvention e adder lo plus tarde modificante le detalios del evento.",
 	"wikimediacampaignevents-grant-id-event-details-label": "ID de subvention",
-	"wikimediacampaignevents-communitylist-title": "Lista communitari",
-	"wikimediacampaignevents-communitylist-no-events-title": "Necun WikiProjecto trovate.",
-	"wikimediacampaignevents-communitylist-no-events-text": "Il non ha WikiProjectos sur iste wiki.",
-	"wikimediacampaignevents-communitylist-header-text": "Discoperi WikiProjectos - gruppos de contributores focalisate sur topicos specific, areas de Wikipedia, o cosas a facer.",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Eventos",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Communitates",
-	"wikimediacampaignevents-communitylist-api-error-title": "Error",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Non es possibile monstrar WikiProjectos a causa de problemas de connexion con le [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service servicio de consulta Wikidata]. Per favor tenta lo de novo plus tarde.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Non es possibile monstrar information de WikiProjectos a causa de problemas de connexion con le [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API de Wikidata]. Per favor essaya lo de novo plus tarde."
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Necun WikiProjecto trovate.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Il non ha WikiProjectos sur iste wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Discoperi WikiProjectos - gruppos de contributores focalisate sur topicos specific, areas de Wikipedia, o cosas a facer.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventos",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Communitates",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Error",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Non es possibile monstrar WikiProjectos a causa de problemas de connexion con le [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service servicio de consulta Wikidata]. Per favor tenta lo de novo plus tarde.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Non es possibile monstrar information de WikiProjectos a causa de problemas de connexion con le [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API de Wikidata]. Per favor essaya lo de novo plus tarde."
 }

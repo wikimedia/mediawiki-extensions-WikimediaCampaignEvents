@@ -11,13 +11,12 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Внесената назнака е неисправна. Погледајте на порталот [https://wmf.fluxx.io/ Fluxx] и внесете ја исправната.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Се појави грешка при проверката на назнаката на вашата доделба. Обидете се да го поднесете образецот по неколку минути. Ако проблемот и понатаму се јавува, образецот можете да го поднесете без назнака на доделбата, и да ја додадете подоцна уредувајќи ги поединостите за настанот.",
 	"wikimediacampaignevents-grant-id-event-details-label": "Назнака на доделбата",
-	"wikimediacampaignevents-communitylist-title": "Список на заедницата",
-	"wikimediacampaignevents-communitylist-no-events-title": "Не пронајдов ниден википроект.",
-	"wikimediacampaignevents-communitylist-no-events-text": "Нема википроекти на ова вики.",
-	"wikimediacampaignevents-communitylist-header-text": "Откривајте википроекти — групи од придонеси со задршка на дадени теми, области на Википедија или задачи.",
-	"wikimediacampaignevents-communitylist-events-tab-heading": "Настани",
-	"wikimediacampaignevents-communitylist-communities-tab-heading": "Заедници",
-	"wikimediacampaignevents-communitylist-api-error-title": "Грешка",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Не можеме да прикажуваме википроекти поради проблеми со поврзувањето со [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Службања за побарувања на Википодатоците]. Обидете се подоцна.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Не можеме да прикажуваме информации за википроекти поради проблеми со поврзувањето со [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Приложникот на Википодатоците]. Обидете се подоцна."
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Не пронајдов ниден википроект.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Нема википроекти на ова вики.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Откривајте википроекти — групи од придонеси со задршка на дадени теми, области на Википедија или задачи.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Настани",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Заедници",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Грешка",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Не можеме да прикажуваме википроекти поради проблеми со поврзувањето со [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Службања за побарувања на Википодатоците]. Обидете се подоцна.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Не можеме да прикажуваме информации за википроекти поради проблеми со поврзувањето со [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Приложникот на Википодатоците]. Обидете се подоцна."
 }

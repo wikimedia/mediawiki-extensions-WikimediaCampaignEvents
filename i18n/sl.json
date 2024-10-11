@@ -11,7 +11,7 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "Zdi se, da ste vnesli napačen ID dotacije. Še enkrat preverite svoj ID dotacije na [https://wmf.fluxx.io/ portalu za pridobitelje sredstev (Fluxx)] in ga vnesite znova.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Pri preverjanju vašega ID-ja dotacije je prišlo do težave. Obrazec lahko poskusite znova oddati čez nekaj minut. Če se bo težava ponovila, lahko še vedno oddate obrazec brez ID-ja dotacije in ga dodate pozneje tako, da uredite podatke o dogodku.",
 	"wikimediacampaignevents-grant-id-event-details-label": "ID dotacije",
-	"wikimediacampaignevents-communitylist-api-error-title": "Napaka",
-	"wikimediacampaignevents-communitylist-wdqs-api-error-text": "Vikiprojektov ne moremo prikazati zaradi težav s povezavo s [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service poizvedovalno storitvijo Wikipodatkov]. Poskusite znova pozneje.",
-	"wikimediacampaignevents-communitylist-wikidata-api-error-text": "Podatkov vikiprojekta ne moremo prikazati zaradi težav s povezavo z [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API-jem Wikipodatkov]. Poskusite znova pozneje."
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Napaka",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Vikiprojektov ne moremo prikazati zaradi težav s povezavo s [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service poizvedovalno storitvijo Wikipodatkov]. Poskusite znova pozneje.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Podatkov vikiprojekta ne moremo prikazati zaradi težav s povezavo z [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API-jem Wikipodatkov]. Poskusite znova pozneje."
 }
