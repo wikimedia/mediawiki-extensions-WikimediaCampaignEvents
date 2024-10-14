@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Borhan"
+			"Borhan",
+			"San1joy23"
 		]
 	},
 	"wikimediacampaignevents-grant-id-input-label": "অনুদান আইডি",
 	"wikimediacampaignevents-grant-id-input-placeholder": "যেমন: 1201-3302",
 	"wikimediacampaignevents-grant-id-input-help-message": "যদি এই প্রোগ্রাম বা ইভেন্টটি উইকিমিডিয়া ফাউন্ডেশনের অনুদান দ্বারা সমর্থিত হয়, তাহলে অনুগ্রহ করে আপনার অনুদান আইডি প্রদান করুন, যা আপনি [https://wmf.fluxx.io/ অনুদান প্রবেশদ্বারে (Fluxx)] পেতে পারেন। অনুগ্রহ করে আপনার অনুদান আইডির সংখ্যা এবং ড্যাশগুলি লিখুন, কিন্তু অক্ষরগুলি বাদ দিন৷ উদাহরণস্বরূপ, যদি আপনার অনুদান আইডি G-1111-1111 হয়, তাহলে অনুগ্রহ করে 1111-1111 লিখুন।",
+	"wikimediacampaignevents-collaboration-list-title": "সহযোগিতার তালিকা",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "ত্রুটি"
 }
