@@ -4,7 +4,7 @@
 			"Bjankuloski06"
 		]
 	},
-	"wikimediacampaignevents-desc": "Додава викимедиски можности во додатокот CampaignEvents.",
+	"wikimediacampaignevents-desc": "Додава викимедиски можности во додатокот CampaignEvents (Походи).",
 	"wikimediacampaignevents-grant-id-input-label": "Назнака на доделбата",
 	"wikimediacampaignevents-grant-id-input-placeholder": "на пр. 1201-3302",
 	"wikimediacampaignevents-grant-id-input-help-message": "Доколку оваа прогрма или настан е поддржана со доделба од Фондацијата Викимедија, укажете назнака на доделбата, која ќе ја најдете на порталот [https://wmf.fluxx.io/ Fluxx]. Внесете ги бројките и цртите од назнаката, но изоставете ги буквите. На пример, ако гласи G-1111-1111, тогаш внесете 1111-1111.",
