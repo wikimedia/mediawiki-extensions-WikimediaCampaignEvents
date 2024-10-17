@@ -12,6 +12,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWDQSExcep
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikibaseException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
+use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -125,9 +126,14 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 			if ( $wikiProject === null ) {
 				continue;
 			}
+			$linkedLabel = Html::element(
+				'a',
+				[ 'href' => $wikiProject['sitelink'] ],
+				$wikiProject['label'] !== '' ? $wikiProject['label'] : $qid
+			);
 			$properties = [
 				'Classes' => 'ext-campaignevents-collaboration-list-wikiproject',
-				'Title' => $wikiProject['label'] !== '' ? $wikiProject['label'] : $qid,
+				'Title' => $linkedLabel,
 				'Description' => $wikiProject['description'],
 				'Url' => $wikiProject['sitelink'],
 			];
