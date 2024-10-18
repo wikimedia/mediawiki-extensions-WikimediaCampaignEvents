@@ -97,7 +97,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 				$offset,
 				$direction
 			);
-		} catch ( CannotQueryWDQSException $cannotQueryWikiProjectsException ) {
+		} catch ( CannotQueryWDQSException | CannotQueryWikibaseException $cannotQueryWikiProjectsException ) {
 			return $this->getErrorTemplate( $outputPage, $cannotQueryWikiProjectsException );
 		}
 
