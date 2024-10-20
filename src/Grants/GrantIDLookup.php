@@ -7,7 +7,7 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Grants;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use StatusValue;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * This class is responsible for looking up information about grant IDs (e.g., whether they exist, when they were

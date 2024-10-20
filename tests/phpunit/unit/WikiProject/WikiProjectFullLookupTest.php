@@ -11,8 +11,8 @@ use MediaWiki\Status\Status;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiUnitTestCase;
 use MWHttpRequest;
-use WANObjectCache;
 use Wikimedia\ObjectCache\EmptyBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @coversDefaultClass \MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup

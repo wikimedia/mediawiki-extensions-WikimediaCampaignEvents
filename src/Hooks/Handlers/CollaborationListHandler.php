@@ -15,9 +15,9 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLooku
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use OOUI\Tag;
-use OutputPage;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook {
 	private TemplateParser $templateParser;

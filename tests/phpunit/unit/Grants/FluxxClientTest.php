@@ -4,7 +4,6 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\Grants;
 
-use HashBagOStuff;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient;
@@ -14,7 +13,8 @@ use MediaWikiUnitTestCase;
 use MWHttpRequest;
 use Psr\Log\NullLogger;
 use StatusValue;
-use WANObjectCache;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient

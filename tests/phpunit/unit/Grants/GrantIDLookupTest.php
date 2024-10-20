@@ -6,14 +6,14 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\Grants;
 
 use Exception;
 use Generator;
-use HashBagOStuff;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\FluxxClient;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup;
 use MediaWikiUnitTestCase;
 use StatusValue;
-use WANObjectCache;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantIDLookup

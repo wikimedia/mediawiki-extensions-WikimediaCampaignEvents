@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use JsonException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\WikiMap\WikiMap;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * This is the main lookup service for WikiProject data, intended to be used with an interface that supports pagination.
