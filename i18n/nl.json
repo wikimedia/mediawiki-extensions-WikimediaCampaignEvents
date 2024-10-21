@@ -11,5 +11,14 @@
 	"wikimediacampaignevents-grant-id-input-help-message": "Als dit programma of evenement wordt ondersteund door een subsidie van de Wikimedia Foundation, geef dan uw Subsidie-ID op, die u kunt vinden in het [https://wmf.fluxx.io/ portaal voor begunstigden (Fluxx)]. Voer de cijfers en streepjes in uw subsidie-ID in, maar laat de letters weg. Als uw subsidie-ID bijvoorbeeld G-1111-1111 is, voert u 1111-1111 in.",
 	"wikimediacampaignevents-grant-id-invalid-error-message": "De subsidie-ID die u heeft ingevoerd lijkt onjuist. Controleer uw subsidie-ID nogmaals in de [https://wmf.fluxx.io/ portaal voor begunstigden (Fluxx)] en voer hem opnieuw in.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "Er is een probleem opgetreden bij het valideren van uw subsidie-ID. U kunt proberen het formulier over enkele minuten opnieuw te verzenden. Als het probleem zich blijft voordoen, kunt u het formulier ook zonder subsidie-ID indienen. Voeg de ID dan later toe door de gebeurtenisdetails te bewerken.",
-	"wikimediacampaignevents-grant-id-event-details-label": "Subsidie-ID"
+	"wikimediacampaignevents-grant-id-event-details-label": "Subsidie-ID",
+	"wikimediacampaignevents-collaboration-list-title": "Samenwerkingslijst",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Geen WikiProjecten gevonden.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Er zijn geen WikiProjecten op deze wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Ontdek WikiProjecten: groepen bijdragers die zich richten op specifieke onderwerpen, taken of gebieden van de wiki.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Evenementen",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemeenschappen",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Fout",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "De WikiProjecten kunnen niet worden weergeven vanwege verbindingsproblemen met [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Probeer het later opnieuw.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "De WikiProject-informatie kan niet worden weergeven vanwege verbindingsproblemen met de [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API van Wikidata]. Probeer het later opnieuw."
 }
