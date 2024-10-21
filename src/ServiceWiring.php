@@ -11,6 +11,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLooku
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectIDLookup;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Sparql\SparqlClient;
 
 // This file is actually covered by WikimediaCampaignEventsServicesTest, but it's not possible to specify a path
 // in @covers annotations (https://github.com/sebastianbergmann/phpunit/issues/3794)
@@ -39,9 +40,10 @@ return [
 		);
 	},
 	WikiProjectIDLookup::SERVICE_NAME => static function ( MediaWikiServices $services ): WikiProjectIDLookup {
+		$sparqlEndpoint = $services->getMainConfig()->get( 'WikimediaCampaignEventsSparqlEndpoint' );
 		return new WikiProjectIDLookup(
 			$services->getMainObjectStash(),
-			$services->getHttpRequestFactory()
+			new SparqlClient( $sparqlEndpoint, $services->getHttpRequestFactory() )
 		);
 	},
 	WikiProjectFullLookup::SERVICE_NAME => static function ( MediaWikiServices $services ): WikiProjectFullLookup {
