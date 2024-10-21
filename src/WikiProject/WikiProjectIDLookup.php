@@ -4,9 +4,9 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\WikiProject;
 
-use JsonException;
 use MediaWiki\Deferred\DeferredUpdates;
-use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Sparql\SparqlClient;
+use MediaWiki\Sparql\SparqlException;
 use MediaWiki\WikiMap\WikiMap;
 use RuntimeException;
 use Wikimedia\ObjectCache\BagOStuff;
@@ -21,16 +21,16 @@ class WikiProjectIDLookup {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsWikiProjectIDLookup';
 
 	private BagOStuff $cache;
-	private HttpRequestFactory $httpRequestFactory;
+	private SparqlClient $sparqlClient;
 
 	private ?array $cachedIDs = null;
 
 	public function __construct(
 		BagOStuff $cache,
-		HttpRequestFactory $httpRequestFactory
+		SparqlClient $sparqlClient
 	) {
 		$this->cache = $cache;
-		$this->httpRequestFactory = $httpRequestFactory;
+		$this->sparqlClient = $sparqlClient;
 	}
 
 	/**
@@ -72,9 +72,9 @@ class WikiProjectIDLookup {
 	 * @throws CannotQueryWDQSException
 	 */
 	private function computeWikiProjectIDs(): array {
-		$sparqlResponse = $this->runSPARQLQuery();
+		$sparqlResult = $this->runSPARQLQuery();
 		$entityIDs = [];
-		foreach ( $sparqlResponse['results']['bindings'] as $entityInfo ) {
+		foreach ( $sparqlResult as $entityInfo ) {
 			$entityURI = $entityInfo['item']['value'];
 			// Simple str_replace should also work, but this is more robust.
 			preg_match( '/Q\d+$/', $entityURI, $match );
@@ -94,7 +94,6 @@ class WikiProjectIDLookup {
 		}
 
 		$wikiURL = $curWiki->getCanonicalServer() . '/';
-		$endpoint = 'https://query.wikidata.org/sparql';
 		// Note, we order the results explicitly by QID using numerical sorting. This guarantees that the result set is
 		// stable.
 		$sparqlQuery = <<<EOT
@@ -110,30 +109,11 @@ ORDER BY xsd:integer( STRAFTER( STR( ?item ), STR( wd:Q ) ) )
 LIMIT 500
 EOT;
 
-		$params = [
-			'query' => $sparqlQuery,
-			'format' => 'json',
-		];
-		$options = [
-			'method' => 'GET',
-		];
-
-		$url = $endpoint . '?' . http_build_query( $params );
-		$req = $this->httpRequestFactory->create( $url, $options, __METHOD__ );
-
-		$status = $req->execute();
-
-		if ( !$status->isGood() ) {
-			throw new CannotQueryWDQSException( "Bad status from WDQS: $status" );
-		}
-
 		try {
-			$parsedResponse = json_decode( $req->getContent(), true, 512, JSON_THROW_ON_ERROR );
-		} catch ( JsonException $e ) {
-			throw new CannotQueryWDQSException( "Invalid JSON from WDQS", 0, $e );
+			return $this->sparqlClient->query( $sparqlQuery, true );
+		} catch ( SparqlException $e ) {
+			throw new CannotQueryWDQSException( $e->getMessage() );
 		}
-
-		return $parsedResponse;
 	}
 
 	/**

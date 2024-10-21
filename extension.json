@@ -43,6 +43,10 @@
 		"WikimediaCampaignEventsEnableCommunityList": {
 			"description": "Flag to enable Collaboration List feature on a wiki",
 			"value": false
+		},
+		"WikimediaCampaignEventsSparqlEndpoint": {
+			"description": "The URL of the primary SPARQL endpoint.",
+			"value": "https://query-main.wikidata.org/sparql"
 		}
 	},
 	"ServiceWiringFiles": [
