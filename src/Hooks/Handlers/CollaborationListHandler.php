@@ -38,7 +38,10 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 	): void {
 		if ( $outputPage->getConfig()->get( 'WikimediaCampaignEventsEnableCommunityList' ) ) {
 			$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
-			$outputPage->addModuleStyles( 'codex-styles' );
+			$outputPage->addModuleStyles( [
+				'codex-styles',
+				'oojs-ui.styles.icons-editing-core',
+			] );
 			$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
 			$this->activeTab = $outputPage->getRequest()->getVal( 'tab', 'form-tabs-0' );
 			$collaborationListContent = $this->getCollaborationListContent( $outputPage );
