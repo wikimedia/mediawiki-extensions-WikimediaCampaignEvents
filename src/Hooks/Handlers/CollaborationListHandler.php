@@ -17,6 +17,7 @@ use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
+use OOUI\ButtonWidget;
 use OOUI\Tag;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook {
@@ -126,6 +127,14 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 			if ( $wikiProject === null ) {
 				continue;
 			}
+			$editURL = 'https://wikidata.org/wiki/' . $qid;
+			$editButton = new ButtonWidget( [
+				'href' => $editURL,
+				'icon' => 'edit',
+				'framed' => false,
+				'classes' => [ 'wikimediacampaignevents-collaboration-list-edit-button' ],
+			] );
+
 			$linkedLabel = Html::element(
 				'a',
 				[ 'href' => $wikiProject['sitelink'] ],
@@ -133,7 +142,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 			);
 			$properties = [
 				'Classes' => 'ext-campaignevents-collaboration-list-wikiproject',
-				'Title' => $linkedLabel,
+				'Title' => $linkedLabel . $editButton,
 				'Description' => $wikiProject['description'],
 				'Url' => $wikiProject['sitelink'],
 			];
