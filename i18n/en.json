@@ -23,8 +23,5 @@
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "We cannot display WikiProjects due to connection issues with [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Please try again later.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "We cannot display WikiProject information due to connection issues with the [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Please try again later.",
 	"page-collection-tracking-category": "Pages including a page collection",
-	"page-collection-tracking-category-desc": "Pages that contain a <page-collection> marker",
-	"apihelp-query+pagecollectionsmetadata-summary": "Fetch campaign data for the campaign defined inside the page that corresponds to the given title.",
-	"apihelp-query+pagecollectionsmetadata-param-titles": "A string containing the page title for which the campaign data will be fetched.",
-	"apihelp-query+pagecollectionsmetadata-example-1": "Fetch the campaign metadata, for the campaign defined inside 'TestCampaign' page"
+	"page-collection-tracking-category-desc": "Pages that contain a <page-collection> marker"
 }
