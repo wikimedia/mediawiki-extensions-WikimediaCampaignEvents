@@ -4,8 +4,8 @@ declare( strict_types=1 );
 
 namespace MediaWiki\Extension\WikimediaCampaignEvents\ActionApi;
 
-use ApiQuery;
-use ApiQueryBase;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers\PageCollectionHookHandler;
 use MediaWiki\Page\WikiPageFactory;
@@ -28,16 +28,9 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 
 	private TitleFactory $titleFactory;
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 * @param ParserFactory $parserFactory
-	 * @param WikiPageFactory $wikiPageFactory
-	 * @param TitleFactory $titleFactory
-	 */
 	public function __construct(
-		$query,
-		$moduleName,
+		ApiQuery $query,
+		string $moduleName,
 		ParserFactory $parserFactory,
 		WikiPageFactory $wikiPageFactory,
 		TitleFactory $titleFactory
