@@ -19,5 +19,10 @@
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemeinschaften",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Fehler",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Wir können WikiProjects aufgrund von Verbindungsproblemen mit dem [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] nicht anzeigen. Bitte versuche es später erneut.",
-	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Wir können aufgrund von Verbindungsproblemen mit der [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] keine WikiProject-Informationen anzeigen. Bitte versuche es später erneut."
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Wir können aufgrund von Verbindungsproblemen mit der [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] keine WikiProject-Informationen anzeigen. Bitte versuche es später erneut.",
+	"page-collection-tracking-category": "Seiten inklusive einer Seitensammlung",
+	"page-collection-tracking-category-desc": "Seiten mit einem <page-collection>-Marker",
+	"apihelp-query+pagecollectionsmetadata-summary": "Rufe Kampagnendaten für die auf der Seite definierte Kampagne ab, die dem angegebenen Titel entspricht.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Eine Zeichenfolge, die den Seitentitel enthält, für den die Kampagnendaten abgerufen werden.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Hole dir die Kampagnenmetadaten für die auf der Seite „Testkampagne“ definierte Kampagne."
 }
