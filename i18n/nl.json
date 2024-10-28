@@ -20,5 +20,10 @@
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemeenschappen",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Fout",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "De WikiProjecten kunnen niet worden weergeven vanwege verbindingsproblemen met [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Probeer het later opnieuw.",
-	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "De WikiProject-informatie kan niet worden weergeven vanwege verbindingsproblemen met de [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API van Wikidata]. Probeer het later opnieuw."
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "De WikiProject-informatie kan niet worden weergeven vanwege verbindingsproblemen met de [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API van Wikidata]. Probeer het later opnieuw.",
+	"page-collection-tracking-category": "Pagina's met een paginaverzameling",
+	"page-collection-tracking-category-desc": "Pagina’s met een markering <page-collection>",
+	"apihelp-query+pagecollectionsmetadata-summary": "Campagnegegevens ophalen voor de campagne die is gedefinieerd op de pagina die overeenkomt met de opgegeven titel.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Een tekenreeks met de titel van de pagina waarvan de campagnegegevens worden opgehaald.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Haal de campagne-metagegevens op voor de campagne die is gedefinieerd op de pagina ‘TestCampaign’"
 }
