@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Claudio Melo",
+			"Michelle Horsey"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Fetch campaign data for the campaign defined inside the page that corresponds to the given title.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "A string containing the page title for which the campaign data will be fetched.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Fetch the campaign metadata, for the campaign defined inside 'TestCampaign' page"
+}

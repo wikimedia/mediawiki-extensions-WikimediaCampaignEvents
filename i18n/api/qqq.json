@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "{{doc-apihelp-summary|query+pagecollectionsmetadata}}",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "{{doc-apihelp-param|query+pagecollectionsmetadata|titles}}",
+	"apihelp-query+pagecollectionsmetadata-example-1": "{{doc-apihelp-example|query+pagecollectionsmetadata}}"
+}

@@ -20,6 +20,7 @@
 	"MessagesDirs": {
 		"WikimediaCampaignEvents": [
 			"i18n",
+			"i18n/api",
 			"i18n/rest"
 		]
 	},
