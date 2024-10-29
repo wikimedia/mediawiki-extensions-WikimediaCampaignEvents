@@ -5,7 +5,7 @@
 			"Michelle Horsey"
 		]
 	},
-	"apihelp-query+pagecollectionsmetadata-summary": "Fetch campaign data for the campaign defined inside the page that corresponds to the given title.",
-	"apihelp-query+pagecollectionsmetadata-param-titles": "A string containing the page title for which the campaign data will be fetched.",
-	"apihelp-query+pagecollectionsmetadata-example-1": "Fetch the campaign metadata, for the campaign defined inside 'TestCampaign' page"
+	"apihelp-query+pagecollectionsmetadata-summary": "Fetch page collection information for the given title.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "A string containing the page title for which the page collection information will be fetched.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Fetch the page collection information, for the collection defined inside 'TestCollection' page"
 }

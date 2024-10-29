@@ -115,7 +115,7 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 	 */
 	protected function getExamplesMessages() {
 		return [
-			'action=query&list=pagecollectionsmetadata&titles=TestCampaign'
+			'action=query&list=pagecollectionsmetadata&titles=TestCollection'
 				=> 'apihelp-query+pagecollectionsmetadata-example-1',
 		];
 	}

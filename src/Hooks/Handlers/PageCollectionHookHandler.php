@@ -33,8 +33,6 @@ class PageCollectionHookHandler implements ParserFirstCallInitHook {
 	 * <page-collection
 	 *   name='My Page Collection'
 	 *   description='This is a page collection'
-	 *   source-language='en'
-	 *   target-languages='es|fr'
 	 *   end-date='2024-10-20'
 	 * ></page-collection>
 	 *
@@ -55,16 +53,9 @@ class PageCollectionHookHandler implements ParserFirstCallInitHook {
 			"lang" => $parser->getContentLanguage()->getCode(),
 			"name" => "",
 			"description" => "",
-			"source-language" => "en",
-			"target-languages" => "",
-			"status" => "active",
 			"end-date" => "",
 		];
 		$pageCollectionDefinition = array_merge( $defaultOptions, $args );
-		$pageCollectionDefinition["target-languages"] = explode(
-			"|",
-			$pageCollectionDefinition["target-languages"]
-		);
 
 		$parserOutput->setExtensionData(
 			self::PAGE_COLLECTION_EXTENSION_DATA_KEY,
