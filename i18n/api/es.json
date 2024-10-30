@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"IZapico (WMF)"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Obtiene los datos de la campaña definida dentro de la página que corresponde al título dado.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Cadena que contiene el título de la página de la que se obtendrán los datos de la campaña.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Obtener los metadatos de la campaña, para la campaña definida dentro de la página 'TestCampaign'"
+}

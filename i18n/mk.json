@@ -22,8 +22,5 @@
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Не можеме да прикажуваме википроекти поради проблеми со поврзувањето со [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Службања за побарувања на Википодатоците]. Обидете се подоцна.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Не можеме да прикажуваме информации за википроекти поради проблеми со поврзувањето со [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Приложникот на Википодатоците]. Обидете се подоцна.",
 	"page-collection-tracking-category": "Страници што содржат збирка на страници",
-	"page-collection-tracking-category-desc": "Страници што содржат обележувач <page-collection>",
-	"apihelp-query+pagecollectionsmetadata-summary": "Дај податоци за поход од походот определен во страницата која одговара на дадениот наслов.",
-	"apihelp-query+pagecollectionsmetadata-param-titles": "Низа што го содржи насловот на страницата за која треба да се добијат податоците за поход.",
-	"apihelp-query+pagecollectionsmetadata-example-1": "Дај метаподатоци за походот определен во страницата „TestCampaign“"
+	"page-collection-tracking-category-desc": "Страници што содржат обележувач <page-collection>"
 }

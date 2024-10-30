@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Campagnegegevens ophalen voor de campagne die is gedefinieerd op de pagina die overeenkomt met de opgegeven titel.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Een tekenreeks met de titel van de pagina waarvan de campagnegegevens worden opgehaald.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Haal de campagne-metagegevens op voor de campagne die is gedefinieerd op de pagina ‘TestCampaign’"
+}

@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "אחזור נתוני אירוע עבור האירוע שמוגדר בדף ששייך לכותרת הנתונה.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "מחרוזת שמכילה את כותרת הדף שנתוני האירוע יאוחזרו עבורו.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "אחזור המטא־נתונים של אירוע, עבור האירוע שמוגדר בתוך דף \"TestCampaign\""
+}

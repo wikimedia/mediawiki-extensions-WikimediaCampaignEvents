@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Rufe Kampagnendaten für die auf der Seite definierte Kampagne ab, die dem angegebenen Titel entspricht.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Eine Zeichenfolge, die den Seitentitel enthält, für den die Kampagnendaten abgerufen werden.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Hole dir die Kampagnenmetadaten für die auf der Seite „Testkampagne“ definierte Kampagne."
+}
