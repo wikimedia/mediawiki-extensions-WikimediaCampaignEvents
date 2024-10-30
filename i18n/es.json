@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"IZapico (WMF)",
+			"Zapipedia (WMF)"
+		]
+	},
+	"wikimediacampaignevents-desc": "Proporciona funcionalidades específicas de Wikimedia para la extensión CampaignEvents."
+}
