@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"IZapico (WMF)",
+			"Zapipedia (WMF)"
+		]
+	},
+	"wikimediacampaignevents-desc": "Proporciona funcionalidades específicas de Wikimedia para la extensión CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "ID de subvención",
+	"wikimediacampaignevents-grant-id-input-placeholder": "Por ejemplo, 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Si este programa o evento cuenta con el apoyo de una subvención de la Fundación Wikimedia, por favor proporciona su ID de subvención, que puedes encontrar en el [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Introduce los números y guiones de tu ID de subvención, pero excluye las letras. Por ejemplo, si tu ID de subvención es G-1111-1111, introduce 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "La ID de subvención que has introducido parece ser incorrecta. Por favor, vuelve a comprobar tu ID de subvención en el [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] y vuelve a introducirlo.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Se ha producido un problema al validar su ID de subvención. Puedes volver a completar el formulario dentro de unos minutos. Si el problema persiste, puedes guardar el formulario sin un ID de subvención y añadirlo más tarde editando los detalles del evento.",
+	"wikimediacampaignevents-grant-id-event-details-label": "ID de subvención"
+}

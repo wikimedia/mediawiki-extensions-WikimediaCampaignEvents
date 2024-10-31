@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Samoasambia"
+		]
+	},
+	"wikimediacampaignevents-desc": "Tarjoaa Wikimedia-erityisiä ominaisuuksia CampaignEvents-laajennukseen",
+	"wikimediacampaignevents-grant-id-input-label": "Apurahatunnus",
+	"wikimediacampaignevents-grant-id-input-placeholder": "esim. 1201-3302",
+	"wikimediacampaignevents-grant-id-event-details-label": "Apurahatunnus"
+}
