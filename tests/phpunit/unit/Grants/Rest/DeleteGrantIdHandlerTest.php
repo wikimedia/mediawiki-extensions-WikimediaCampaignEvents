@@ -30,9 +30,9 @@ class DeleteGrantIdHandlerTest extends MediaWikiUnitTestCase {
 	];
 
 	private function newHandler(
-		IEventLookup $eventLookup = null,
-		PermissionChecker $permissionChecker = null,
-		GrantsStore $grantsStore = null
+		?IEventLookup $eventLookup = null,
+		?PermissionChecker $permissionChecker = null,
+		?GrantsStore $grantsStore = null
 	): DeleteGrantIdHandler {
 		return new DeleteGrantIdHandler(
 			$eventLookup ?? $this->createMock( IEventLookup::class ),
