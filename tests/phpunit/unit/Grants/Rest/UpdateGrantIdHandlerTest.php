@@ -43,10 +43,10 @@ class UpdateGrantIdHandlerTest extends MediaWikiUnitTestCase {
 	}
 
 	private function newHandler(
-		IEventLookup $eventLookup = null,
-		PermissionChecker $permissionChecker = null,
-		GrantIDLookup $grantIdLookup = null,
-		GrantsStore $grantsStore = null
+		?IEventLookup $eventLookup = null,
+		?PermissionChecker $permissionChecker = null,
+		?GrantIDLookup $grantIdLookup = null,
+		?GrantsStore $grantsStore = null
 	): UpdateGrantIdHandler {
 		return new UpdateGrantIdHandler(
 			$eventLookup ?? $this->createMock( IEventLookup::class ),

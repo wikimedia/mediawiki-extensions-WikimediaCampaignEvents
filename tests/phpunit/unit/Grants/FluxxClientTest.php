@@ -26,7 +26,7 @@ class FluxxClientTest extends MediaWikiUnitTestCase {
 	private function getClient(
 		?HttpRequestFactory $requestFactory,
 		array $configOverrides = [],
-		WANObjectCache $cache = null
+		?WANObjectCache $cache = null
 	): FluxxClient {
 		return new FluxxClient(
 			$requestFactory ?? $this->createMock( HttpRequestFactory::class ),

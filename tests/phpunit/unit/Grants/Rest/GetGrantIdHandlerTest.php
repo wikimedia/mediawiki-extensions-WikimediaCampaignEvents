@@ -28,9 +28,9 @@ class GetGrantIdHandlerTest extends MediaWikiUnitTestCase {
 	];
 
 	private function newHandler(
-		IEventLookup $eventLookup = null,
-		PermissionChecker $permissionChecker = null,
-		GrantsStore $grantsStore = null
+		?IEventLookup $eventLookup = null,
+		?PermissionChecker $permissionChecker = null,
+		?GrantsStore $grantsStore = null
 	): GetGrantIdHandler {
 		return new GetGrantIdHandler(
 			$eventLookup ?? $this->createMock( IEventLookup::class ),

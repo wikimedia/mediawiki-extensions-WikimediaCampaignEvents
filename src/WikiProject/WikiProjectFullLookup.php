@@ -51,7 +51,7 @@ class WikiProjectFullLookup {
 	public function getWikiProjects(
 		string $languageCode,
 		int $limit,
-		string $lastEntity = null,
+		?string $lastEntity = null,
 		int $direction = self::DIR_FORWARDS
 	): array {
 		$allIDs = $this->wikiProjectIDLookup->getWikiProjectIDs();
