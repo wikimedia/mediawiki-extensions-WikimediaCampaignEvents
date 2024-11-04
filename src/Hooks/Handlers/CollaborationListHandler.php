@@ -245,27 +245,26 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 			->setLimits( [ 10, 20, 50 ] )
 			->setCurrentLimit( $limit );
 
-		// TODO: Remove string casts when I5c6b8ad8075d295666a6a04d8c95398dfd9f4060 is merged.
 		if ( !$isFirstPage ) {
 			$navBuilder->setPrevLinkQuery( [
-				'offset' => (string)array_key_first( $wikiProjects ),
-				'dir' => (string)WikiProjectFullLookup::DIR_BACKWARDS,
-				'limit' => (string)$limit,
+				'offset' => array_key_first( $wikiProjects ),
+				'dir' => WikiProjectFullLookup::DIR_BACKWARDS,
+				'limit' => $limit,
 			] );
 			$navBuilder->setFirstLinkQuery( [
-				'dir' => (string)WikiProjectFullLookup::DIR_FORWARDS,
-				'limit' => (string)$limit,
+				'dir' => WikiProjectFullLookup::DIR_FORWARDS,
+				'limit' => $limit,
 			] );
 		}
 		if ( !$isLastPage ) {
 			$navBuilder->setNextLinkQuery( [
-				'offset' => (string)array_key_last( $wikiProjects ),
-				'dir' => (string)WikiProjectFullLookup::DIR_FORWARDS,
-				'limit' => (string)$limit,
+				'offset' => array_key_last( $wikiProjects ),
+				'dir' => WikiProjectFullLookup::DIR_FORWARDS,
+				'limit' => $limit,
 			] );
 			$navBuilder->setLastLinkQuery( [
-				'dir' => (string)WikiProjectFullLookup::DIR_BACKWARDS,
-				'limit' => (string)$limit,
+				'dir' => WikiProjectFullLookup::DIR_BACKWARDS,
+				'limit' => $limit,
 			] );
 		}
 		return $navBuilder;
