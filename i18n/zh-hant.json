@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cookai1205",
 			"Kly",
 			"列维劳德"
 		]
@@ -12,7 +13,7 @@
 	"wikimediacampaignevents-grant-id-invalid-error-message": "您輸入的授予 ID 似乎不正確。請在[ttps://wmf.fluxx.io/ 受贈入口網頁（Fluxx）]中仔細檢查您的授予 ID，然後重新輸入。",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "驗證您的授予 ID 時出現問題。您可以在幾分鐘後再次提交表單。如果問題持續發生，您仍然可以在沒有授予 ID 的情況下提交表單，並稍後透過編輯活動詳細資訊來新增它。",
 	"wikimediacampaignevents-grant-id-event-details-label": "授予 ID",
-	"wikimediacampaignevents-collaboration-list-title": "合作清單",
+	"wikimediacampaignevents-collaboration-list-title": "協作清單",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "未找到維基專題。",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "此 wiki 上沒有維基專題。",
 	"wikimediacampaignevents-collaboration-list-header-text": "探索維基專題 - 專注於特定主題、維基百科領域或任務的貢獻者群組。",
