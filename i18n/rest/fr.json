@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mahabarata"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Vous n'êtes pas autorisé à modifier l'identifiant de subvention pour cet événement.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "L'identifiant de subvention ne peut pas être vide.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "L'identifiant de subvention que vous avez saisi n'est pas valide.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx n'est actuellement pas en mesure de valider cet identifiant de subvention. Réessayez dans quelques minutes.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Vous n'êtes pas autorisé à consulter l'identifiant de subvention pour cet événement."
+}
