@@ -22,5 +22,5 @@
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "No podemos mostrar WikiProyectos debido a problemas de conexión con [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Por favor, inténtalo de nuevo más tarde.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "No podemos mostrar información de WikiProyectos debido a problemas de conexión con [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Vuelve a intentarlo más tarde.",
 	"page-collection-tracking-category": "Páginas que incluyen una colección de páginas",
-	"page-collection-tracking-category-desc": "Páginas que contienen un marcador <page-collection>."
+	"page-collection-tracking-category-desc": "Páginas que contienen un marcador &lt;page-collection&gt;."
 }

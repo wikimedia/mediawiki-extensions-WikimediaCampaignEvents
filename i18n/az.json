@@ -21,5 +21,5 @@
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] ilə əlaqə problemlərə görə VikiLayihələri göstərə bilmirik. Daha sonra yenidən cəhd edin.",
 	"page-collection-tracking-category": "Səhifə kolleksiyası ehtiva edən səhifələr",
-	"page-collection-tracking-category-desc": "<page-collection> ehtiva edən səhifələr"
+	"page-collection-tracking-category-desc": "&lt;page-collection&gt; ehtiva edən səhifələr"
 }

@@ -21,5 +21,5 @@
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "איננו יכולים להציג את מיזמי ויקי עקב בעיות חיבור עם [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service שירות השאילתות של ויקינתונים]. נא לנסות שוב מאוחר יותר.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "איננו יכולים להציג מידע על מיזמי ויקי עקב בעיות חיבור עם [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? ה־API של ויקינתונים]. נא לנסות שוב מאוחר יותר.",
 	"page-collection-tracking-category": "דפים שמכילים אוסף דפים",
-	"page-collection-tracking-category-desc": "דפים שמכילים סמן <page-collection>"
+	"page-collection-tracking-category-desc": "דפים שמכילים סמן &lt;page-collection&gt;"
 }
