@@ -5,6 +5,14 @@
 			"Terio legale"
 		]
 	},
+	"wikimediacampaignevents-desc": "Ajoute à l'extension CampaignEvents des fonctionnalités spécifiques pour Wikimédia.",
+	"wikimediacampaignevents-grant-id-input-label": "Identifiant de la subvention",
+	"wikimediacampaignevents-grant-id-input-placeholder": "par exemple 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Si ce programme ou événement est soutenu par une subvention de la Fondation Wikimédia, veuillez indiquer son identifiant (disponible sur le [https://wmf.fluxx.io/ portail des bénéficiaires Fluxx]). Veuillez saisir les chiffres et les tirets de l'identifiant mais excluez les lettres. Par exemple, si l'identifiant de la subvention est G-1111-1111, veuillez saisir 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "L'identifiant de la subvention que vous avez saisi semble incorrect. Veuillez le vérifier sur le [https://wmf.fluxx.io/ portail des bénéficiaires Fluxx] et le saisir à nouveau.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Un problème est survenu lors de la validation de l'identifiant de la subvention. Vous pouvez réessayer de soumettre le formulaire dans quelques minutes. Si le problème persiste, vous pouvez toujours soumettre le formulaire sans identifiant et l'ajouter ultérieurement en modifiant les détails de l'événement.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Identifiant de la subvention",
+	"wikimediacampaignevents-collaboration-list-title": "Liste de collaboration",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Aucun Wikiprojects (Projets wiki) trouvé.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Il n'existe pas de WikiProjects sur ce wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Découvrez les WikiProjects : des groupes de contributeurs axés sur des sujets, des tâches ou des domaines spécifiques du wiki.",
@@ -12,5 +20,7 @@
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Communautés",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Erreur",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Nous ne pouvons pas afficher les WikiProjects à cause de problèmes de connexion au [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service service de requête Wikidata]. Veuillez réessayer plus tard.",
-	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Nous ne pouvons pas afficher les informations du WikiProject à cause de problèmes de connexion à l'[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API Wikidata]. Veuillez réessayer plus tard."
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Nous ne pouvons pas afficher les informations du WikiProject à cause de problèmes de connexion à l'[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API Wikidata]. Veuillez réessayer plus tard.",
+	"page-collection-tracking-category": "Pages comprenant une collection de pages",
+	"page-collection-tracking-category-desc": "Pages contenant un marqueur &lt;page-collection&gt;"
 }
