@@ -21,6 +21,7 @@
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Error title used on [[Special:AllEvents]] to alert that an API error has occurred.",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Error text used on [[Special:AllEvents]] to alert that a WDQS API error has occurred.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Error text used on [[Special:AllEvents]] to alert that a wikibase API error has occurred. Indicates that no WikiProjects information will be available at all.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Label of a button linking to the Wikidata item for a WikiProject, where users can update inaccurate or outdated information.",
 	"page-collection-tracking-category": "{{tracking category name}}\nThe [[:mw:Special:MyLanguage/Help:Tracking categories|tracking category]] to add to the pages that contain a translation campaign page marker",
 	"page-collection-tracking-category-desc": "Description of Translation Campaign tracking category"
 }
