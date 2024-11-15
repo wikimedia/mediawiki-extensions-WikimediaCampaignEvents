@@ -37,34 +37,32 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 		OutputPage $outputPage,
 		string &$eventsContent
 	): void {
-		if ( $outputPage->getConfig()->get( 'WikimediaCampaignEventsEnableCommunityList' ) ) {
-			$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
-			$outputPage->addModuleStyles( [
-				'codex-styles',
-				'oojs-ui.styles.icons-editing-core',
-			] );
-			$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
-			$this->activeTab = $outputPage->getRequest()->getVal( 'tab', 'form-tabs-0' );
-			$collaborationListContent = $this->getCollaborationListContent( $outputPage );
-			$eventsContent = $this->getLayout(
+		$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
+		$outputPage->addModuleStyles( [
+			'codex-styles',
+			'oojs-ui.styles.icons-editing-core',
+		] );
+		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
+		$this->activeTab = $outputPage->getRequest()->getVal( 'tab', 'form-tabs-0' );
+		$collaborationListContent = $this->getCollaborationListContent( $outputPage );
+		$eventsContent = $this->getLayout(
+			[
 				[
-					[
-						'content' => $eventsContent,
-						'label' => $outputPage->msg(
-							'wikimediacampaignevents-collaboration-list-events-tab-heading'
-						)->text()
-					],
-					[
-						'content' => ( new Tag( 'p' ) )
-								->appendContent( $outputPage->msg(
-									'wikimediacampaignevents-collaboration-list-header-text' )->text()
-								) . $collaborationListContent,
-						'label' => $outputPage->msg(
-							'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
-					]
+					'content' => $eventsContent,
+					'label' => $outputPage->msg(
+						'wikimediacampaignevents-collaboration-list-events-tab-heading'
+					)->text()
+				],
+				[
+					'content' => ( new Tag( 'p' ) )
+							->appendContent( $outputPage->msg(
+								'wikimediacampaignevents-collaboration-list-header-text' )->text()
+							) . $collaborationListContent,
+					'label' => $outputPage->msg(
+						'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
 				]
-			);
-		}
+			]
+		);
 	}
 
 	/**
