@@ -17,6 +17,7 @@ use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
+use MessageLocalizer;
 use OOUI\ButtonWidget;
 use OOUI\Tag;
 
@@ -108,7 +109,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 
 		$navBuilder = $this->getNavigationBuilder( $outputPage, $offset, $limit, $direction, $wikiProjects );
 
-		return $navBuilder->getHtml() . $this->getWikiProjectsHTML( $wikiProjects );
+		return $navBuilder->getHtml() . $this->getWikiProjectsHTML( $outputPage, $wikiProjects );
 	}
 
 	private function getEmptyStateContent( OutputPage $outputPage ): string {
@@ -124,17 +125,21 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 		);
 	}
 
-	private function getWikiProjectsHTML( array $wikiProjects ): string {
+	private function getWikiProjectsHTML( MessageLocalizer $msgLocalizer, array $wikiProjects ): string {
 		$cards = [];
 		foreach ( $wikiProjects as $qid => $wikiProject ) {
 			if ( $wikiProject === null ) {
 				continue;
 			}
 			$editURL = 'https://wikidata.org/wiki/' . $qid;
+			$editLabel = $msgLocalizer->msg( 'wikimediacampaignevents-collaboration-list-wikidata-edit-label' );
 			$editButton = new ButtonWidget( [
 				'href' => $editURL,
 				'icon' => 'edit',
 				'framed' => false,
+				'label' => $editLabel,
+				'invisibleLabel' => true,
+				'title' => $editLabel,
 				'classes' => [ 'wikimediacampaignevents-collaboration-list-edit-button' ],
 			] );
 
