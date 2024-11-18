@@ -21,6 +21,7 @@
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Erreur",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Nous ne pouvons pas afficher les WikiProjects à cause de problèmes de connexion au [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service service de requête Wikidata]. Veuillez réessayer plus tard.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Nous ne pouvons pas afficher les informations du WikiProject à cause de problèmes de connexion à l'[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API Wikidata]. Veuillez réessayer plus tard.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Modifier les informations sur cette communauté dans Wikidata.",
 	"page-collection-tracking-category": "Pages comprenant une collection de pages",
 	"page-collection-tracking-category-desc": "Pages contenant un marqueur &lt;page-collection&gt;"
 }

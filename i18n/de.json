@@ -20,6 +20,7 @@
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Fehler",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Wir können WikiProjects aufgrund von Verbindungsproblemen mit dem [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service] nicht anzeigen. Bitte versuche es später erneut.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Wir können aufgrund von Verbindungsproblemen mit der [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API] keine WikiProject-Informationen anzeigen. Bitte versuche es später erneut.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Bearbeite Informationen zu dieser Community in Wikidata.",
 	"page-collection-tracking-category": "Seiten inklusive einer Seitensammlung",
 	"page-collection-tracking-category-desc": "Seiten mit einem &lt;page-collection&gt;-Marker"
 }

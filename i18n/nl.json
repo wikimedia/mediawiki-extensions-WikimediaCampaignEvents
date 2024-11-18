@@ -21,6 +21,7 @@
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Fout",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "De WikiProjecten kunnen niet worden weergeven vanwege verbindingsproblemen met [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Probeer het later opnieuw.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "De WikiProject-informatie kan niet worden weergeven vanwege verbindingsproblemen met de [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API van Wikidata]. Probeer het later opnieuw.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Informatie over deze gemeenschap bewerken in Wikidata.",
 	"page-collection-tracking-category": "Pagina's met een paginaverzameling",
 	"page-collection-tracking-category-desc": "Pagina’s met een markering &lt;page-collection&gt;"
 }
