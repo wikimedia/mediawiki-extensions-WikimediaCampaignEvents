@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bachounda"
+			"Bachounda",
+			"Meno25"
 		]
 	},
 	"wikimediacampaignevents-extensionname": "Wikimedia&shy;Campaign&shy;Events",
@@ -11,5 +12,14 @@
 	"wikimediacampaignevents-grant-id-input-help-message": "إذا كان هذا البرنامج أو الفعالية مدعومًا بمنحة من مؤسسة ويكيميديا، يُرجى تقديم معرف المنحة الخاص بك، والذي يمكنك العثور عليه في [https://wmf.fluxx.io/ بوابة الممنوحين (Fluxx)]. يُرجى إدخال الأرقام والشرطات في معرّف المنحة الخاص بك، مع استبعاد الحروف. على سبيل المثال، إذا كان مُعرّف المنحة الخاص بك هو G-1111-1111، يرجى إدخال 1111-1111.",
 	"wikimediacampaignevents-grant-id-invalid-error-message": "يبدو أن معرف المنحة الذي أدخلته غير صحيح. يُرجى إعادة التحقق من معرف المنحة الخاص بك في [https://wmf.fluxx.io/ بوابة الممنوح (Fluxx)] وإعادة إدخاله.",
 	"wikimediacampaignevents-grant-id-api-fails-error-message": "كانت هناك مشكلة في التحقق من صحة معرف المنحة الخاص بك. يمكنك محاولة إرسال النموذج مرة أخرى بعد بضع دقائق. إذا استمرت المشكلة، لا يزال بإمكانك إرسال النموذج بدون معرّف المنحة وإضافته لاحقاً عن طريق تحرير تفاصيل الفعالية.",
-	"wikimediacampaignevents-grant-id-event-details-label": "معرّف المنحة"
+	"wikimediacampaignevents-grant-id-event-details-label": "معرّف المنحة",
+	"wikimediacampaignevents-collaboration-list-title": "قائمة التعاون",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "لم يتم العثور على مشاريع ويكي.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "لا توجد مشاريع ويكي على هذه الويكي.",
+	"wikimediacampaignevents-collaboration-list-header-text": "اكتشف مشاريع الويكي—مجموعات من المساهمين الذين يركزون على مواضيع أو مهام أو مجالات محددة من الويكي.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "الفعاليات",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "المجتمعات",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "خطأ",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "لا يمكننا عرض مشاريع الويكي بسبب مشاكل الاتصال مع [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service خدمة استعلام ويكي بيانات الويكي]. يرجى المحاولة مرة أخرى لاحقا.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "لا يمكننا عرض معلومات مشروع ويكي بسبب مشاكل الاتصال مع [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. يرجى المحاولة مرة أخرى لاحقا."
 }
