@@ -89,6 +89,10 @@ class WikiProjectIDLookup {
 	 * @throws CannotQueryWDQSException
 	 */
 	private function runSPARQLQuery(): array {
+		if ( defined( 'MW_PHPUNIT_TEST' ) ) {
+			// Do not make real HTTP requests in tests (can be triggered by SpecialPageFatalTest).
+			return [];
+		}
 		$wikiURL = rtrim( $this->canonicalServer, '/' ) . '/';
 		// Note, we order the results explicitly by QID using numerical sorting. This guarantees that the result set is
 		// stable.
