@@ -16,10 +16,13 @@
 	"wikimediacampaignevents-collaboration-list-title": "協作清單",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "未找到維基專題。",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "此 wiki 上沒有維基專題。",
-	"wikimediacampaignevents-collaboration-list-header-text": "探索維基專題 - 專注於特定主題、維基百科領域或任務的貢獻者群組。",
+	"wikimediacampaignevents-collaboration-list-header-text": "探索維基專題——專注於特定主題、任務或維基百科領域的貢獻者群組。",
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "活動",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "社群",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "錯誤",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "由於[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service 維基數據查詢服務]的連線問題，我們無法顯示維基專題。請稍後再試。",
-	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "由於[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? 維基數據 API] 的連線問題，我們無法顯示維基專題資訊。請稍後再試。"
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "由於[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? 維基數據 API] 的連線問題，我們無法顯示維基專題資訊。請稍後再試。",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "在維基數據編輯關於此社群的資訊。",
+	"page-collection-tracking-category": "包含頁面集合的頁面",
+	"page-collection-tracking-category-desc": "包含&lt;page-collection&gt;標記的頁面"
 }

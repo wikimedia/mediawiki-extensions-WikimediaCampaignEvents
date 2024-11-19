@@ -11,5 +11,6 @@
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventi",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Comunità",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Errore",
-	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Non possiamo visualizzare le informazioni di WikiProject a causa di problemi di connessione con [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Riprova più tardi."
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Non possiamo visualizzare le informazioni di WikiProject a causa di problemi di connessione con [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Riprova più tardi.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Modifica le informazioni su questa comunità in Wikidata."
 }
