@@ -10,6 +10,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectIDLookup;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Sparql\SparqlClient;
 
@@ -40,8 +41,11 @@ return [
 		);
 	},
 	WikiProjectIDLookup::SERVICE_NAME => static function ( MediaWikiServices $services ): WikiProjectIDLookup {
-		$sparqlEndpoint = $services->getMainConfig()->get( 'WikimediaCampaignEventsSparqlEndpoint' );
+		$cfg = $services->getMainConfig();
+		$canonicalServer = $cfg->get( MainConfigNames::CanonicalServer );
+		$sparqlEndpoint = $cfg->get( 'WikimediaCampaignEventsSparqlEndpoint' );
 		return new WikiProjectIDLookup(
+			$canonicalServer,
 			$services->getMainObjectStash(),
 			new SparqlClient( $sparqlEndpoint, $services->getHttpRequestFactory() )
 		);

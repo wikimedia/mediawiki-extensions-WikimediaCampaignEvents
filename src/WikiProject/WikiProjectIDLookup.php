@@ -7,8 +7,6 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\WikiProject;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Sparql\SparqlClient;
 use MediaWiki\Sparql\SparqlException;
-use MediaWiki\WikiMap\WikiMap;
-use RuntimeException;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -20,15 +18,18 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 class WikiProjectIDLookup {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsWikiProjectIDLookup';
 
+	private string $canonicalServer;
 	private BagOStuff $cache;
 	private SparqlClient $sparqlClient;
 
 	private ?array $cachedIDs = null;
 
 	public function __construct(
+		string $canonicalServer,
 		BagOStuff $cache,
 		SparqlClient $sparqlClient
 	) {
+		$this->canonicalServer = $canonicalServer;
 		$this->cache = $cache;
 		$this->sparqlClient = $sparqlClient;
 	}
@@ -88,12 +89,7 @@ class WikiProjectIDLookup {
 	 * @throws CannotQueryWDQSException
 	 */
 	private function runSPARQLQuery(): array {
-		$curWiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
-		if ( $curWiki === null ) {
-			throw new RuntimeException( 'Current wiki does not exist? Must be a glitch in the Matrix.' );
-		}
-
-		$wikiURL = $curWiki->getCanonicalServer() . '/';
+		$wikiURL = rtrim( $this->canonicalServer, '/' ) . '/';
 		// Note, we order the results explicitly by QID using numerical sorting. This guarantees that the result set is
 		// stable.
 		$sparqlQuery = <<<EOT
