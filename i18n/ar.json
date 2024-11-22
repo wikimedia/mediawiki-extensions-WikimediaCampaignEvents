@@ -22,6 +22,7 @@
 	"wikimediacampaignevents-collaboration-list-api-error-title": "خطأ",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "لا يمكننا عرض مشاريع الويكي بسبب مشاكل الاتصال مع [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service خدمة استعلام ويكي بيانات الويكي]. يرجى المحاولة مرة أخرى لاحقا.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "لا يمكننا عرض معلومات مشروع ويكي بسبب مشاكل الاتصال مع [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. يرجى المحاولة مرة أخرى لاحقا.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "قم بتعديل المعلومات حول هذا المجتمع في ويكي بيانات.",
 	"page-collection-tracking-category": "الصفحات التي تتضمن مجموعة الصفحات",
 	"page-collection-tracking-category-desc": "الصفحات التي تحتوي على علامة &lt;page-collection&gt;"
 }
