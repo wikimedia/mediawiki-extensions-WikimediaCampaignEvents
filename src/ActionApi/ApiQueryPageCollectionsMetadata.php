@@ -9,10 +9,10 @@ use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers\PageCollectionHookHandler;
 use MediaWiki\Page\WikiPageFactory;
+use MediaWiki\Parser\ParserFactory;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\TitleFactory;
-use ParserFactory;
-use ParserOptions;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
