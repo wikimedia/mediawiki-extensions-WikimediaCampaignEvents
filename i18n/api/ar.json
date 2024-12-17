@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Meno25"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "جلب معلومات مجموعة الصفحات للعنوان المحدد.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "سلسلة تحتوي على عنوان الصفحة التي سيتم جلب معلومات مجموعة الصفحات الخاصة بها.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "جلب معلومات مجموعة الصفحات للمجموعة المحددة داخل صفحة \"TestCollection\""
+}
