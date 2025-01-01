@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Дај податоци за збирка страници за даден наслов.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Низа што го содржи насловот на страницата за која треба да се добијат податоците за збирка страници.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Дај информации за збирка, за збирката определена во страницата „TestCollection“"
+}
