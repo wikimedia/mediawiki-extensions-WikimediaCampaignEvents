@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Msz2001"
+		]
+	},
+	"wikimediacampaignevents-desc": "Zapewnia funkcje rozszerzenia CampaignEvents specyficzne dla Wikimediów.",
+	"wikimediacampaignevents-grant-id-input-label": "Identyfikator grantu",
+	"wikimediacampaignevents-grant-id-input-placeholder": "np. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Jeśli ten program lub wydarzenie jest wspierane przez grant z Wikimedia Foundation, podaj identyfikator swojego grantu. Znajdziesz do w [https://wmf.fluxx.io/ Portalu grantobiorców (Grantee Portal, Fluxx)]. Wpisz cyfry i myślniki w identyfikatorze, ale nie wpisuj liter. Na przykład, jeśli identyfikator Twojego grantu to G-1111-1111, wpisz 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Podany identyfikator grantu jest niepoprawny. Sprawdź go raz jeszcze w [https://wmf.fluxx.io/ Portalu grantobiorców (Grantee Portal, Fluxx)] i wprowadź ponownie.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Wystąpił problem z weryfikacją identyfikatora grantu. Możesz spróbować ponownie przesłać formularz za kilka minut. Jeśli problem będzie się powtarzał, nadal możesz przesłać formularz bez identyfikatora i dodać go później, edytując szczegóły wydarzenia.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Identyfikator grantu",
+	"wikimediacampaignevents-collaboration-list-title": "Lista współpracy",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Nie znaleziono wikiprojektów.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Na tej wiki nie ma żadnych wikiprojektów.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Odkryj wikiprojekty: grupy użytkowników, którzy zajmują się konkretnymi tematami lub zadaniami na wiki.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Wydarzenia",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Społeczności",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Błąd",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Nie udało się wyświetlić wikiprojektów z uwagi na problemy z połączeniem z [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service usługą zapytań do Wikidanych]. Spróbuj ponownie później.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Nie udało się wyświetlić wikiprojektów z uwagi na problemy z połączeniem z [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API Wikidanych]. Spróbuj ponownie później."
+}
