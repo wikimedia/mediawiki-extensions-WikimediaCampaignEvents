@@ -41,7 +41,7 @@ class EventRegistrationFormHandler implements
 			'placeholder-message' => 'wikimediacampaignevents-grant-id-input-placeholder',
 			'help-message' => 'wikimediacampaignevents-grant-id-input-help-message',
 			'section' => AbstractEventRegistrationSpecialPage::DETAILS_SECTION,
-			'filter-callback' => fn ( $grantID ) => trim( (string)$grantID ),
+			'filter-callback' => static fn ( $grantID ) => trim( (string)$grantID ),
 			'validation-callback' => function ( $grantID, $alldata ) use ( $currentGrantID ) {
 				if ( $grantID === '' || $grantID === $currentGrantID ) {
 					// Note that if a grant ID was once valid, we don't need to validate it again: it can only
