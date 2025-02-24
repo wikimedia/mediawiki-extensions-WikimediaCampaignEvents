@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Obtener information sur le collection de paginas pro le titulo date.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Un catena que contine le titulo del pagina pro le qual le information sur le collection de paginas essera obtenite.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Obtener le information sur le collection de paginas, pro le collection definite in le pagina ‘TestCollection’"
+}
