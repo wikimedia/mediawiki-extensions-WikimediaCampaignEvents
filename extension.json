@@ -91,9 +91,8 @@
 		"pagecollectionsmetadata": {
 			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\ActionApi\\ApiQueryPageCollectionsMetadata",
 			"services": [
-				"ParserFactory",
-				"WikiPageFactory",
-				"TitleFactory"
+				"ParserCache",
+				"PageStore"
 			]
 		}
 	},
