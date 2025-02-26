@@ -6,13 +6,10 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\ActionApi;
 
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
-use MediaWiki\Content\TextContent;
 use MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers\PageCollectionHookHandler;
-use MediaWiki\Page\WikiPageFactory;
-use MediaWiki\Parser\ParserFactory;
+use MediaWiki\Page\PageLookup;
+use MediaWiki\Parser\ParserCache;
 use MediaWiki\Parser\ParserOptions;
-use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Title\TitleFactory;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -22,23 +19,19 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API
  */
 class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
-	private ParserFactory $parserFactory;
+	private ParserCache $parserCache;
 
-	private WikiPageFactory $wikiPageFactory;
-
-	private TitleFactory $titleFactory;
+	private PageLookup $pageLookup;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		ParserFactory $parserFactory,
-		WikiPageFactory $wikiPageFactory,
-		TitleFactory $titleFactory
+		ParserCache $parserCache,
+		PageLookup $pageLookup
 	) {
 		parent::__construct( $query, $moduleName );
-		$this->parserFactory = $parserFactory;
-		$this->wikiPageFactory = $wikiPageFactory;
-		$this->titleFactory = $titleFactory;
+		$this->parserCache = $parserCache;
+		$this->pageLookup = $pageLookup;
 	}
 
 	public function execute() {
@@ -52,23 +45,18 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 	 * @return array An associative array containing the page collection metadata.
 	 */
 	public function getPageCollectionMetadata( string $pageTitle ): array {
-		$parser = $this->parserFactory->getInstance();
+		$pageIdentity = $this->pageLookup->getPageByName( NS_MAIN, $pageTitle );
+		if ( $pageIdentity === null ) {
+			return [];
+		}
 
 		$parserOptions = new ParserOptions( $this->getUser() );
-		$titleObj = $this->titleFactory->newFromText( $pageTitle );
-		if ( !$titleObj ) {
-			return [];
-		}
-		$wikiPage = $this->wikiPageFactory->newFromTitle( $titleObj );
-		$content = $wikiPage->getContent( RevisionRecord::RAW );
-
-		if ( $content instanceof TextContent ) {
-			$output = $parser->parse( $content->getText(), $titleObj, $parserOptions );
-			$metadata  = $output->getExtensionData( PageCollectionHookHandler::PAGE_COLLECTION_EXTENSION_DATA_KEY );
-		} else {
+		$output = $this->parserCache->get( $pageIdentity, $parserOptions );
+		if ( $output === false ) {
 			return [];
 		}
 
+		$metadata = $output->getExtensionData( PageCollectionHookHandler::PAGE_COLLECTION_EXTENSION_DATA_KEY );
 		if ( !$metadata ) {
 			return [];
 		}
