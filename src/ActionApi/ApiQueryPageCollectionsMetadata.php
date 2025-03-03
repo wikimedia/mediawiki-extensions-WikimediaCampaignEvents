@@ -8,7 +8,7 @@ use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers\PageCollectionHookHandler;
 use MediaWiki\Page\PageLookup;
-use MediaWiki\Parser\ParserCache;
+use MediaWiki\Page\ParserOutputAccess;
 use MediaWiki\Parser\ParserOptions;
 use Wikimedia\ParamValidator\ParamValidator;
 
@@ -19,18 +19,18 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API
  */
 class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
-	private ParserCache $parserCache;
+	private ParserOutputAccess $parserOutputAccess;
 
 	private PageLookup $pageLookup;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		ParserCache $parserCache,
+		ParserOutputAccess $parserOutputAccess,
 		PageLookup $pageLookup
 	) {
 		parent::__construct( $query, $moduleName );
-		$this->parserCache = $parserCache;
+		$this->parserOutputAccess = $parserOutputAccess;
 		$this->pageLookup = $pageLookup;
 	}
 
@@ -51,7 +51,12 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 		}
 
 		$parserOptions = new ParserOptions( $this->getUser() );
-		$output = $this->parserCache->get( $pageRecord, $parserOptions );
+		$status = $this->parserOutputAccess->getParserOutput( $pageRecord, $parserOptions );
+		if ( !$status->isOK() ) {
+			return [];
+		}
+
+		$output = $status->getValue();
 		if ( $output === false ) {
 			return [];
 		}
