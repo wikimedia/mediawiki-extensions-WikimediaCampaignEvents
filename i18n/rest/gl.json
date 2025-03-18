@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Non tes autorización para cambiar o identificador de concesión deste evento.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "O identificador de concesión non pode estar baleiro.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "O identificador de concesión que introduciches non é válido.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Nestes intres, Fluxx non pode validar este identificador de concesión. Inténtao de novo nun anaco.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Non tes autorización para ver o identificador de concesión deste evento."
+}
