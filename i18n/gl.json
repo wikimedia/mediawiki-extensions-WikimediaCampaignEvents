@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"wikimediacampaignevents-desc": "Ofrece funcións específicas da Wikimedia para a extensión CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "Identificador da subvención",
+	"wikimediacampaignevents-grant-id-input-placeholder": "por exemplo, 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Se este programa ou evento está apoiado por unha subvención da Fundación Wikimedia, proporciona o identificador da subvención; pódelo atopar no [https://wmf.fluxx.io/ portal dos beneficiarios (Fluxx)]. Introduce os números e guións do identificador da subvención, mais non as letras. Por exemplo, se o identificador da subvención é G-1111-1111, introduce 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "O identificador da subvención que introduciches semella incorrecto. Comproba o identificador da subvención no [https://wmf.fluxx.io/ portal do beneficiario (Fluxx)] e escríbeo de novo.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Houbo un problema coa validación do identificador da subvención. Podes intentar enviar o formulario de novo nun anaco. Se o problema continúa, podes enviar o formulario sen ningún identificador e engadilo máis adiante editando os detalles do evento.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Identificador da subvención",
+	"wikimediacampaignevents-collaboration-list-title": "Lista de colaboración",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Non se atopou ningún wikiproxecto.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Non hai ningún wikiproxecto neste wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Descubre os wikiproxectos: grupos de colaboradores centrados en temas, tarefas ou zonas específicas do wiki.",
+	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventos",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Comunidades",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Erro",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Non podemos amosar os wikiproxectos debido a problemas de conexión co [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service servizo de pescudas de Wikidata]. Inténtao de novo máis tarde.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Non podemos amosar a información do wikiproxecto debido a problemas de conexión coa [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API de Wikidata]. Inténtao de novo máis tarde."
+}
