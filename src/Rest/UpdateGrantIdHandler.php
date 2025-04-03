@@ -5,7 +5,6 @@ declare( strict_types=1 );
 namespace MediaWiki\Extension\WikimediaCampaignEvents\Rest;
 
 use MediaWiki\Extension\CampaignEvents\Event\Store\IEventLookup;
-use MediaWiki\Extension\CampaignEvents\MWEntity\MWAuthorityProxy;
 use MediaWiki\Extension\CampaignEvents\Permissions\PermissionChecker;
 use MediaWiki\Extension\CampaignEvents\Rest\EventIDParamTrait;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
@@ -62,8 +61,7 @@ class UpdateGrantIdHandler extends SimpleHandler {
 			);
 		}
 
-		$performer = new MWAuthorityProxy( $this->getAuthority() );
-		if ( !$this->permissionChecker->userCanEditRegistration( $performer, $registration ) ) {
+		if ( !$this->permissionChecker->userCanEditRegistration( $this->getAuthority(), $registration ) ) {
 			throw new LocalizedHttpException(
 				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-permission-denied' ),
 				403
