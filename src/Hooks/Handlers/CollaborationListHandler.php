@@ -6,8 +6,7 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Hooks\Handlers;
 
 use LogicException;
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetAllEventsContentHook;
-use MediaWiki\Extension\CampaignEvents\Special\SpecialAllEvents;
+use MediaWiki\Extension\CampaignEvents\Hooks\CampaignEventsGetAllEventsTabsHook;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWDQSException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikibaseException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
@@ -16,53 +15,42 @@ use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
-use MediaWiki\SpecialPage\SpecialPage;
 use MessageLocalizer;
 use OOUI\ButtonWidget;
 use OOUI\Tag;
 
-class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook {
+class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
+	private const COMMUNITIES_TAB = 'communities';
 	private TemplateParser $templateParser;
 	private string $activeTab;
 	private WikiProjectFullLookup $wikiProjectLookup;
 
 	public function __construct( WikiProjectFullLookup $wikiProjectLookup ) {
+		$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
 		$this->wikiProjectLookup = $wikiProjectLookup;
 	}
 
 	/**
 	 * @inheritDoc
 	 */
-	public function onCampaignEventsGetAllEventsContent(
+	public function onCampaignEventsGetAllEventsTabs(
 		OutputPage $outputPage,
-		string &$eventsContent
+		array &$tabs,
+		string $activeTab
 	): void {
-		$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
+		$this->activeTab = $activeTab;
 		$outputPage->addModuleStyles( [
-			'codex-styles',
 			'oojs-ui.styles.icons-editing-core',
 		] );
 		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
-		$this->activeTab = $outputPage->getRequest()->getVal( 'tab', 'form-tabs-0' );
 		$collaborationListContent = $this->getCollaborationListContent( $outputPage );
-		$eventsContent = $this->getLayout(
-			[
-				[
-					'content' => $eventsContent,
-					'label' => $outputPage->msg(
-						'wikimediacampaignevents-collaboration-list-events-tab-heading'
-					)->text()
-				],
-				[
-					'content' => ( new Tag( 'p' ) )
-							->appendContent( $outputPage->msg(
-								'wikimediacampaignevents-collaboration-list-header-text' )->text()
-							) . $collaborationListContent,
-					'label' => $outputPage->msg(
-						'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
-				]
-			]
-		);
+		$tabs[self::COMMUNITIES_TAB] = [
+			'content' => ( new Tag( 'p' ) )
+				->appendContent( $outputPage->msg(
+					'wikimediacampaignevents-collaboration-list-header-text' )->text()
+				) . $collaborationListContent,
+			'label' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
+		];
 	}
 
 	/**
@@ -158,26 +146,6 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsContentHook 
 			);
 		}
 		return implode( '', $cards );
-	}
-
-	private function getLayout( array $tabs ): string {
-		$data = [
-			'url' => SpecialPage::getTitleFor( SpecialAllEvents::PAGE_NAME )->getLocalURL(),
-			'pageTitle' => 'Special:' . SpecialAllEvents::PAGE_NAME,
-		];
-		foreach ( $tabs as $i => $tab ) {
-			$active = $this->activeTab === "form-tabs-$i";
-			$data['tabs'][] =
-				[
-					'id' => $i,
-					'content' => $tab['content'],
-					'label' => $tab['label'],
-					'active' => wfBoolToStr( $active ),
-					'hidden' => wfBoolToStr( !$active ),
-				];
-
-		}
-		return $this->templateParser->processTemplate( 'TabLayout', $data );
 	}
 
 	/**
