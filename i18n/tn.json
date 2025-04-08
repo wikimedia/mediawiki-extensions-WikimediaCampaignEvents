@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kolobetsoo"
+		]
+	},
+	"wikimediacampaignevents-desc": "Tsenya dikarolo tse di kgethegileng tsa Wikimedia tse Di oketsang CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "Sesupo sa dithuso",
+	"wikimediacampaignevents-grant-id-input-placeholder": "Sekai, 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Fa e le gore thulaganyo eno kgotsa tiragalo eno e rotloediwa ke Mokgatlho wa Wikimedia Ka madi, tsweetswee tsenya sesupo sa gago sa ikopelo madi, e o ka e bonang mo [https://wmf.fluxx.io/ Portal ya Baamogedi ba dithuso tsa madi (Fluxx)]. Tsweetswee tsenya dinomoro le dithaladi mo nomorong ya gago ya sesupo, mme o se ka wa akaretsa ditlhaka. sekai, fa nomoronya gago sesupo ya ago ya ikopelo e le G-1111-1111, tsweetswee tsenya 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "nomoro ya sesupo ya gago ya ikopelo madi  e o e tsentseng e lebega e se yone. Tsweetswee tlhatlhoba nomoro ya gago ya sesupo ya ikopelo gabedi mo [https://wmf.fluxx.io/ Grantee Portal (Fluxx) ] mme o bo o e tsenya gape."
+}
