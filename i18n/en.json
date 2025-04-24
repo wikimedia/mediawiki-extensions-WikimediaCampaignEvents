@@ -17,7 +17,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "No WikiProjects found.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "There are no WikiProjects on this wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Discover WikiProjects—groups of contributors focused on specific topics, tasks, or areas of the wiki.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Events",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Communities",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Error",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "We cannot display WikiProjects due to connection issues with [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Please try again later.",
