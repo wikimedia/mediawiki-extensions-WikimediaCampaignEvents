@@ -15,7 +15,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Necun WikiProjecto trovate.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Il non ha WikiProjectos sur iste wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Discoperi WikiProjectos: gruppos de contributores focalisate sur topicos, cargas o areas specific del wiki.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventos",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Communitates",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Error",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Non es possibile monstrar WikiProjectos a causa de problemas de connexion con le [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service servicio de consulta Wikidata]. Per favor tenta lo de novo plus tarde.",

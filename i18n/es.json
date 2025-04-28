@@ -16,7 +16,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Ningún wikiproyecto encontrado.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "No hay wikiproyectos en esta wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Descubre grupos de personas que colaboran en wikiproyectos centrados en temas, tareas o áreas específicas de la wiki.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventos",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Comunidades",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Error",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "No podemos mostrar WikiProyectos debido a problemas de conexión con [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Por favor, inténtalo de nuevo más tarde.",

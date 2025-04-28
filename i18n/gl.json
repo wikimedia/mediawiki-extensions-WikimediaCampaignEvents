@@ -15,7 +15,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Non se atopou ningún wikiproxecto.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Non hai ningún wikiproxecto neste wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Descubre os wikiproxectos: grupos de colaboradores centrados en temas, tarefas ou zonas específicas do wiki.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventos",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Comunidades",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Erro",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Non podemos amosar os wikiproxectos debido a problemas de conexión co [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service servizo de pescudas de Wikidata]. Inténtao de novo máis tarde.",

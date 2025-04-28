@@ -17,7 +17,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "لم يتم العثور على مشاريع ويكي.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "لا توجد مشاريع ويكي على هذه الويكي.",
 	"wikimediacampaignevents-collaboration-list-header-text": "اكتشف مشاريع الويكي—مجموعات من المساهمين الذين يركزون على مواضيع أو مهام أو مجالات محددة من الويكي.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "الفعاليات",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "المجتمعات",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "خطأ",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "لا يمكننا عرض مشاريع الويكي بسبب مشاكل الاتصال مع [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service خدمة استعلام ويكي بيانات الويكي]. يرجى المحاولة مرة أخرى لاحقا.",

@@ -16,7 +16,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Geen WikiProjecten gevonden.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Er zijn geen WikiProjecten op deze wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Ontdek WikiProjecten: groepen bijdragers die zich richten op specifieke onderwerpen, taken of gebieden van de wiki.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Evenementen",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemeenschappen",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Fout",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "De WikiProjecten kunnen niet worden weergeven vanwege verbindingsproblemen met [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Probeer het later opnieuw.",

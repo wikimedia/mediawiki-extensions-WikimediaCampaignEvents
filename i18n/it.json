@@ -8,7 +8,6 @@
 	"wikimediacampaignevents-grant-id-input-placeholder": "ad esempio 1201-3302",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Nessun WikiProgetto trovato.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Non ci sono WikiProgetti su questo wiki.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Eventi",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Comunità",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Errore",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Non possiamo visualizzare le informazioni di WikiProject a causa di problemi di connessione con [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Riprova più tardi.",

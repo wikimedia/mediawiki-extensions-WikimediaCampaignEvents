@@ -15,7 +15,6 @@
 	"wikimediacampaignevents-collaboration-list-no-events-title": "לא נמצאו מיזמי ויקי.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "אין מיזמי ויקי בוויקי הזה.",
 	"wikimediacampaignevents-collaboration-list-header-text": "{{GENDER:|גלה|גלי}} מיזמי ויקי (wikiProjects) - קבוצות של תורמים שמתמקדים בנושאים, תחומים של ויקיפדיה או סוגי משימות מסוימים.",
-	"wikimediacampaignevents-collaboration-list-events-tab-heading": "אירועים",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "קהילות",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "שגיאה",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "איננו יכולים להציג את מיזמי ויקי עקב בעיות חיבור עם [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service שירות השאילתות של ויקינתונים]. נא לנסות שוב מאוחר יותר.",
