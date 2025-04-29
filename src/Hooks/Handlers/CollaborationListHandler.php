@@ -16,7 +16,6 @@ use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MessageLocalizer;
-use OOUI\ButtonWidget;
 use OOUI\Tag;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
@@ -118,22 +117,19 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 				continue;
 			}
 			$editURL = 'https://wikidata.org/wiki/' . $qid;
-			$editLabel = $msgLocalizer->msg( 'wikimediacampaignevents-collaboration-list-wikidata-edit-label' );
-			$editButton = new ButtonWidget( [
-				'href' => $editURL,
-				'icon' => 'edit',
-				'framed' => false,
-				'label' => $editLabel,
-				'invisibleLabel' => true,
-				'title' => $editLabel,
-				'classes' => [ 'wikimediacampaignevents-collaboration-list-edit-button' ],
-			] );
-
 			$linkedLabel = Html::element(
 				'a',
 				[ 'href' => $wikiProject['sitelink'] ],
 				$wikiProject['label'] !== '' ? $wikiProject['label'] : $qid
 			);
+
+			$editLabel = $msgLocalizer->msg( 'wikimediacampaignevents-collaboration-list-wikidata-edit-label' )->text();
+			$editButton = $this->templateParser->processTemplate( 'Button', [
+				'Href' => $editURL,
+				'Label' => $editLabel,
+				'Title' => $editLabel,
+				'Classes' => 'wikimediacampaignevents-collaboration-list-edit-button'
+			] );
 			$properties = [
 				'Classes' => 'ext-campaignevents-collaboration-list-wikiproject',
 				'Title' => $linkedLabel . $editButton,
