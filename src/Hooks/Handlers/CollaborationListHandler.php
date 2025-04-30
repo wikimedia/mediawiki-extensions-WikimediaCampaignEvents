@@ -136,10 +136,11 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 				'Description' => $wikiProject['description'],
 				'Url' => $wikiProject['sitelink'],
 			];
-			$cards[] = $this->templateParser->processTemplate(
+			// workaround for T391109
+			$cards[] = str_replace( '\n', '', $this->templateParser->processTemplate(
 				'Card',
 				$properties
-			);
+			) );
 		}
 		return implode( '', $cards );
 	}
