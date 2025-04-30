@@ -16,7 +16,6 @@ use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MessageLocalizer;
-use OOUI\Tag;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	private const COMMUNITIES_TAB = 'communities';
@@ -29,25 +28,21 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 		$this->wikiProjectLookup = $wikiProjectLookup;
 	}
 
-	/**
-	 * @inheritDoc
-	 */
 	public function onCampaignEventsGetAllEventsTabs(
 		OutputPage $outputPage,
-		array &$tabs,
+		array &$pageTabs,
 		string $activeTab
 	): void {
 		$this->activeTab = $activeTab;
-		$outputPage->addModuleStyles( [
-			'oojs-ui.styles.icons-editing-core',
-		] );
 		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
 		$collaborationListContent = $this->getCollaborationListContent( $outputPage );
-		$tabs[self::COMMUNITIES_TAB] = [
-			'content' => ( new Tag( 'p' ) )
-				->appendContent( $outputPage->msg(
-					'wikimediacampaignevents-collaboration-list-header-text' )->text()
-				) . $collaborationListContent,
+		$header = Html::element(
+			'p',
+			[],
+			$outputPage->msg( 'wikimediacampaignevents-collaboration-list-header-text' )->text()
+		);
+		$pageTabs[self::COMMUNITIES_TAB] = [
+			'content' => $header . $collaborationListContent,
 			'label' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
 		];
 	}
