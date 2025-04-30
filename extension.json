@@ -84,7 +84,7 @@
 		"CampaignEventsRegistrationFormLoad": "EventRegistrationFormHandler",
 		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler",
 		"CampaignEventsGetEventDetails": "EventDetailsHandler",
-		"CampaignEventsGetAllEventsContent": "CollaborationListHandler",
+		"CampaignEventsGetAllEventsTabs": "CollaborationListHandler",
 		"ParserFirstCallInit": "PageCollectionHook"
 	},
 	"APIListModules": {
