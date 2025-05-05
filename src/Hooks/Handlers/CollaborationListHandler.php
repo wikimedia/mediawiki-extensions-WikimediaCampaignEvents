@@ -29,20 +29,12 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 		$this->wikiProjectLookup = $wikiProjectLookup;
 	}
 
-	/**
-	 * @param SpecialPage|OutputPage $outputPage
-	 * @param array &$pageTabs
-	 * @param string $activeTab
-	 * @return void
-	 */
 	public function onCampaignEventsGetAllEventsTabs(
-		$outputPage,
+		SpecialPage $specialPage,
 		array &$pageTabs,
 		string $activeTab
 	): void {
-		if ( $outputPage instanceof SpecialPage ) {
-			$outputPage = $outputPage->getOutput();
-		}
+		$outputPage = $specialPage->getOutput();
 		$this->activeTab = $activeTab;
 		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
 		$collaborationListContent = $this->getCollaborationListContent( $outputPage );
