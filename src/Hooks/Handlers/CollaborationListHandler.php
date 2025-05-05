@@ -93,7 +93,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	}
 
 	private function getEmptyStateContent( OutputPage $outputPage ): string {
-		return $this->templateParser->processTemplate(
+		return $this->processTemplateWithTransclusionWorkaround(
 			'Message',
 			[
 				'Classes' => 'ext-campaignevents-collaboration-list-empty-state',
@@ -119,7 +119,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 			);
 
 			$editLabel = $msgLocalizer->msg( 'wikimediacampaignevents-collaboration-list-wikidata-edit-label' )->text();
-			$editButton = $this->templateParser->processTemplate( 'Button', [
+			$editButton = $this->processTemplateWithTransclusionWorkaround( 'Button', [
 				'Href' => $editURL,
 				'Label' => $editLabel,
 				'Title' => $editLabel,
@@ -131,11 +131,10 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 				'Description' => $wikiProject['description'],
 				'Url' => $wikiProject['sitelink'],
 			];
-			// workaround for T391109
-			$cards[] = str_replace( '\n', '', $this->templateParser->processTemplate(
+			$cards[] = $this->processTemplateWithTransclusionWorkaround(
 				'Card',
 				$properties
-			) );
+			);
 		}
 		return implode( '', $cards );
 	}
@@ -153,7 +152,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 			throw new LogicException( 'Unexpected exception type: ' . get_class( $exception ) );
 		}
 
-		return $this->templateParser->processTemplate(
+		return $this->processTemplateWithTransclusionWorkaround(
 			'Message',
 			[
 				'Type' => 'error',
@@ -234,5 +233,14 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 			] );
 		}
 		return $navBuilder;
+	}
+
+	/**
+	 * Wrapper around TemplateParser::processTemplate that also replaces newlines, so that the resulting HTML
+	 * can be transcluded without the wikitext parser messing with it (T391109).
+	 */
+	private function processTemplateWithTransclusionWorkaround( string $templateName, array $params ): string {
+		$html = $this->templateParser->processTemplate( $templateName, $params );
+		return str_replace( "\n", '', $html );
 	}
 }
