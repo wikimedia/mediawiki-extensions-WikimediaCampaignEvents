@@ -15,6 +15,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\SpecialPage\SpecialPage;
 use MessageLocalizer;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
@@ -28,11 +29,20 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 		$this->wikiProjectLookup = $wikiProjectLookup;
 	}
 
+	/**
+	 * @param SpecialPage|OutputPage $outputPage
+	 * @param array &$pageTabs
+	 * @param string $activeTab
+	 * @return void
+	 */
 	public function onCampaignEventsGetAllEventsTabs(
-		OutputPage $outputPage,
+		$outputPage,
 		array &$pageTabs,
 		string $activeTab
 	): void {
+		if ( $outputPage instanceof SpecialPage ) {
+			$outputPage = $outputPage->getOutput();
+		}
 		$this->activeTab = $activeTab;
 		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
 		$collaborationListContent = $this->getCollaborationListContent( $outputPage );
