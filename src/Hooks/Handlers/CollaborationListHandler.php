@@ -37,23 +37,25 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 		$outputPage = $specialPage->getOutput();
 		$this->activeTab = $activeTab;
 		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
-		$collaborationListContent = $this->getCollaborationListContent( $outputPage );
+		$collaborationListContent = $this->getCollaborationListContent( $outputPage, !$specialPage->including() );
 		$header = Html::element(
 			'p',
 			[],
 			$outputPage->msg( 'wikimediacampaignevents-collaboration-list-header-text' )->text()
 		);
 		$pageTabs[self::COMMUNITIES_TAB] = [
-			'content' => $header . $collaborationListContent,
+			'content' => $specialPage->including() ? $collaborationListContent : $header . $collaborationListContent,
 			'label' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-communities-tab-heading' )->text()
 		];
 	}
 
 	/**
 	 * @param OutputPage $outputPage
+	 * @param bool $showNav
+	 *
 	 * @return string
 	 */
-	private function getCollaborationListContent( OutputPage $outputPage ): string {
+	private function getCollaborationListContent( OutputPage $outputPage, bool $showNav = false ): string {
 		try {
 			$hasWikiProjects = $this->wikiProjectLookup->hasWikiProjects();
 		} catch ( CannotQueryWDQSException $cannotQueryWikiProjectsException ) {
@@ -90,8 +92,8 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 		}
 
 		$navBuilder = $this->getNavigationBuilder( $outputPage, $offset, $limit, $direction, $wikiProjects );
-
-		return $navBuilder->getHtml() . $this->getWikiProjectsHTML( $outputPage, $wikiProjects );
+		$content = $showNav ? $navBuilder->getHtml() : "";
+		return $content . $this->getWikiProjectsHTML( $outputPage, $wikiProjects );
 	}
 
 	private function getEmptyStateContent( OutputPage $outputPage ): string {
