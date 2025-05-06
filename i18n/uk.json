@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"wikimediacampaignevents-extensionname": "Події&shy;кампаній&shy;Вікімедіа",
+	"wikimediacampaignevents-desc": "Надає специфічні для Вікімедіа функції для розширення CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "Ідентифікатор гранту",
+	"wikimediacampaignevents-grant-id-input-placeholder": "наприклад, 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Якщо ця програма чи подія фінасується грантом від Фонду Вікімедіа, будь ласка, вкажіть свій ідентифікатор гранту, який можна знайти на [https://wmf.fluxx.io/ Порталі грантоодержувачів (Fluxx)]. Будь ласка, введіть цифри та дефіси у своєму ідентифікаторі гранту, але без літер. Наприклад, якщо ваш ідентифікатор гранту G-1111-1111, введіть 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Схоже, що введений вами ідентифікатор гранту неправильний. Будь ласка, перевірте свій ідентифікатор гранту на [https://wmf.fluxx.io/ Порталі грантоодержувачів (Fluxx)] та введіть його ще раз.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Виникла проблема з перевіркою вашого ідентифікатора гранту. Ви можете спробувати надіслати форму ще раз через кілька хвилин. Якщо проблема не зникне, ви все ще можете надіслати форму без ідентифікатора гранту та додати його пізніше, відредагувавши деталі події.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Ідентифікатор гранту",
+	"wikimediacampaignevents-collaboration-list-title": "Список співпраці",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Вікіпроєктів не знайдено.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "У цій вікі немає вікіпроєктів.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Відкрийте для себе вікіпроєкти — групи дописувачів, що зосереджені на певних темах, завданнях або закутках вікі.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Спільноти",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Помилка",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Ми не можемо показати вікіпроєкти через проблеми зв'язку з [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Спробуйте, будь ласка, пізніше.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Ми не можемо показати інформацію про вікіпроєкт через проблеми зв'язку з [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Спробуйте, будь ласка, пізніше."
+}
