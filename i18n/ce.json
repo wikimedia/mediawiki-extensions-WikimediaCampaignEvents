@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"wikimediacampaignevents-grant-id-input-label": "Грантан ID",
+	"wikimediacampaignevents-grant-id-event-details-label": "Грантан ID",
+	"wikimediacampaignevents-collaboration-list-title": "Цхьаьнаболхбаран могӀам",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Цхьа а Википроект ца карийна.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Йукъараллаш",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "ГӀалат"
+}
