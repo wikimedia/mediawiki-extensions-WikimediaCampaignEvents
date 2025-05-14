@@ -12,5 +12,5 @@ use MediaWiki\Tests\ExtensionJsonTestBase;
  */
 class WikimediaCampaignEventsExtensionJsonTest extends ExtensionJsonTestBase {
 	/** @inheritDoc */
-	protected string $extensionJsonPath = __DIR__ . '/../../../extension.json';
+	protected static string $extensionJsonPath = __DIR__ . '/../../../extension.json';
 }
