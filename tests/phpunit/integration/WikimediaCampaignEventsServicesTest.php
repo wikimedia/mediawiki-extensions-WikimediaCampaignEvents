@@ -13,7 +13,7 @@ use MediaWiki\Tests\ExtensionServicesTestBase;
  */
 class WikimediaCampaignEventsServicesTest extends ExtensionServicesTestBase {
 	/** @inheritDoc */
-	protected string $className = WikimediaCampaignEventsServices::class;
+	protected static string $className = WikimediaCampaignEventsServices::class;
 	/** @inheritDoc */
 	protected string $serviceNamePrefix = 'WikimediaCampaignEvents';
 }
