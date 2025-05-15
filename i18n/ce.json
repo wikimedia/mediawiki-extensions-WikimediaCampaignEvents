@@ -4,6 +4,11 @@
 			"Умар"
 		]
 	},
+	"wikimediacampaignevents-desc": "Викимедиан леррина функцеш ло CampaignEvents шордарна.",
 	"wikimediacampaignevents-grant-id-input-label": "Грантан ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "ала-дешан 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Нагахь санна хӀара программа йа хилам Викимедиа Фондан грантан гӀоьнца белахь, хьайн Грантан ID дӀало, иза хьуна карор йу [https://wmf.fluxx.io/ Грантан порталехь (Fluxx)]. Грантан ID-на тӀехь терахьаш а, сизаш а йазде, амма элпаш йукъара даха. Масала, нагахь санна хьан грантан ID G-1111-1111 йелахь, 1111-1111 йазде.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Ахь йазйина Grant ID нийса йоцуш санна хетало. Дехар до, хьайн Grant ID хьажа [https://wmf.fluxx.io/ Грантан порталехь (Fluxx)], цул тӀаьхьа йуха а йазйе.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Цхьа проблема йара хьан Grant ID талларца. Цхьа масех минот йаьлча йуха а форма чуйала хьажа мегар ду. Нагахь санна проблема лаьтташ йелахь, хьан хӀинца а йиш йу форма дӀакхачо Grant ID йоцуш, тӀаьхьо тӀетоха, хиламех дерг хийца а хийцина.",
 	"wikimediacampaignevents-grant-id-event-details-label": "Грантан ID"
 }
