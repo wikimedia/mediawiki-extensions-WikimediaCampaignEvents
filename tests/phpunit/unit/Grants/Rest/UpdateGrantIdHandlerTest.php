@@ -16,7 +16,6 @@ use MediaWiki\Extension\WikimediaCampaignEvents\Grants\GrantsStore;
 use MediaWiki\Extension\WikimediaCampaignEvents\Rest\UpdateGrantIdHandler;
 use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\RequestData;
-use MediaWiki\Session\Session;
 use MediaWiki\Tests\Rest\Handler\HandlerTestTrait;
 use MediaWikiUnitTestCase;
 use StatusValue;
@@ -59,7 +58,10 @@ class UpdateGrantIdHandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideBadTokenSessions
 	 */
-	public function testRun__badToken( Session $session, string $exceptMsg, ?string $token ) {
+	public function testRun__badToken( $session, string $exceptMsg, ?string $token ) {
+		if ( is_callable( $session ) ) {
+			$session = $session( $this );
+		}
 		$this->assertCorrectBadTokenBehaviour(
 			$this->newHandler(),
 			self::getRequestData(),
