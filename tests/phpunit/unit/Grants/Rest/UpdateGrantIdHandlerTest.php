@@ -58,10 +58,8 @@ class UpdateGrantIdHandlerTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideBadTokenSessions
 	 */
-	public function testRun__badToken( $session, string $exceptMsg, ?string $token ) {
-		if ( is_callable( $session ) ) {
-			$session = $session( $this );
-		}
+	public function testRun__badToken( callable $session, string $exceptMsg, ?string $token ) {
+		$session = $session( $this );
 		$this->assertCorrectBadTokenBehaviour(
 			$this->newHandler(),
 			self::getRequestData(),
