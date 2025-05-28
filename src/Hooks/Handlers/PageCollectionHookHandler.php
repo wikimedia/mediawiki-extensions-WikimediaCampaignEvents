@@ -44,6 +44,11 @@ class PageCollectionHookHandler implements ParserFirstCallInitHook {
 	public function parsePageCollection( ?string $label, array $args, Parser $parser ): string {
 		$parserOutput = $parser->getOutput();
 
+		$isTranslation = $parserOutput->getPageProperty( 'translate-is-translation' ) !== null;
+		if ( $isTranslation ) {
+			return "";
+		}
+
 		// add a tracking category to the page that includes the marker, so that we can easily
 		// find/query such pages
 		$parser->addTrackingCategory( "page-collection-tracking-category" );
