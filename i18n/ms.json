@@ -1,9 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tofeiku"
+			"Tofeiku",
+			"Hakimi97"
 		]
 	},
+	"wikimediacampaignevents-extensionname": "Acara&shy;Kempen&shy;Wikimedia",
+	"wikimediacampaignevents-desc": "Menyediakan ciri khusus Wikimedia untuk sambungan CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "ID geran",
+	"wikimediacampaignevents-grant-id-input-placeholder": "contohnya 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Jika program atau acara ini disokong oleh geran daripada Yayasan Wikimedia, sila berikan ID Geran anda, yang boleh anda temui di [https://wmf.fluxx.io/ Portal Penerima Geran (Fluxx)]. Sila masukkan nombor dan sempang dalam ID geran anda, tetapi kecualikan huruf tersebut. Contohnya, jika ID geran anda ialah G-1111-1111, sila masukkan 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "ID Geran yang anda masukkan nampaknya tidak betul. Sila semak semula ID Geran anda dalam [https://wmf.fluxx.io/ Portal Penerima Geran (Fluxx)] dan masukkan semula.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Terdapat masalah dengan mengesahkan ID Geran anda. Anda boleh cuba menyerahkan semula borang dalam beberapa minit. Jika isu berterusan, anda masih boleh menyerahkan borang tanpa ID Geran dan menambahkannya kemudian dengan menyunting butiran acara.",
+	"wikimediacampaignevents-grant-id-event-details-label": "ID geran",
+	"wikimediacampaignevents-collaboration-list-title": "Senarai kerjasama",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Tiada WikiProjek yang ditemui.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Tiada WikiProjek di wiki ini.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Temui WikiProjek—sekumpulan penyumbang yang menumpukan pada topik, tugasan atau bidang tertentu dalam wiki.",
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Acara",
-	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Komuniti"
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Komuniti",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Ralat",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Kami tidak boleh memaparkan WikiProjek kerana masalah sambungan dengan [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Perkhidmatan Pertanyaan Wikidata]. Sila cuba lagi kemudian.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Kami tidak boleh memaparkan maklumat WikiProjek kerana isu sambungan dengan [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API Wikidata]. Sila cuba lagi kemudian."
 }
