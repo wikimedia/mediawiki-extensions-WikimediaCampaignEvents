@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Noooote"
+		]
+	},
+	"wikimediacampaignevents-extensionname": "Wikimedia&shy;Campaign&shy;Events",
+	"wikimediacampaignevents-desc": "Ta'n provide este Wikimedia features para con el CampaignEvents extension.",
+	"wikimediacampaignevents-grant-id-input-label": "Man grant ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "por ejemplo: 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Si este programa o event soportao del un 'grant' estaba na Fundacion de Wikipedia, por favor hace provide de tuyo Grant ID, que puede tu encontra na [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] Por favor hace enter maga numero y maga dash na na de tuyo grant ID, pero hace exclui maga letra. Por ejemplo, si el grant ID de tuyo G-1111-1111, hace lang entrr como 1111-1111."
+}
