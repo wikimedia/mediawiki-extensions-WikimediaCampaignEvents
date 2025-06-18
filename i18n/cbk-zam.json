@@ -1,12 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aristorkle",
 			"Noooote"
 		]
 	},
 	"wikimediacampaignevents-extensionname": "Wikimedia&shy;Campaign&shy;Events",
 	"wikimediacampaignevents-desc": "Ta'n provide este Wikimedia features para con el CampaignEvents extension.",
-	"wikimediacampaignevents-grant-id-input-label": "Man grant ID",
-	"wikimediacampaignevents-grant-id-input-placeholder": "por ejemplo: 1201-3302",
-	"wikimediacampaignevents-grant-id-input-help-message": "Si este programa o event soportao del un 'grant' estaba na Fundacion de Wikipedia, por favor hace provide de tuyo Grant ID, que puede tu encontra na [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] Por favor hace enter maga numero y maga dash na na de tuyo grant ID, pero hace exclui maga letra. Por ejemplo, si el grant ID de tuyo G-1111-1111, hace lang entrr como 1111-1111."
+	"wikimediacampaignevents-grant-id-input-label": "Grant ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "Por ejemplo: 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Si este programa o event soportao del un 'grant' estaba na Fundacion de Wikipedia, por favor hace provide de tuyo Grant ID, que puede tu encontra na [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] Por favor hace enter maga numero y maga dash na na de tuyo grant ID, pero hace exclui maga letra. Por ejemplo, si el grant ID de tuyo G-1111-1111, hace lang entrr como 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "El Grant ID ya pone tu dol hende amo. Por favor chequea gayod el de tuyo Grant ID na [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] y pone ole.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Tiene ya ocurri problema cuando ta hace validate el Grant ID de tuyo. Puede tu proba somete con el form otra vez luego un rato. Si ta persisti el problema, puede tu siempre somete el form sin necesita un Grant ID y aumenta con este luego por medio de hace edit con el detalles del event.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Grant ID",
+	"wikimediacampaignevents-collaboration-list-title": "Lista del colaboracion",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "No hay puede encontra maga Wikiproyecto.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "No hay Wikiproyecto na este wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Descubri na Wikiproyecto—maga grupo del maga contributor concentrao na tema especifico, trabajo, o maga area del wiki.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Maga comunidad",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Error",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "No puede hace display con el maga Wikiproyecto por causa na problema na conexion; [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service wikidata Query Service]. Por favor proba otra vez.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "No puede kame hace display con el informacion del Wikiproyecto por causa na maga problema na conexion; [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API.] Por favor proba otra vez luego.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Hace edit el informacion acerca na este comunidad na Wikidatos.",
+	"page-collection-tracking-category": "Maga pagina que ta inclui un colleccion de pagina.",
+	"page-collection-tracking-category-desc": "Maga pagina que ta contene un &lt;page-collection&gt; marker"
 }
