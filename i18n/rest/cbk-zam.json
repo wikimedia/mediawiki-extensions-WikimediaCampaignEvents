@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Noooote"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Hende tu autorizao cambia el grant ID de este event.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "Hende puede no hay laman el grant ID.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Invalido el Grant ID ya pone tu.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "El Fluxx no puede ahora hace valida con este Grant ID. Espera por cuantos minutos y proba otra vez.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Hende tu autorizao mira con el grant ID de este event."
+}
