@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ainali"
+		]
+	},
+	"wikimediacampaignevents-collaboration-list-title": "Samarbeteslista",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Inga WikiProjekt hittades.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Det finns inga WikiProjekt på denna wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Upptäck WikiProjekt - grupper av användare som fokuserar på specifika ämnen, uppgifter eller områden i wikin.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemenskaper",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Fel",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Redigera information om denna gemenskap i Wikidata.",
+	"page-collection-tracking-category": "Sidor som innehåller en sidkollektion",
+	"page-collection-tracking-category-desc": "Sidor som innehåller en &lt;page-collection&gt; markör"
+}
