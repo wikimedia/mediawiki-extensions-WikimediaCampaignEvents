@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ainali"
+		]
+	},
+	"wikimediacampaignevents-grant-id-input-placeholder": "t.ex. 1201-3302",
+	"wikimediacampaignevents-collaboration-list-title": "Samarbeteslista",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Inga WikiProjekt hittades.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Det finns inga WikiProjekt på denna wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Upptäck WikiProjekt - grupper av användare som fokuserar på specifika ämnen, uppgifter eller områden i wikin.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemenskaper",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Fel"
+}
