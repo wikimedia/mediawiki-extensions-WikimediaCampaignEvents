@@ -88,7 +88,7 @@ class FluxxClient {
 		];
 		try {
 			$headers['Authorization'] = 'Bearer ' . $this->getToken();
-		} catch ( AuthenticationException $exception ) {
+		} catch ( AuthenticationException ) {
 			throw new FluxxRequestException( 'Authentication error' );
 		}
 

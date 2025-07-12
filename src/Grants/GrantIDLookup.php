@@ -61,7 +61,7 @@ class GrantIDLookup {
 		return $this->cache->getWithSetCallback(
 			$this->cache->makeKey( 'WikimediaCampaignEvents-GrantData', $grantID ),
 			WANObjectCache::TTL_HOUR,
-			function () use ( $grantID, &$grantStatus )  {
+			function () use ( $grantID )  {
 				// TODO Cache failures due to invalid grant ID, but NOT network issues
 				return $this->requestGrantData( $grantID );
 			},
