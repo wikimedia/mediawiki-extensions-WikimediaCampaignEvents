@@ -4,11 +4,14 @@
 			"Ainali"
 		]
 	},
+	"wikimediacampaignevents-desc": "Tillhandahåller Wikimedia-specifika funktioner för KampanjEvenemangs-tillägget.",
 	"wikimediacampaignevents-grant-id-input-placeholder": "t.ex. 1201-3302",
 	"wikimediacampaignevents-collaboration-list-title": "Samarbeteslista",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Inga WikiProjekt hittades.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Det finns inga WikiProjekt på denna wiki.",
 	"wikimediacampaignevents-collaboration-list-header-text": "Upptäck WikiProjekt - grupper av användare som fokuserar på specifika ämnen, uppgifter eller områden i wikin.",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Gemenskaper",
-	"wikimediacampaignevents-collaboration-list-api-error-title": "Fel"
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Fel",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Vi kan inte visa WikiProjekt på grund av anslutningsproblem med [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Försök igen senare.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Vi kan inte visa WikiProjekt-information på grund av anslutningsproblem med [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Försök igen senare."
 }
