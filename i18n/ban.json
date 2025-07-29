@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chinamoonroll"
+		]
+	},
+	"wikimediacampaignevents-grant-id-input-label": "ID Grant",
+	"wikimediacampaignevents-grant-id-input-placeholder": "e.g. 1201-3302",
+	"wikimediacampaignevents-grant-id-event-details-label": "ID Grant",
+	"wikimediacampaignevents-collaboration-list-title": "Lis kolaborasi",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Nénten wénten WikiProjects ring wiki puniki.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Komunitas"
+}

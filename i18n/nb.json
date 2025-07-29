@@ -5,5 +5,7 @@
 		]
 	},
 	"wikimediacampaignevents-desc": "Tilbyr Wikimedia-spesifikke funksjoner til CampaignEvents-utvidelsen.",
-	"wikimediacampaignevents-grant-id-input-placeholder": "f.eks. 1201-3302"
+	"wikimediacampaignevents-grant-id-input-label": "Tilskudds-ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "f.eks. 1201-3302",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Tilskudds-ID-en du skrev inn ser feil ut. Dobbeltsjekk tilskudds-ID-en i [https://wmf.fluxx.io/ tilskuddsportalen (Fluxx)] og legg den til på nytt."
 }
