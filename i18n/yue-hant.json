@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim"
+		]
+	},
+	"wikimediacampaignevents-desc": "為「廣告系列活動」擴充程式提供維基媒體專用功能。",
+	"wikimediacampaignevents-grant-id-input-label": "授予 ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "例如1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "如果呢個計劃或者活動得到維基媒體基金會嘅資助，請提供你嘅資助 ID ，你可以喺［https://wmf.fluxx.io/ Grantee Portal（Fluxx）］入面搵到，請喺你嘅資助 ID 入面輸入數字同破折號，但係唔包括啲字母，例如，如果你嘅資助 ID 係 G-1111-1111。",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "你輸入嘅資助 ID 似乎唔啱。請重新檢查你嘅資助 ID 喺[https://wmf.fluxx.io/ Grantee Portal (Fluxx)]然後重新進入。",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "驗證你嘅資助 ID 嗰陣有問題。 你可以試下喺幾分鐘之後再提交張表格。如果問題仍然存在，你仍然可以提交表格，而唔使用 Grant ID ，然後稍後編輯活動詳情加入表格。",
+	"wikimediacampaignevents-grant-id-event-details-label": "授予 ID",
+	"wikimediacampaignevents-collaboration-list-title": "協作清單",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "搵唔到維基項目。",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "呢個維基上面冇維基項目。",
+	"wikimediacampaignevents-collaboration-list-header-text": "發掘維基項目 — 一班專注於 Wiki 嘅特定主題、任務或者領域嘅貢獻者。",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "社群",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "錯誤",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "由於連線問題，我哋顯示唔到維基項目[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]。請遲啲再試一次。",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "由於[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? 維基數據 API]，所以我哋顯示唔到維基項目資料。"
+}
