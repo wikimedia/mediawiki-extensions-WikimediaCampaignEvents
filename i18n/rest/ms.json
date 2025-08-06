@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hakimi97"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Anda tidak dibenarkan menukar ID geran untuk acara ini.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "ID geran tidak boleh kosong.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "ID Geran yang anda masukkan tidak sah.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx tidak dapat mengesahkan ID Geran ini pada masa ini. Cuba lagi dalam beberapa minit.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Anda tidak dibenarkan melihat ID geran untuk acara ini."
+}

@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hakimi97"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Ambil maklumat pengumpulan laman untuk tajuk yang diberikan.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Rentetan yang mengandungi tajuk laman yang melibatkan maklumat pengumpulan laman akan diambil.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Ambil maklumat pengumpulan laman, untuk pengumpulan yang ditakrifkan dalam laman 'TestCollection'"
+}
