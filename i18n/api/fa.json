@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Darafsh"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "اطلاعات مجموعهٔ صفحه را برای عنوان داده‌شده واکشی کنید.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "رشته‌ای که شامل عنوان صفحه‌ای است که اطلاعات مجموعه صفحه برای آن واکشی خواهد شد.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "اطلاعات مجموعه صفحه را برای مجموعه‌ای که در صفحهٔ 'TestCollection' تعریف شده است واکشی کنید."
+}

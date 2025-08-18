@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Darafsh"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "شما مجاز به تغییر شناسهٔ کمک‌هزینه برای این رویداد نیستید.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "شناسهٔ کمک‌هزینه نمی‌تواند خالی باشد.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "شناسهٔ کمک‌هزینه‌ای که وارد کرده‌اید نامعتبر است.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx در حال حاضر قادر به تأیید این شناسهٔ کمک‌هزینه نیست. چند دقیقهٔ دیگر دوباره تلاش کنید.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "شما مجاز به مشاهدهٔ شناسهٔ کمک‌هزینه برای این رویداد نیستید."
+}

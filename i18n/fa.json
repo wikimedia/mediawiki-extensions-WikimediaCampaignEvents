@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Darafsh"
+		]
+	},
+	"wikimediacampaignevents-desc": "ویژگی‌های ویژهٔ ویکی‌مدیا را برای افزونهٔ CampaignEvents فراهم می‌کند.",
+	"wikimediacampaignevents-grant-id-input-label": "شناسهٔ کمک‌هزینه",
+	"wikimediacampaignevents-grant-id-input-placeholder": "مثلاً 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "اگر این برنامه یا رویداد با کمک‌هزینه‌ای از بنیاد ویکی‌مدیا پشتیبانی می‌شود، لطفاً شناسهٔ کمک‌هزینهٔ خود را وارد کنید که می‌توانید آن را در [https://wmf.fluxx.io/ پورتال گیرندگان کمک‌هزینه (Fluxx)] پیدا کنید. لطفاً فقط شماره‌ها و خط تیره‌های موجود در شناسهٔ کمک‌هزینهٔ خود را وارد کنید و حروف را حذف کنید. برای نمونه، اگر شناسهٔ کمک‌هزینهٔ شما G-1111-1111 است، عدد 1111-1111 را وارد کنید.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "به نظر می‌رسد شناسهٔ کمک‌هزینه‌ای که وارد کرده‌اید نادرست است. لطفاً شناسهٔ کمک‌هزینهٔ خود را در [https://wmf.fluxx.io/ پورتال گیرندگان کمک‌هزینه (Fluxx)] دوباره بررسی کنید و دوباره وارد نمایید.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "مشکلی در تأیید شناسهٔ کمک‌هزینهٔ شما رخ داد. می‌توانید چند دقیقه بعد دوباره فرم را ارسال کنید. اگر مشکل ادامه داشت، همچنان می‌توانید فرم را بدون شناسهٔ کمک‌هزینه ارسال کنید و بعداً با ویرایش جزئیات رویداد آن را اضافه کنید.",
+	"wikimediacampaignevents-grant-id-event-details-label": "شناسهٔ کمک‌هزینه",
+	"wikimediacampaignevents-collaboration-list-title": "فهرست همکاری",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "هیچ ویکی‌پروژه‌ای پیدا نشد.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "در این ویکی هیچ ویکی‌پروژه‌ای وجود ندارد.",
+	"wikimediacampaignevents-collaboration-list-header-text": "با ویکی‌پروژه‌ها آشنا شوید — گروه‌هایی از مشارکت‌کنندگان که بر موضوع‌ها، کارها یا حوزه‌های خاصی از ویکی تمرکز دارند.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "جوامع",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "خطا",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "به دلیل مشکلات اتصال با [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service سرویس جستجوی ویکی‌داده] نمی‌توانیم ویکی‌پروژه‌ها را نمایش دهیم. لطفاً بعداً دوباره تلاش کنید.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "به دلیل مشکلات اتصال با [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? رابط برنامه‌نویسی ویکی‌داده] نمی‌توانیم اطلاعات ویکی‌پروژه را نمایش دهیم. لطفاً بعداً دوباره تلاش کنید.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "اطلاعات مربوط به این اجتماع را در ویکی‌داده ویرایش کنید.",
+	"page-collection-tracking-category": "صفحه‌های شامل یک مجموعهٔ صفحه",
+	"page-collection-tracking-category-desc": "صفحه‌هایی که شامل نشانگر &lt;page-collection&gt هستند"
+}
