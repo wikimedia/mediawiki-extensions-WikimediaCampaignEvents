@@ -23,6 +23,8 @@ class BeforePageDisplayHandler implements BeforePageDisplayHook {
 		'نضم_لينا!'
 	];
 
+	private const EXPECTED_BANNER = 'fy25-we211-banner1';
+
 	private SpecialPageFactory $specialPageFactory;
 
 	public function __construct( SpecialPageFactory $specialPageFactory ) {
@@ -62,7 +64,7 @@ class BeforePageDisplayHandler implements BeforePageDisplayHook {
 			return false;
 		}
 
-		if ( $out->getRequest()->getVal( 'wprov' ) !== 'cbeer' ) {
+		if ( $out->getRequest()->getVal( 'banner' ) !== self::EXPECTED_BANNER ) {
 			return false;
 		}
 

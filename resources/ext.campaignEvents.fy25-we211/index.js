@@ -3,6 +3,7 @@
  *
  * Simple JavaScript module for FY25 WE2.1.1 campaign.
  * Modifies Special:HomePage links to include source tracking.
+ * Loaded when banner=fy25-we211-banner1 parameter is present.
  *
  * Read more https://phabricator.wikimedia.org/T402496
  */
