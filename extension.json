@@ -115,10 +115,6 @@
 			],
 			"dependencies": [
 				"jquery"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		}
 	},
