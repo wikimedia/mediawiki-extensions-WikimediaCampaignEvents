@@ -40,7 +40,7 @@
 						.replace( /^.*(?:\/wiki\/|index\.php\/)/, '' );
 					const title = mw.Title.newFromText( href );
 					return title && title.getNamespaceId() === -1 &&
-						title.getMainText().toLowerCase() === pageName.toLowerCase();
+						title.getMain().toLowerCase() === pageName.toLowerCase();
 				} catch ( e ) {
 					return false;
 				}
