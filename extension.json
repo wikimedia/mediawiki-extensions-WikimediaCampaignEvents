@@ -77,6 +77,12 @@
 			"services": [
 				"WikiPageFactory"
 			]
+		},
+		"BeforePageDisplayHandler": {
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\BeforePageDisplayHandler",
+			"services": [
+				"SpecialPageFactory"
+			]
 		}
 	},
 	"Hooks": {
@@ -85,7 +91,8 @@
 		"CampaignEventsRegistrationFormSubmit": "EventRegistrationFormHandler",
 		"CampaignEventsGetEventDetails": "EventDetailsHandler",
 		"CampaignEventsGetAllEventsTabs": "CollaborationListHandler",
-		"ParserFirstCallInit": "PageCollectionHook"
+		"ParserFirstCallInit": "PageCollectionHook",
+		"BeforePageDisplay": "BeforePageDisplayHandler"
 	},
 	"APIListModules": {
 		"pagecollectionsmetadata": {
@@ -98,6 +105,18 @@
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
+	},
+	"ResourceModules": {
+		"ext.campaignEvents.fy25-we211": {
+			"localBasePath": "resources",
+			"remoteExtPath": "WikimediaCampaignEvents/resources",
+			"scripts": [
+				"ext.campaignEvents.fy25-we211/index.js"
+			],
+			"dependencies": [
+				"jquery"
+			]
+		}
 	},
 	"RestRoutes": [
 		{
