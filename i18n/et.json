@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"wikimediacampaignevents-desc": "Varustab tarkvaralisa CampaignEvents Wikimediale eriomaste funktsioonidega.",
+	"wikimediacampaignevents-collaboration-list-title": "Osalemisloend",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Vikiprojekte ei leidu.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Selles vikis ei ole ühtegi vikiprojekti.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Avasta vikiprojekte. Need on kaastööliste rühmad, mis keskenduvad vikis teatud teemale, ülesandele või töövaldkonnale.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Kogukonnad"
+}
