@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "取得指定標題的頁面集合資訊。",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "包含在將取得頁面集合資訊之頁面標題的字串。",
+	"apihelp-query+pagecollectionsmetadata-example-1": "取得在「TestCollection」頁面裡所定義集合的頁面集合資訊"
+}
