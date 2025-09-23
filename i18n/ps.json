@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"wikimediacampaignevents-extensionname": "ويکي‌رسنۍ&shy;ټاکنيزې‌سيالۍ&shy;پېښې",
+	"wikimediacampaignevents-desc": "د ټاکنيزې‌سيالۍ‌پېښو شاتاړي لپاره د ويکي‌رسنۍ ځانگړې ځانگړنې چمتو کوي.",
+	"wikimediacampaignevents-grant-id-input-label": "منلو پېژند",
+	"wikimediacampaignevents-grant-id-input-placeholder": "بېلگې په ډول ۱۲۰۱-۳۳۰۲",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "هغه د منلو پېژند چې تاسو دننه کړی، ناسم ښکاري. مهرباني وکړئ خپل د منلو پېژند په [https://wmf.fluxx.io/ مرستې تانبه (Fluxx)] کې دوهم‌ځلي سم‌کتنه وکړئ او بياځلي يې دننه کړئ.",
+	"wikimediacampaignevents-grant-id-event-details-label": "منلو پېژند",
+	"wikimediacampaignevents-collaboration-list-title": "همکارۍ لړليک",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "هېڅ ويکي‌پروژې ونه موندل شوې.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "په دې ويکي کې هېڅ ويکي‌پروژې نشته.",
+	"wikimediacampaignevents-collaboration-list-header-text": "ويکيپروژو سره بلدتيا—ونډه‌والو دلې چې د ويکي په ځانگړو سکالوگانو، دندو، يا برخو تمرکز کوي.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "ټولنې",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "تېروتنه"
+}
