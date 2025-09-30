@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Obter información da colección de páxinas para o título indicado.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Unha cadea de texto que contén o título da páxina para a que se obterá a información da colección de páxinas.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Obter a información da colección de páxinas para a colección definida dentro da páxina «TestCollection»"
+}
