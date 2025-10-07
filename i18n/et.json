@@ -5,6 +5,9 @@
 		]
 	},
 	"wikimediacampaignevents-desc": "Varustab tarkvaralisa CampaignEvents Wikimediale eriomaste funktsioonidega.",
+	"wikimediacampaignevents-grant-id-input-label": "Grandi identifikaator",
+	"wikimediacampaignevents-grant-id-input-placeholder": "nt 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Kui seda programmi või üritust toetab Wikimedia Foundation, siis palun too ära grandi identifikaator, mille leiad [https://wmf.fluxx.io/ grandisaajate portaalist (Fluxx)]. Palun sisesta identifikaatorist numbrid ja kriipsud, aga jätta välja tähed. Näiteks kui grandi identifikaator on G-1111-1111, siis palun sisesta 1111-1111.",
 	"wikimediacampaignevents-collaboration-list-title": "Osalemisloend",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Vikiprojekte ei leidu.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Selles vikis ei ole ühtegi vikiprojekti.",
