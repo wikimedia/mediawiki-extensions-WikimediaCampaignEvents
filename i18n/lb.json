@@ -4,8 +4,12 @@
 			"Volvox"
 		]
 	},
+	"wikimediacampaignevents-desc": "Stellt Wikimedia-spezifesch Funktioune fir d'CampaignEvents-Erweiderung zur Verfügung.",
 	"wikimediacampaignevents-grant-id-input-placeholder": "z. B. 1201-3302",
+	"wikimediacampaignevents-collaboration-list-title": "Collaboratiounslëscht",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Keng WikiProjete fonnt.",
 	"wikimediacampaignevents-collaboration-list-no-events-text": "Et gëtt keng WikiProjeten op dëser Wiki.",
-	"wikimediacampaignevents-collaboration-list-api-error-title": "Feeler"
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Communautéiten",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Feeler",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Informatiounen iwwer dës Communautéit op Wikidata änneren."
 }
