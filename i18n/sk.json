@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luky001"
+		]
+	},
+	"wikimediacampaignevents-desc": "Zabezpečuje funkcie špecifické pre Wikimediu pre rozšírenie CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "ID grantu",
+	"wikimediacampaignevents-grant-id-input-placeholder": "napr. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Ak je tento projekt alebo podujatie podporované grantom od Nadácie Wikimedia, uveďte, prosím, vaše ID grantu, ktoré nájdete na [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Vo vašom ID grantu zadajte čísla a pomlčky, ale vynechajte písmená. Napríklad, ak je vaše ID grantu G-1111-1111, zadajte, prosím, 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Zdá sa, že zadané ID grantu je nesprávne. Skontrolujte, prosím, vaše ID grantu na [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] a zadajte ho znova.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Vyskytol sa problém s overením vášho ID grantu. Formulár môžete skúsiť odoslať znova o niekoľko minút. Ak problém pretrváva, môžete formulár odoslať aj bez ID grantu a pridať ho neskôr úpravou podrobností o podujatí.",
+	"wikimediacampaignevents-grant-id-event-details-label": "ID grantu",
+	"wikimediacampaignevents-collaboration-list-title": "Zoznam spoločných aktivít",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Nenašli sa žiadne WikiProjekty.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Na tejto wiki neexistujú žiadne WikiProjekty.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Objavte WikiProjekty – skupiny redaktorov zameraných na konkrétnu tému, činnosť alebo oblasť.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Spoločné projekty",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Chyba",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "WikiProjekty nemôžeme zobraziť kvôli problémom s pripojením k [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service dopytovej službe Wikiúdajov]. Skúste to znova neskôr, prosím.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "WikiProjekty nemôžeme zobraziť kvôli problémom s pripojením k [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API rozhraniu Wikiúdajov]. Skúste to znova neskôr, prosím.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Upravte informácie o tomto projekte na Wikiúdajoch."
+}
