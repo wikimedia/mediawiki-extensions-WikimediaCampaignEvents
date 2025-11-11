@@ -7,6 +7,9 @@
 	"wikimediacampaignevents-desc": "Tarjoaa Wikimedia-erityisiä ominaisuuksia CampaignEvents-laajennukseen",
 	"wikimediacampaignevents-grant-id-input-label": "Apurahatunnus",
 	"wikimediacampaignevents-grant-id-input-placeholder": "esim. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Jos Wikimedia-säätiö tukee tätä tapahtumaa tai ohjelmaa, syötä apurahatunnuksesi, jonka löydät [https://wmf.fluxx.io/ Grantee Portalista (Fluxx)]. Syötä apurahatunnuksen numerot ja väliviivat, mutta jätä kirjaimet pois. Esim. jos apurahatunnuksesi on G-1111-1111, syötä 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Syöttämäsi apurahatunnus näyttää olevan virheellinen. Tarkista purahatunnuksesi [https://wmf.fluxx.io/ Grantee Portalissa (Fluxx)] ja syötä se uudelleen.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Apurahatunnuksesi vahvistamisessa tapahtui virhe. Voit yrittää lomakkeen lähettämistä uudelleen muutaman minuutin kuluttua. Jos ongelma jatkuu, voit lähettää lomakkeen ilman apurahatunnusta ja lisätä sen myöhemmin muokkaamalla tapahtuman tietoja.",
 	"wikimediacampaignevents-grant-id-event-details-label": "Apurahatunnus",
 	"wikimediacampaignevents-collaboration-list-title": "Yhteistyölista",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "Wikiprojekteja ei löytynyt.",
@@ -14,5 +17,7 @@
 	"wikimediacampaignevents-collaboration-list-header-text": "Tutustu wikiprojekteihin – osallistujaryhmiin, jotka keskittyvät tiettyihin aiheisiin, tehtäviin tai wikin alueisiin.",
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "Tapahtumat",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Yhteisöt",
-	"wikimediacampaignevents-collaboration-list-api-error-title": "Virhe"
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Virhe",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Emme voi näyttää wikiprojekteja \n[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidatan kyselypalvelun] yhteysongelmien vuoksi. Yritä myöhemmin uudelleen.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Emme voi näyttää wikiprojekteja \n[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API:n] yhteysongelmien vuoksi. Yritä myöhemmin uudelleen."
 }
