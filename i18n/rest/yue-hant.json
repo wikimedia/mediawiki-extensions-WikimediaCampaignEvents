@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "你冇權改呢個活動嘅授權 ID。",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "授權 ID 唔可以留空。",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "你輸入嘅授權 ID 無效。",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx目前無法驗證呢個Grant ID。請喺幾分鐘後再試。",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "你冇權限查看呢個活動嘅 Grant ID。"
+}
