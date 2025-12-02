@@ -1,12 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Putnik"
 		]
 	},
+	"wikimediacampaignevents-desc": "Предоставляет специфичные для Викимедиа функции для расширения CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "Идентификатор гранта",
+	"wikimediacampaignevents-grant-id-input-placeholder": "например, 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Если эта программа или мероприятие поддержана грантом Фонда Викимедиа, укажите идентификатор вашего гранта, который можно найти на [https://wmf.fluxx.io/ Портале получателей грантов (Fluxx)]. Введите цифры и дефисы в идентификаторе гранта, но исключите буквы. Например, если идентификатор вашего гранта G-1111-1111, то введите 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Похоже, введённый вами идентификатор гранта неверен. Пожалуйста, проверьте свой идентификатор гранта на [https://wmf.fluxx.io/ Портале получателей грантов (Fluxx)] и введите его повторно.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Возникла проблема с проверкой вашего идентификатора гранта. Попробуйте отправить форму ещё раз через несколько минут. Если проблема не исчезнет, вы всё равно сможете отправить форму без идентификатора гранта и добавить его позже, изменив данные мероприятия.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Идентификатор гранта",
 	"wikimediacampaignevents-collaboration-list-title": "Список сотрудничества",
-	"wikimediacampaignevents-collaboration-list-header-text": "Откройте для себя WikiProjects — группы участников, сосредоточенные на определенных темах, задачах или областях вики.",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Не найдено ни одного вики-проекта.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "В этой вики нет вики-проектов.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Откройте для себя вики-проекты — группы участников, сосредоточенные на определенных темах, задачах или областях вики.",
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "События",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Сообщества",
-	"wikimediacampaignevents-collaboration-list-api-error-title": "Ошибка"
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Ошибка",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Мы не можем отобразить вики-проекты из-за проблем с подключением к [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Сервису запросов к Викиданным]. Повторите попытку позже.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Мы не можем отобразить информацию о вики-проектах из-за проблем с подключением к [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API Викиданных]. Повторите попытку позже."
 }
