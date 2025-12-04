@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Peterxy12"
+		]
+	},
+	"wikimediacampaignevents-desc": "为CampaignEvents扩充套件提供特定的维基媒体功能。",
+	"wikimediacampaignevents-grant-id-input-label": "授予ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "例如：1201-3302",
+	"wikimediacampaignevents-grant-id-event-details-label": "授予ID",
+	"wikimediacampaignevents-collaboration-list-title": "协作清单",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "未找到维基专题。",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "社群",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "错误"
+}
