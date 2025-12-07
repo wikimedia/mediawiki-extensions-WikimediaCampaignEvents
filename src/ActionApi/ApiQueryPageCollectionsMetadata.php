@@ -19,19 +19,13 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API
  */
 class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
-	private ParserOutputAccess $parserOutputAccess;
-
-	private PageLookup $pageLookup;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		ParserOutputAccess $parserOutputAccess,
-		PageLookup $pageLookup
+		private readonly ParserOutputAccess $parserOutputAccess,
+		private readonly PageLookup $pageLookup,
 	) {
 		parent::__construct( $query, $moduleName );
-		$this->parserOutputAccess = $parserOutputAccess;
-		$this->pageLookup = $pageLookup;
 	}
 
 	public function execute() {

@@ -11,12 +11,9 @@ use MediaWiki\Output\OutputPage;
 use OOUI\Tag;
 
 class EventDetailsHandler implements CampaignEventsGetEventDetailsHook {
-	private GrantsStore $grantsStore;
-
 	public function __construct(
-		GrantsStore $grantsStore
+		private readonly GrantsStore $grantsStore,
 	) {
-		$this->grantsStore = $grantsStore;
 	}
 
 	/**

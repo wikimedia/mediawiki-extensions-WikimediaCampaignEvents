@@ -25,10 +25,9 @@ class BeforePageDisplayHandler implements BeforePageDisplayHook {
 
 	private const EXPECTED_BANNER = 'fy25-we211-banner1';
 
-	private SpecialPageFactory $specialPageFactory;
-
-	public function __construct( SpecialPageFactory $specialPageFactory ) {
-		$this->specialPageFactory = $specialPageFactory;
+	public function __construct(
+		private readonly SpecialPageFactory $specialPageFactory,
+	) {
 	}
 
 	/**

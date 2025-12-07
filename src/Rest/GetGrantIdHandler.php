@@ -16,24 +16,11 @@ use Wikimedia\Message\MessageValue;
 class GetGrantIdHandler extends SimpleHandler {
 	use EventIDParamTrait;
 
-	/** @var IEventLookup */
-	private IEventLookup $eventLookup;
-	private PermissionChecker $permissionChecker;
-	private GrantsStore $grantsStore;
-
-	/**
-	 * @param IEventLookup $eventLookup
-	 * @param PermissionChecker $permissionChecker
-	 * @param GrantsStore $grantsStore
-	 */
 	public function __construct(
-		IEventLookup $eventLookup,
-		PermissionChecker $permissionChecker,
-		GrantsStore $grantsStore
+		private readonly IEventLookup $eventLookup,
+		private readonly PermissionChecker $permissionChecker,
+		private readonly GrantsStore $grantsStore,
 	) {
-		$this->eventLookup = $eventLookup;
-		$this->permissionChecker = $permissionChecker;
-		$this->grantsStore = $grantsStore;
 	}
 
 	/**

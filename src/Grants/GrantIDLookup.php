@@ -19,15 +19,10 @@ class GrantIDLookup {
 	private const ENDPOINT = 'grant_request/list';
 	private const GRANTS_FILTER_PERIOD_DAYS = 730;
 
-	private FluxxClient $fluxxClient;
-	private WANObjectCache $cache;
-
 	public function __construct(
-		FluxxClient $fluxxClient,
-		WANObjectCache $cache
+		private readonly FluxxClient $fluxxClient,
+		private readonly WANObjectCache $cache,
 	) {
-		$this->fluxxClient = $fluxxClient;
-		$this->cache = $cache;
 	}
 
 	/**

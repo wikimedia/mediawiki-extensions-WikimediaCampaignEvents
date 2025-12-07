@@ -24,21 +24,12 @@ class UpdateGrantIdHandler extends SimpleHandler {
 	use EventIDParamTrait;
 	use TokenAwareHandlerTrait;
 
-	private IEventLookup $eventLookup;
-	private PermissionChecker $permissionChecker;
-	private GrantsStore $grantsStore;
-	private GrantIDLookup $grantIDLookup;
-
 	public function __construct(
-		IEventLookup $eventLookup,
-		GrantIDLookup $grantIDLookup,
-		PermissionChecker $permissionChecker,
-		GrantsStore $grantsStore
+		private readonly IEventLookup $eventLookup,
+		private readonly GrantIDLookup $grantIDLookup,
+		private readonly PermissionChecker $permissionChecker,
+		private readonly GrantsStore $grantsStore,
 	) {
-		$this->eventLookup = $eventLookup;
-		$this->grantIDLookup = $grantIDLookup;
-		$this->permissionChecker = $permissionChecker;
-		$this->grantsStore = $grantsStore;
 	}
 
 	/**

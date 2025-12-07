@@ -21,18 +21,11 @@ class WikiProjectFullLookup {
 	public const DIR_FORWARDS = 1;
 	public const DIR_BACKWARDS = 2;
 
-	private WikiProjectIDLookup $wikiProjectIDLookup;
-	private WANObjectCache $cache;
-	private HttpRequestFactory $httpRequestFactory;
-
 	public function __construct(
-		WikiProjectIDLookup $wikiProjectIDLookup,
-		WANObjectCache $cache,
-		HttpRequestFactory $httpRequestFactory
+		private readonly WikiProjectIDLookup $wikiProjectIDLookup,
+		private readonly WANObjectCache $cache,
+		private readonly HttpRequestFactory $httpRequestFactory,
 	) {
-		$this->wikiProjectIDLookup = $wikiProjectIDLookup;
-		$this->cache = $cache;
-		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/**

@@ -9,10 +9,9 @@ use MediaWiki\Extension\CampaignEvents\Database\CampaignsDatabaseHelper;
 class GrantsStore {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsGrantsStore';
 
-	private CampaignsDatabaseHelper $dbHelper;
-
-	public function __construct( CampaignsDatabaseHelper $dbHelper ) {
-		$this->dbHelper = $dbHelper;
+	public function __construct(
+		private readonly CampaignsDatabaseHelper $dbHelper,
+	) {
 	}
 
 	/**
