@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Peterxy12"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "取得指定标题的页面集合信息。",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "包含在将取得页面集合信息之页面标题的字符串。",
+	"apihelp-query+pagecollectionsmetadata-example-1": "取得在“TestCollection”页面里所定义集合的页面集合信息"
+}
