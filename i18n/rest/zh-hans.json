@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Peterxy12"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "您无权更改此活动的授权ID。",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "授权ID不可为空。",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "您输入的授权ID无效。",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx目前无法验证此授权ID。请稍后再试。",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "您无权查看此活动的授权ID。"
+}
