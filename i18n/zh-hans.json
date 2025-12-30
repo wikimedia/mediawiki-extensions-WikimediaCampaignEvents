@@ -7,9 +7,16 @@
 	"wikimediacampaignevents-desc": "为CampaignEvents扩充套件提供特定的维基媒体功能。",
 	"wikimediacampaignevents-grant-id-input-label": "授予ID",
 	"wikimediacampaignevents-grant-id-input-placeholder": "例如：1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "如果此计划或活动得到维基媒体基金会的资助，请提供您的授予ID，您可以在[https://wmf.fluxx.io/ 受赠入口网页（Fluxx）]中找到该ID。请输入您的授予ID中的数字和短划线，但不要包含字母。例如，如果您的授予ID为G-1111-1111，请输入1111-1111。",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "您输入的授予ID似乎不正确。请在[ttps://wmf.fluxx.io/ 受赠入口网页（Fluxx）]中仔细检查您的授予ID，然后重新输入。",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "验证您的授予ID时出现问题。您可以在几分钟后再次提交表单。如果问题持续发生，您仍然可以在没有授予 ID的情况下提交表单，并稍后通过编辑活动详细信息来新增它。",
 	"wikimediacampaignevents-grant-id-event-details-label": "授予ID",
 	"wikimediacampaignevents-collaboration-list-title": "协作清单",
 	"wikimediacampaignevents-collaboration-list-no-events-title": "未找到维基专题。",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "此wiki上没有维基专题。",
+	"wikimediacampaignevents-collaboration-list-header-text": "探索维基专题——专注于特定主题、任务或维基百科领域的贡献者群组。",
 	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "社群",
-	"wikimediacampaignevents-collaboration-list-api-error-title": "错误"
+	"wikimediacampaignevents-collaboration-list-api-error-title": "错误",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "由于[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service 维基数据查询服务]的连接问题，我们无法显示维基专题。请稍后再试。",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "由于[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? 维基数据API]的连接问题，我们无法显示维基专题信息。请稍后再试。"
 }
