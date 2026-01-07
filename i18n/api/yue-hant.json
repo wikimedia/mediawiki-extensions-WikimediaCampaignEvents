@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "擷取指定標題嘅頁面收藏資訊。",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "包含埋要擷取頁面收藏資訊嘅頁面標題嘅字串。",
+	"apihelp-query+pagecollectionsmetadata-example-1": "擷取 'TestCollection' 頁面入面定義嘅收藏嘅頁面收藏資訊"
+}
