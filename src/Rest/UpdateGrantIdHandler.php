@@ -96,12 +96,12 @@ class UpdateGrantIdHandler extends SimpleHandler {
 
 		try {
 			$this->grantIDLookup->doLookup( $grantID );
-		} catch ( InvalidGrantIDException $_ ) {
+		} catch ( InvalidGrantIDException ) {
 			throw new LocalizedHttpException(
 				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-invalid' ),
 				400
 			);
-		} catch ( FluxxRequestException $_ ) {
+		} catch ( FluxxRequestException ) {
 			throw new LocalizedHttpException(
 				MessageValue::new( 'wikimediacampaignevents-rest-grant-id-edit-api-error' ),
 				503

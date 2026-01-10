@@ -160,7 +160,7 @@ class FluxxClient {
 
 		try {
 			$parsedResponse = json_decode( $request->getContent(), true, 512, JSON_THROW_ON_ERROR );
-		} catch ( JsonException $_ ) {
+		} catch ( JsonException ) {
 			return null;
 		}
 
@@ -190,7 +190,7 @@ class FluxxClient {
 
 		try {
 			$responseData = $this->makePostRequestInternal( $this->fluxxOauthUrl, $data, $headers );
-		} catch ( FluxxRequestException $_ ) {
+		} catch ( FluxxRequestException ) {
 			throw new AuthenticationException( 'Authentication error' );
 		}
 

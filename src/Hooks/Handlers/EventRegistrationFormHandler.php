@@ -52,9 +52,9 @@ class EventRegistrationFormHandler implements
 
 				try {
 					return $this->grantIDLookup->doLookup( $grantID );
-				} catch ( InvalidGrantIDException $_ ) {
+				} catch ( InvalidGrantIDException ) {
 					return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-invalid-error-message' );
-				} catch ( FluxxRequestException $_ ) {
+				} catch ( FluxxRequestException ) {
 					return StatusValue::newFatal( 'wikimediacampaignevents-grant-id-api-fails-error-message' );
 				}
 			},
