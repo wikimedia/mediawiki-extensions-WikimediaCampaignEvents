@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stefan2255"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Hämta information om sidsamling för den angivna titeln.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "En sträng som innehåller sidtiteln för vilken information om sidsamlingen kommer att hämtas.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Hämta information om sidsamlingen för samlingen som definieras på sidan 'TestCollection'"
+}
