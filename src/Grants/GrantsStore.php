@@ -21,7 +21,7 @@ class GrantsStore {
 	 * @return void
 	 */
 	public function updateGrantID( string $grantID, int $eventID, string $grantAgreementAt ): void {
-		$dbw = $this->dbHelper->getDBConnection( DB_PRIMARY );
+		$dbw = $this->dbHelper->getPrimaryConnection();
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'wikimedia_campaign_events_grant' )
 			->row( [
@@ -44,7 +44,7 @@ class GrantsStore {
 	 * @return void
 	 */
 	public function deleteGrantID( int $eventID ): void {
-		$dbw = $this->dbHelper->getDBConnection( DB_PRIMARY );
+		$dbw = $this->dbHelper->getPrimaryConnection();
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'wikimedia_campaign_events_grant' )
 			->where( [ 'wceg_event_id' => $eventID ] )
@@ -57,7 +57,7 @@ class GrantsStore {
 	 * @return string|null
 	 */
 	public function getGrantID( int $eventID ): ?string {
-		$dbr = $this->dbHelper->getDBConnection( DB_REPLICA );
+		$dbr = $this->dbHelper->getReplicaConnection();
 		$grantID = $dbr->newSelectQueryBuilder()
 			->select( 'wceg_grant_id' )
 			->from( 'wikimedia_campaign_events_grant' )
