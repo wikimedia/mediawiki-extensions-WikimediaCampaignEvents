@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Steenth"
+		]
+	},
+	"wikimediacampaignevents-desc": "Tilbyder Wikimedia-specifikke funktioner til CampaignEvents-udvidelsen.",
+	"wikimediacampaignevents-grant-id-input-label": "Grant-ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "f.eks. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Hvis dette program eller denne begivenhed er støttet af en bevilling fra Wikimedia Foundation, bedes du angive dit bevillings-ID, som du kan finde på [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Indtast venligst tallene og bindestregerne i dit bevillings-ID, men udelad bogstaverne. Hvis dit bevillings-ID f.eks. er G-1111-1111, skal du indtaste 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Det indtastede bevillings-ID ser ud til at være forkert. Dobbelttjek venligst dit bevillings-ID i [https://wmf.fluxx.io/ Bevillings-ID-portalen (Fluxx)] og indtast det igen.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Der opstod et problem med at validere dit Grant-ID. Du kan prøve at indsende formularen igen om et par minutter. Hvis problemet fortsætter, kan du stadig indsende formularen uden et Grant-ID og tilføje den senere ved at redigere begivenhedsoplysningerne.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Grant-ID",
+	"wikimediacampaignevents-collaboration-list-title": "Samarbejdsliste",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Ingen WikiProjekter fundet.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Der er ingen WikiProjekter på denne wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Opdag WikiProjekter – grupper af bidragydere med fokus på specifikke emner, opgaver eller områder af wikien.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Fællesskaber",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Fejl",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Vi kan ikke vise WikiProjekter på grund af forbindelsesproblemer med [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Prøv igen senere.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Vi kan ikke vise WikiProject-oplysninger på grund af forbindelsesproblemer med [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Prøv igen senere.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Rediger oplysninger om dette fællesskab i Wikidata.",
+	"page-collection-tracking-category": "Sider, der inkluderer en sidesamling",
+	"page-collection-tracking-category-desc": "Sider, der indeholder en &lt;page-collection&gt; markør"
+}
