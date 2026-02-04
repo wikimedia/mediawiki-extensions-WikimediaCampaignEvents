@@ -9,6 +9,7 @@ use MediaWiki\Sparql\SparqlClient;
 use MediaWiki\Sparql\SparqlException;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
+use Wikimedia\Timestamp\TimestampFormat as TS;
 
 /**
  * This class is used to lookup the available WikiProjects on a given wiki, using the Wikidata Query Service. Only the
@@ -60,7 +61,7 @@ class WikiProjectIDLookup {
 		}
 
 		// Schedule regeneration if the value is older than 1 hour.
-		if ( (int)ConvertibleTimestamp::now( TS_UNIX ) - $lastUpdate >= 60 * 60 ) {
+		if ( (int)ConvertibleTimestamp::now( TS::UNIX ) - $lastUpdate >= 60 * 60 ) {
 			$this->updateWikiProjectIDsCache( $cacheKey );
 		}
 
@@ -126,7 +127,7 @@ EOT;
 				$cacheKey,
 				[
 					'list' => $this->computeWikiProjectIDs(),
-					'lastUpdate' => (int)ConvertibleTimestamp::now( TS_UNIX ),
+					'lastUpdate' => (int)ConvertibleTimestamp::now( TS::UNIX ),
 				],
 				BagOStuff::TTL_WEEK
 			);

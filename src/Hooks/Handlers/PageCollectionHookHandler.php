@@ -14,7 +14,7 @@ class PageCollectionHookHandler implements ParserFirstCallInitHook {
 	 * Bind the parsePageCollection function to the page-collection magic word
 	 * @param Parser $parser
 	 */
-	public function onParserFirstCallInit( $parser ) {
+	public function onParserFirstCallInit( $parser ): void {
 		$parser->setHook( "page-collection", [ $this, "parsePageCollection" ] );
 	}
 

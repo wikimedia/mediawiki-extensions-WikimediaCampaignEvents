@@ -28,7 +28,7 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 		parent::__construct( $query, $moduleName );
 	}
 
-	public function execute() {
+	public function execute(): void {
 		$this->run();
 	}
 
@@ -60,10 +60,10 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 			return [];
 		}
 
-		return \json_decode( $metadata, true );
+		return json_decode( $metadata, true );
 	}
 
-	private function run() {
+	private function run(): void {
 		$params = $this->extractRequestParams();
 
 		$pageTitles = array_map(
@@ -85,7 +85,7 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 	 *
 	 * @return array The array of allowed parameters.
 	 */
-	public function getAllowedParams() {
+	public function getAllowedParams(): array {
 		return [
 			'titles' => [
 				ParamValidator::PARAM_TYPE => 'string',
@@ -100,7 +100,7 @@ class ApiQueryPageCollectionsMetadata extends ApiQueryBase {
 	 *
 	 * @return array The array of example messages.
 	 */
-	protected function getExamplesMessages() {
+	protected function getExamplesMessages(): array {
 		return [
 			'action=query&list=pagecollectionsmetadata&titles=TestCollection'
 				=> 'apihelp-query+pagecollectionsmetadata-example-1',

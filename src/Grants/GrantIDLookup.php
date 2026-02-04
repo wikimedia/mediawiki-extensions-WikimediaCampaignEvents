@@ -8,6 +8,7 @@ use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestExc
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\InvalidGrantIDException;
 use StatusValue;
 use Wikimedia\ObjectCache\WANObjectCache;
+use Wikimedia\Timestamp\TimestampFormat as TS;
 
 /**
  * This class is responsible for looking up information about grant IDs (e.g., whether they exist, when they were
@@ -84,7 +85,7 @@ class GrantIDLookup {
 		if ( $grant !== null && $grant[ 'base_request_id' ] === $grantID ) {
 			return [
 				'grant_agreement_at' => wfTimestamp(
-					TS_MW,
+					TS::MW,
 					$grant[ 'grant_agreement_at' ]
 				)
 			];
