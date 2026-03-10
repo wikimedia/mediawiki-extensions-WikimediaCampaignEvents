@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fúlvio"
+		]
+	},
+	"wikimediacampaignevents-desc": "Fornece funcionalidades específicas da Wikimedia para a extensão CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "ID de subsídio",
+	"wikimediacampaignevents-grant-id-input-placeholder": "ex. 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Se este programa ou evento for apoiado por um subsídio da Fundação Wikimedia, forneça o seu ID de subsídio, que pode ser encontrado no [https://wmf.fluxx.io/ Grantee Portal (Fluxx)]. Insira os números e os traços do seu ID de subsídio, mas exclua as letras. Por exemplo, se o seu ID de subsídio for G-1111-1111, insira 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "O ID de subsídio que você inseriu parece estar incorreto. Por favor, verifique novamente o seu ID de subsídio no [https://wmf.fluxx.io/ Grantee Portal (Fluxx)] e insira-o novamente.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Houve um problema ao validar seu ID de subsídio. Você pode tentar enviar o formulário novamente em alguns minutos. Se o problema persistir, você ainda poderá enviar o formulário sem um ID de subsídio e adicioná-lo posteriormente, editando os detalhes do evento.",
+	"wikimediacampaignevents-grant-id-event-details-label": "ID de subsídio",
+	"wikimediacampaignevents-collaboration-list-title": "Lista de colaboração",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Nenhum wikiprojeto encontrado.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Não existem wikiprojetos nesta wiki.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Descubra grupos de pessoas que colaboram com wikiprojetos focados em temas, tarefas ou áreas específicas da wiki.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Comunidades",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Erro",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Não foi possível exibir os Wikiprojetos devido a problemas de conexão com o [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Wikidata Query Service]. Tente novamente mais tarde.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Não foi possível exibir as informações do Wikiprojeto devido a problemas de conexão com a [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API do Wikidata]. Tente novamente mais tarde."
+}
