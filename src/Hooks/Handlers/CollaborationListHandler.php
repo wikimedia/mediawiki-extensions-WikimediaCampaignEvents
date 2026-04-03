@@ -14,19 +14,23 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLooku
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
 use MediaWiki\Language\MessageLocalizer;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
+use Psr\Log\LoggerInterface;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	private const COMMUNITIES_TAB = 'communities';
 	private TemplateParser $templateParser;
 	private string $activeTab;
 	private WikiProjectFullLookup $wikiProjectLookup;
+	private LoggerInterface $logger;
 
 	public function __construct( WikiProjectFullLookup $wikiProjectLookup ) {
 		$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
 		$this->wikiProjectLookup = $wikiProjectLookup;
+		$this->logger = LoggerFactory::getInstance( 'CampaignEvents' );
 	}
 
 	public function onCampaignEventsGetAllEventsTabs(
@@ -58,8 +62,9 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	private function getCollaborationListContent( OutputPage $outputPage, bool $showNav = false ): string {
 		try {
 			$hasWikiProjects = $this->wikiProjectLookup->hasWikiProjects();
-		} catch ( CannotQueryWDQSException $cannotQueryWikiProjectsException ) {
-			return $this->getErrorTemplate( $outputPage, $cannotQueryWikiProjectsException );
+		} catch ( CannotQueryWDQSException $exception ) {
+			$this->logger->warning( "Error querying WDQS for WikiProjects", [ 'exception' => $exception ] );
+			return $this->getErrorTemplate( $outputPage, $exception );
 		}
 
 		if ( !$hasWikiProjects ) {
@@ -87,8 +92,9 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 				$offset,
 				$direction
 			);
-		} catch ( CannotQueryWDQSException | CannotQueryWikibaseException $cannotQueryWikiProjectsException ) {
-			return $this->getErrorTemplate( $outputPage, $cannotQueryWikiProjectsException );
+		} catch ( CannotQueryWDQSException | CannotQueryWikibaseException $exception ) {
+			$this->logger->warning( "Error querying WikiProjects", [ 'exception' => $exception ] );
+			return $this->getErrorTemplate( $outputPage, $exception );
 		}
 
 		$navBuilder = $this->getNavigationBuilder( $outputPage, $offset, $limit, $direction, $wikiProjects );

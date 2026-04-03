@@ -155,8 +155,7 @@ class WikiProjectFullLookup {
 		$batches = array_chunk( $entityIDs, 50 );
 		$entities = [];
 		foreach ( $batches as $batch ) {
-			$batchResponse = $this->queryWikidataAPIBatch( $batch, $languageCode );
-			$entities = array_merge( $entities, $batchResponse['entities'] );
+			$entities = array_merge( $entities, $this->queryWikidataAPIBatch( $batch, $languageCode ) );
 		}
 		return $entities;
 	}
@@ -164,7 +163,7 @@ class WikiProjectFullLookup {
 	/**
 	 * @param string[] $entityIDs
 	 * @param string $languageCode
-	 * @return array
+	 * @return array<string,array{labels:array,descriptions:array}>
 	 * @throws CannotQueryWikibaseException
 	 */
 	private function queryWikidataAPIBatch( array $entityIDs, string $languageCode ): array {
@@ -190,13 +189,19 @@ class WikiProjectFullLookup {
 			throw new CannotQueryWikibaseException( "Bad status from WD API: $status" );
 		}
 
+		$encodedResponse = $req->getContent();
 		try {
-			$parsedResponse = json_decode( $req->getContent(), true, 512, JSON_THROW_ON_ERROR );
+			$parsedResponse = json_decode( $encodedResponse, true, 512, JSON_THROW_ON_ERROR );
 		} catch ( JsonException $e ) {
 			throw new CannotQueryWikibaseException( "Invalid JSON from WD API", 0, $e );
 		}
 
-		return $parsedResponse;
+		if ( !isset( $parsedResponse['entities'] ) ) {
+			// T422158: Can sometimes happen, unclear when exactly.
+			throw new CannotQueryWikibaseException( "No results from WD API: $encodedResponse" );
+		}
+
+		return $parsedResponse['entities'];
 	}
 
 	/**
