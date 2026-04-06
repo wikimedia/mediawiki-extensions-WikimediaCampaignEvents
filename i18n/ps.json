@@ -8,6 +8,7 @@
 	"wikimediacampaignevents-desc": "د ټاکنيزې‌سيالۍ‌پېښو شاتاړي لپاره د ويکي‌رسنۍ ځانگړې ځانگړنې چمتو کوي.",
 	"wikimediacampaignevents-grant-id-input-label": "منلو پېژند",
 	"wikimediacampaignevents-grant-id-input-placeholder": "بېلگې په ډول ۱۲۰۱-۳۳۰۲",
+	"wikimediacampaignevents-grant-id-input-help-message": "که چېرې دا خپرونه يا پېښه د ويکي‌رسنۍ بنسټ له خوا د مرستې په توگه ملاتړ کېږي، مهرباني وکړئ خپل د مرستې پېژند وليکئ، کوم چې تاسو په [https://wmf.fluxx.io/ د (فلوکس) مرستې ترلاسنې تانبه] کې موندلی شئ. مهرباني وکړئ يوازې د خپل پېژند شمېرې او تېره‌ليکونه دننه کړئ او له تورو تېر شئ. د بېلگې په توگه که ستاسو د مرستې پېژند G-1111-1111 وي؛ نو 1111-1111 دننه کړئ.",
 	"wikimediacampaignevents-grant-id-invalid-error-message": "هغه د منلو پېژند چې تاسو دننه کړی، ناسم ښکاري. مهرباني وکړئ خپل د منلو پېژند په [https://wmf.fluxx.io/ مرستې تانبه (Fluxx)] کې دوهم‌ځلي سم‌کتنه وکړئ او بياځلي يې دننه کړئ.",
 	"wikimediacampaignevents-grant-id-event-details-label": "منلو پېژند",
 	"wikimediacampaignevents-collaboration-list-title": "همکارۍ لړليک",
