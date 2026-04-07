@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chaduvari"
+		]
+	},
+	"wikimediacampaignevents-grant-id-input-label": "గ్రాంట్ ఐడి",
+	"wikimediacampaignevents-grant-id-input-placeholder": "ఉదా: 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "ఈ కార్యక్రమానికి గానీ, ఈవెంటుకు గానీ వికీమీడియా ఫౌండేషను నుండి గ్రాంటు లభిస్తే, ఆ గ్రాంట్ ఐడీ ఇవ్వండి. దాన్ని [https://wmf.fluxx.io/ గ్రాంటీ పోర్టల్ (Fluxx)లో చూడవచ్చు]. గ్రాంట్ ఐడీ లోని అంకెలు, డ్యాష్‌లను మాత్రమే ఇవ్వండి, అక్షరాలను వదిలెయ్యండి. ఉదాహరణకు, మీ గ్రాంట్ ఐడీ G-1111-1111 అయితే, ఇక్కడ 1111-1111 అని ఇవ్వండి.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "మీరిచ్చిన గ్రాంట్ ఐడీ తప్పు లాగుంది. [https://wmf.fluxx.io/ గ్రాంటీ పోర్టల్ (Fluxx) లో] మీ గ్రాంట్ ఐడీని ఒకసారి సరిచూసుకుని, మళ్ళీ ఇవ్వండి.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "మీ గ్రాంట్ ఐడీని ధ్రువీకరించడంలో ఇబ్బంది ఎదురైంది. కొద్ది నిమిషాలాగి మళ్ళీ ఈ ఫారమును సమర్పించి చూడండి. ఇబ్బంది అలాగే ఉంటే, గ్రాంట్ ఐడీ లేకుండానే ఫారాన్ని సమర్పించవచ్చు. తరువాత, ఈవెంటు వివరాలను దిద్దుబాటు చేసి, దాన్ని చేర్చవచ్చు.",
+	"wikimediacampaignevents-grant-id-event-details-label": "గ్రాంట్ ఐడి",
+	"wikimediacampaignevents-collaboration-list-title": "తోడ్పాటు జాబితా",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "వికీప్రాజెక్టులేమీ కనబడలేదు.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "ఈ వికీలో వికీప్రాజెక్టులేమీ లేవు.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "సముదాయాలు",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "లోపం",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service వికీడేటా క్వెరీ సర్వీసులో] ఇబ్బందుల కారణంగా వికీప్రాజెక్టులను చూపించలేకపోతున్నాం. తరువాత మళ్ళీ ప్రయత్నించండి.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? వికీడేటా API తో] ఇబ్బందుల కారణంగా వికీప్రాజెక్టు సమాచారాన్ని చూపించలేకపోతున్నాం. తరువాత మళ్ళీ ప్రయత్నించండి."
+}
