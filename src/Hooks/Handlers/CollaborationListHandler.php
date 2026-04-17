@@ -13,10 +13,10 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProje
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\TemplateParser;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
-use MessageLocalizer;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	private const COMMUNITIES_TAB = 'communities';

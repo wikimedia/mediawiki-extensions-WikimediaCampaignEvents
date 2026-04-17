@@ -9,8 +9,8 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\AuthenticationException;
 use MediaWiki\Extension\WikimediaCampaignEvents\Grants\Exception\FluxxRequestException;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\MainConfigNames;
-use MWHttpRequest;
 use Psr\Log\LoggerInterface;
 use Wikimedia\ObjectCache\WANObjectCache;
 

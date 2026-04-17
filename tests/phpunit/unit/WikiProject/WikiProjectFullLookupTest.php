@@ -7,10 +7,10 @@ namespace MediaWiki\Extension\WikimediaCampaignEvents\Tests\Unit\WikiProject;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectIDLookup;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Http\MWHttpRequest;
 use MediaWiki\Status\Status;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiUnitTestCase;
-use MWHttpRequest;
 use Wikimedia\ObjectCache\EmptyBagOStuff;
 use Wikimedia\ObjectCache\WANObjectCache;
 
