@@ -9,7 +9,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.46",
+		"MediaWiki": ">= 1.47.0",
 		"extensions": {
 			"CampaignEvents": "*"
 		}
@@ -99,8 +99,7 @@
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\WikimediaCampaignEvents\\Tests\\Integration\\": "tests/phpunit/integration/"
 	},
-	"ResourceModules": {
-	},
+	"ResourceModules": {},
 	"RestRoutes": [
 		{
 			"path": "/wikimediacampaignevents/v0/event_registration/{id}/grant_id",
