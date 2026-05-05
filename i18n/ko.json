@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
+	"wikimediacampaignevents-grant-id-input-label": "권한 ID",
+	"wikimediacampaignevents-grant-id-event-details-label": "권한 ID",
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "이벤트",
 	"wikimediacampaignevents-collaboration-list-api-error-title": "오류"
 }
