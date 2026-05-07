@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tensama0415"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "주어진 제목에 대한 문서 컬렉션 정보를 가져옵니다.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "문서 컬렉션 정보를 가져올 문서 제목이 포함된 문자열입니다.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "'TestCollection' 문서 내부에 정의된 컬렉션에 대한 문서 컬렉션 정보를 가져옵니다"
+}
