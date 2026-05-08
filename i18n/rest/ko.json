@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tensama0415"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "이 이벤트에 대한 권한 ID를 변경할 권한이 없습니다.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "권한 ID는 비워둘 수 없습니다.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "입력한 권한 ID가 잘못되었습니다.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "현재 Fluxx는 이 권한 ID를 검증할 수 없습니다. 몇 분 후에 다시 시도해 보세요.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "이 이벤트에 대한 권한 ID를 볼 권한이 없습니다."
+}
