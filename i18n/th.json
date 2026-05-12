@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patsagorn Y."
+		]
+	},
+	"wikimediacampaignevents-desc": "ฟีเจอร์จำเพาะของวิกิมีเดียสำหรับส่วนขยาย CampaignEvents",
+	"wikimediacampaignevents-grant-id-input-label": "รหัสจำเพาะทุน",
+	"wikimediacampaignevents-grant-id-input-placeholder": "เช่น 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "หากโครงการหรือกิจกรรมได้รับการสนับสนุนจากทุนของมูลนิธิวิกิมีเดีย โปรดระบุรหัสจำเพาะของทุน (Grant ID) ซึ่งสามารถดูได้จาก[https://wmf.fluxx.io/ หน้าพอทัลการอนุมัติงบ (Fluxx)] โปรดระบรหัสและขีดกลางจากรหัสของทุนโดยไม่มีตัวอักษร เช่น หากรหัสทุนคือ G-1111-1111 โปรดกรอก 1111-1111",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "รหัสทุนที่คุณระบุเหมือนจะไม่ถูกต้อง โปรดตรวจสอบใหม่อีกครั้งจากรหัสทุนใน[https://wmf.fluxx.io/ หน้าพอทัลการอนุมัติงบ (Fluxx)] แล้วลองใหม่อีกครั้ง",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "เกิดปัญหาในการตรวจยืนยันรหัสทุนของคุณ คุณสามารถลองส่งใหม่อีกครั้งได้ในอีกไม่กี่นาที หากปัญหายังคงอยู่ คุณสามารถบันทึกโดยไม่ต้องระบุรหัสทุนแล้วเพิ่มใหม่ในภายหลังในหน้ารายละเอียดกิจกรรม",
+	"wikimediacampaignevents-grant-id-event-details-label": "รหัสทุน",
+	"wikimediacampaignevents-collaboration-list-title": "รายการผู้มีส่วนร่วม",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "ไม่พบโครงการวิกิ",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "ไม่พบโครงการวิกิใด ๆ ในวิกินี้",
+	"wikimediacampaignevents-collaboration-list-header-text": "ขอแนะนำโครงการวิกิ กลุ่มของผู้มีส่วนร่วมในหัวข้อจำเพาะ งาน หรือบางพื้นที่ของวิกินี้",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "ชุมชน",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "ข้อผิดพลาด",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "เราไม่สามารถแสดงผลโครงการวิกิได้เนื่องจากปัญหาในการเชื่อมต่อกับ[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service บริการเรียกข้อมูลวิกิสนเทศ] โปรดลองใหม่อีกครั้งในภายหลัง",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "เราไม่สามารถแสดงสารสนเทศโครงการวิกิได้เนื่องจากปัญหาในการเชื่อมต่อกับ[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? เอพีไอวิกิสนเทศ] โปรดลองใหม่อีกครั้งในภายหลัง"
+}
