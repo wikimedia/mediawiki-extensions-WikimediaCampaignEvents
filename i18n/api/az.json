@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Əkrəm"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Verilən başlıq əsasında səhifə kolleksiyası haqqında məlumat əldə et.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Haqqında məlumat əldə etməyə səhifə kolleksiyası başlığından ibarət mətn.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Tərifi 'TestCollection' səhifəsində verilmiş kolleksiya haqqındakı məlumatları əldə et"
+}
