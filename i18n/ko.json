@@ -5,8 +5,20 @@
 			"Tensama0415"
 		]
 	},
-	"wikimediacampaignevents-grant-id-input-label": "권한 ID",
-	"wikimediacampaignevents-grant-id-event-details-label": "권한 ID",
+	"wikimediacampaignevents-desc": "CampaignEvents 확장 기능에 위키미디어에 특화된 기능을 제공합니다.",
+	"wikimediacampaignevents-grant-id-input-label": "수혜자 ID",
+	"wikimediacampaignevents-grant-id-input-placeholder": "예: 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "이 프로그램 또는 이벤트가 위키미디어 재단으로부터 보조금을 받은 것일 경우, [https://wmf.fluxx.io/ 수혜자 포털 (Fluxx)] 에서 확인할 수 있는 수혜자 ID를 제공하시기 바랍니다. 수혜자 ID에 문자를 제외한 숫자와 대시만을 입력해 주세요. 예를 들어, 수혜자 ID가 G-1111-1111인 경우 1111-1111을 입력해 주세요.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "입력한 수혜자 ID가 잘못된 것 같습니다. [https://wmf.fluxx.io/ 수혜자 포털 (Fluxx)]에서 수혜자 ID를 재확인한 후 다시 입력해주세요.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "수혜자 ID를 확인하는 데 문제가 있었습니다. 몇 분 후에 다시 양식을 제출할 수 있습니다. 문제가 계속되면, 수혜자 ID 없이 양식을 제출한 후 나중에 이벤트 세부 사항을 편집하여 추가 할 수 있습니다.",
+	"wikimediacampaignevents-grant-id-event-details-label": "수혜자 ID",
+	"wikimediacampaignevents-collaboration-list-title": "협업 목록",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "위키프로젝트를 찾을 수 없습니다.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "이 위키에는 위키프로젝트가 없습니다.",
+	"wikimediacampaignevents-collaboration-list-header-text": "위키프로젝트를 살펴보세요. 위키프로젝트는 특정 주제, 작업 또는 위키 영역에 집중하는 기여자 그룹입니다.",
 	"wikimediacampaignevents-collaboration-list-events-tab-heading": "이벤트",
-	"wikimediacampaignevents-collaboration-list-api-error-title": "오류"
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "커뮤니티",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "오류",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "[https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service 위키데이터 쿼리 서비스] 연결 문제로 인해 위키프로젝트를 표시할 수 없습니다. 나중에 다시 시도해 주세요.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "[https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? 위키데이터 API] 연결 문제로 인해 위키프로젝트 정보를 표시할 수 없습니다. 나중에 다시 시도해 주세요."
 }
