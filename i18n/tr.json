@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"LisafBia"
+			"LisafBia",
+			"HakanIST"
 		]
 	},
-	"wikimediacampaignevents-collaboration-list-title": "İş birliği listesi"
+	"wikimediacampaignevents-collaboration-list-title": "İş birliği listesi",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Hata"
 }
