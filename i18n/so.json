@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"wikimediacampaignevents-desc": "Waxay bixisaa astaamo u gaar ah Wikimedia oo loogu talagalay kordhinta CampaignEvents.",
+	"wikimediacampaignevents-grant-id-input-label": "Aqoonsiga deeqda",
+	"wikimediacampaignevents-grant-id-input-placeholder": "tusaale 1201-3302",
+	"wikimediacampaignevents-grant-id-input-help-message": "Haddii barnaamijkan ama dhacdadan ay taageerto deeq ka timid Wikimedia Foundation, fadlan geli Aqoonsigaaga Deeqda, kaas oo aad ka heli karto [https://wmf.fluxx.io/ Xariirka Qaataha Deeqaha (Fluxx)]. Geli oo keliya tirooyinka iyo xarriiqyada ku jira aqoonsiga deeqdaada, hana gelin xarafka. Tusaale ahaan, haddii Aqoonsigaaga Deeqdu yahay G-1111-1111, geli 1111-1111.",
+	"wikimediacampaignevents-grant-id-invalid-error-message": "Aqoonsiga Deeqda ee aad gelisay wuxuu u muuqdaa inuu khaldan yahay. Fadlan dib uga hubi Aqoonsigaaga Deeqda [https://wmf.fluxx.io/ Xariirka Qaataha Deeqaha (Fluxx)] kadibna mar kale geli.",
+	"wikimediacampaignevents-grant-id-api-fails-error-message": "Waxaa dhacay cilad intii la xaqiijinayay Aqoonsigaaga Deeqda. Waxaad isku dayi kartaa inaad mar kale gudbiso foomka dhowr daqiiqo ka dib. Haddii ciladdu sii socoto, weli waad gudbin kartaa foomka adigoon gelin Aqoonsiga Deeqda, kadibna waad ku dari kartaa mar dambe adigoo tafatiraya faahfaahinta dhacdada.",
+	"wikimediacampaignevents-grant-id-event-details-label": "Aqoonsiga deeqda",
+	"wikimediacampaignevents-collaboration-list-title": "Liiska iskaashiga",
+	"wikimediacampaignevents-collaboration-list-no-events-title": "Lama helin Mashaariicda Wiki.",
+	"wikimediacampaignevents-collaboration-list-no-events-text": "Ma jiraan Ma jiraan Mashaariicda Wiki ku jira wiki-gan.",
+	"wikimediacampaignevents-collaboration-list-header-text": "Soo hel Mashaariicda Wiki—kooxo ka mid ah wax ku darsadayaasha oo diiradda saara mowduucyo, hawlo, ama meelo gaar ah oo ka mid ah wiki-ga.",
+	"wikimediacampaignevents-collaboration-list-communities-tab-heading": "Bulshooyinka",
+	"wikimediacampaignevents-collaboration-list-api-error-title": "Khalad",
+	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "Ma soo bandhigi karno Mashaariicda Wiki sababo la xiriira dhibaatooyin isku xirka [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service Adeegga Weydiinta Wikidata]. Fadlan mar dambe isku day.",
+	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "Ma soo bandhigi karno macluumaadka Mashaariicda Wiki sababo la xiriira dhibaatooyin isku xirka [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? Wikidata API]. Fadlan mar dambe isku day.",
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Tafatir macluumaadka ku saabsan bulshadan ee Wikidata.",
+	"page-collection-tracking-category": "Bogag ay ku jiraan ururinta bogagga",
+	"page-collection-tracking-category-desc": "Bogag ay ku jiraan calaamadda &lt;page-collection&gt;"
+}
