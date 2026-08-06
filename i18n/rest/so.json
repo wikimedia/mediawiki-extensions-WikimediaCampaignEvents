@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Looma oggola inaad beddesho aqoonsiga deeqda ee dhacdadan.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "Aqoonsiga deeqda lama bannaanayn karo.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Aqoonsiga deeqda aad gelisay ma aha mid sax ah.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Fluxx hadda ma awoodo inuu xaqiijiyo Aqoonsigan Deeqda. Isku day mar kale dhowr daqiiqo gudahood.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Looma oggola inaad aragto aqoonsiga deeqda ee dhacdadan."
+}
