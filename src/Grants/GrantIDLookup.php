@@ -18,7 +18,8 @@ class GrantIDLookup {
 	public const SERVICE_NAME = 'WikimediaCampaignEventsGrantIDLookup';
 
 	private const ENDPOINT = 'grant_request/list';
-	private const GRANTS_FILTER_PERIOD_DAYS = 730;
+	/** Maximum age of the grant, 4 years per T434691 */
+	private const GRANTS_FILTER_PERIOD_DAYS = 4 * 365;
 
 	public function __construct(
 		private readonly FluxxClient $fluxxClient,
