@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"apihelp-query+pagecollectionsmetadata-summary": "Získať informácie o kolekcii stránok pre zadaný názov.",
+	"apihelp-query+pagecollectionsmetadata-param-titles": "Reťazec obsahujúci názov stránky, pre ktorú sa získajú informácie o kolekcii stránok.",
+	"apihelp-query+pagecollectionsmetadata-example-1": "Získať informácie o kolekcii stránok pre kolekciu definovanú na stránke „TestCollection“"
+}

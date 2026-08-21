@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luky001"
+			"Luky001",
+			"Wizzard"
 		]
 	},
 	"wikimediacampaignevents-desc": "Zabezpečuje funkcie špecifické pre Wikimediu pre rozšírenie CampaignEvents.",
@@ -19,5 +20,7 @@
 	"wikimediacampaignevents-collaboration-list-api-error-title": "Chyba",
 	"wikimediacampaignevents-collaboration-list-wdqs-api-error-text": "WikiProjekty nemôžeme zobraziť kvôli problémom s pripojením k [https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service dopytovej službe Wikiúdajov]. Skúste to znova neskôr, prosím.",
 	"wikimediacampaignevents-collaboration-list-wikidata-api-error-text": "WikiProjekty nemôžeme zobraziť kvôli problémom s pripojením k [https://www.mediawiki.org/wiki/Special:MyLanguage/Wikibase/API#What_is_the_Wikibase_API? API rozhraniu Wikiúdajov]. Skúste to znova neskôr, prosím.",
-	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Upravte informácie o tomto projekte na Wikiúdajoch."
+	"wikimediacampaignevents-collaboration-list-wikidata-edit-label": "Upravte informácie o tomto projekte na Wikiúdajoch.",
+	"page-collection-tracking-category": "Stránky obsahujúce kolekciu stránok",
+	"page-collection-tracking-category-desc": "Stránky, ktoré obsahujú značku &lt;page-collection&gt;"
 }
