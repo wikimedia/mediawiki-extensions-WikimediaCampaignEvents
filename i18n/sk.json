@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luky001"
+			"Luky001",
+			"Wizzard"
 		]
 	},
 	"wikimediacampaignevents-desc": "Zabezpečuje funkcie špecifické pre Wikimediu pre rozšírenie CampaignEvents.",
