@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"wikimediacampaignevents-rest-grant-id-edit-permission-denied": "Nemáte oprávnenie zmeniť ID grantu pre toto podujatie.",
+	"wikimediacampaignevents-rest-grant-id-edit-empty": "ID grantu nemôže byť prázdne.",
+	"wikimediacampaignevents-rest-grant-id-edit-invalid": "Zadané ID grantu je neplatné.",
+	"wikimediacampaignevents-rest-grant-id-edit-api-error": "Služba Fluxx momentálne nedokáže overiť toto ID grantu. Skúste to znova o niekoľko minút.",
+	"wikimediacampaignevents-rest-grant-id-get-permission-denied": "Nemáte oprávnenie zobraziť ID grantu pre toto podujatie."
+}
