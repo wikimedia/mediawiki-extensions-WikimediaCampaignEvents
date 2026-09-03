@@ -128,8 +128,12 @@ class GrantIDLookupTest extends MediaWikiUnitTestCase {
 				$this->assertArrayHasKey( 'conditions', $filterData );
 				$grantID = null;
 				foreach ( $filterData['conditions'] as $cond ) {
-					if ( $cond[0] === 'base_request_id' && $cond[1] === 'eq' ) {
+					if (
+						array_is_list( $cond ) && count( $cond ) === 3 &&
+						$cond[0] === 'base_request_id' && $cond[1] === 'eq'
+					) {
 						$grantID = $cond[2];
+						break;
 					}
 				}
 				$this->assertNotNull( $grantID, 'Cannot extract grant ID from request params' );

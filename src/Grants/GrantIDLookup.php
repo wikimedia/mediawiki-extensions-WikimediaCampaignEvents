@@ -104,6 +104,7 @@ class GrantIDLookup {
 			"request_received_at",
 			"base_request_id",
 			"grant_agreement_at",
+			'state',
 		];
 	}
 
@@ -116,9 +117,24 @@ class GrantIDLookup {
 			"group_type" => "and",
 			"conditions" => [
 				[ "base_request_id", "eq", $grantID ],
-				[ "granted", "eq", true ],
 				// last-n-months does not include the current month T367465
-				[ "grant_agreement_at", "last-n-days", self::GRANTS_FILTER_PERIOD_DAYS ],
+				[ "request_received_at", "last-n-days", self::GRANTS_FILTER_PERIOD_DAYS ],
+				[
+					'group_type' => 'or',
+					'conditions' => [
+						[ "granted", "eq", true ],
+						[
+							'state',
+							'eq',
+							[
+								'supported_by_partner',
+								'payment_by_partner',
+								'administered_by_partner',
+								'completed_by_partner'
+							]
+						],
+					],
+				],
 			],
 		];
 	}
