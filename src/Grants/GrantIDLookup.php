@@ -21,6 +21,25 @@ class GrantIDLookup {
 	/** Maximum age of the grant, 4 years per T434691 */
 	private const GRANTS_FILTER_PERIOD_DAYS = 4 * 365;
 
+	/** See T436836#12286416 */
+	private const PARTNER_GRANT_STATES = [
+		'supported_by_partner',
+		'payment_by_partner',
+		'administered_by_partner',
+		'completed_by_partner',
+	];
+
+	/** See T440298#12420267 */
+	private const MULTIYEAR_GRANT_STATES = [
+		'revision_required_for_year_2_proposal_back_to_draft',
+		'revision_required_for_year_3',
+		'multiyear_proposal_review',
+		'multiyear_subsequent_year_amendment_processing',
+		'hold_pending_requirements',
+		'pending_amendment_signatures',
+		'multiyear_midterm_report_certification',
+	];
+
 	public function __construct(
 		private readonly FluxxClient $fluxxClient,
 		private readonly WANObjectCache $cache,
@@ -126,12 +145,7 @@ class GrantIDLookup {
 						[
 							'state',
 							'eq',
-							[
-								'supported_by_partner',
-								'payment_by_partner',
-								'administered_by_partner',
-								'completed_by_partner'
-							]
+							array_merge( self::PARTNER_GRANT_STATES, self::MULTIYEAR_GRANT_STATES ),
 						],
 					],
 				],
