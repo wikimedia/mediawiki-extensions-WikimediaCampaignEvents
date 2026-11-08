@@ -73,10 +73,7 @@
 			]
 		},
 		"PageCollectionHook": {
-			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\PageCollectionHookHandler",
-			"services": [
-				"WikiPageFactory"
-			]
+			"class": "MediaWiki\\Extension\\WikimediaCampaignEvents\\Hooks\\Handlers\\PageCollectionHookHandler"
 		}
 	},
 	"Hooks": {
