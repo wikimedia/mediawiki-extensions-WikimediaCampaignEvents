@@ -12,7 +12,6 @@ use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikibaseE
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\CannotQueryWikiProjectsException;
 use MediaWiki\Extension\WikimediaCampaignEvents\WikiProject\WikiProjectFullLookup;
 use MediaWiki\Html\Html;
-use MediaWiki\Html\TemplateParser;
 use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Navigation\PagerNavigationBuilder;
@@ -25,14 +24,12 @@ use Wikimedia\Codex\Utility\Codex;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	private const COMMUNITIES_TAB = 'communities';
-	private TemplateParser $templateParser;
 	private Codex $codex;
 	private string $activeTab;
 	private WikiProjectFullLookup $wikiProjectLookup;
 	private LoggerInterface $logger;
 
 	public function __construct( WikiProjectFullLookup $wikiProjectLookup ) {
-		$this->templateParser = new TemplateParser( __DIR__ . '/../../../templates' );
 		$this->wikiProjectLookup = $wikiProjectLookup;
 		$this->logger = LoggerFactory::getInstance( 'CampaignEvents' );
 	}
@@ -144,16 +141,12 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 				],
 				href: $editURL
 			)->getHtml() );
-			$properties = [
-				'Classes' => 'ext-campaignevents-collaboration-list-wikiproject',
-				'Title' => $linkedLabel . $editButton,
-				'Description' => $wikiProject['description'],
-				'Url' => $wikiProject['sitelink'],
-			];
-			$cards[] = $this->processTemplateWithTransclusionWorkaround(
-				'Card',
-				$properties
-			);
+			// Do not give a URL. The title has links, and a card with a URL is a link, so the links would be nested.
+			$cards[] = self::removeNewlines( $this->codex->card(
+				title: new HtmlSnippet( $linkedLabel . $editButton ),
+				description: $wikiProject['description'],
+				attributes: [ 'class' => 'ext-campaignevents-collaboration-list-wikiproject' ]
+			)->getHtml() );
 		}
 		return implode( '', $cards );
 	}
@@ -249,14 +242,6 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 			] );
 		}
 		return $navBuilder;
-	}
-
-	/**
-	 * Wrapper around TemplateParser::processTemplate that also replaces newlines, so that the resulting HTML
-	 * can be transcluded without the wikitext parser messing with it (T391109).
-	 */
-	private function processTemplateWithTransclusionWorkaround( string $templateName, array $params ): string {
-		return self::removeNewlines( $this->templateParser->processTemplate( $templateName, $params ) );
 	}
 
 	/**
