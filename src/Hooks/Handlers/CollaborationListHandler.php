@@ -133,12 +133,17 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 			);
 
 			$editLabel = $msgLocalizer->msg( 'wikimediacampaignevents-collaboration-list-wikidata-edit-label' )->text();
-			$editButton = $this->processTemplateWithTransclusionWorkaround( 'Button', [
-				'Href' => $editURL,
-				'Label' => $editLabel,
-				'Title' => $editLabel,
-				'Classes' => 'wikimediacampaignevents-collaboration-list-edit-button'
-			] );
+			$editButton = self::removeNewlines( $this->codex->button(
+				weight: 'quiet',
+				iconClass: 'cdx-css-icon--edit',
+				iconOnly: true,
+				attributes: [
+					'class' => 'wikimediacampaignevents-collaboration-list-edit-button',
+					'title' => $editLabel,
+					'aria-label' => $editLabel,
+				],
+				href: $editURL
+			)->getHtml() );
 			$properties = [
 				'Classes' => 'ext-campaignevents-collaboration-list-wikiproject',
 				'Title' => $linkedLabel . $editButton,
