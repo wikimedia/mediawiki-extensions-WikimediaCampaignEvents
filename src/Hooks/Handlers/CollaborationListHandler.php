@@ -19,10 +19,14 @@ use MediaWiki\Navigation\PagerNavigationBuilder;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use Psr\Log\LoggerInterface;
+use Wikimedia\Codex\Component\HtmlSnippet;
+use Wikimedia\Codex\Localization\MediaWikiLocalization;
+use Wikimedia\Codex\Utility\Codex;
 
 class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	private const COMMUNITIES_TAB = 'communities';
 	private TemplateParser $templateParser;
+	private Codex $codex;
 	private string $activeTab;
 	private WikiProjectFullLookup $wikiProjectLookup;
 	private LoggerInterface $logger;
@@ -40,6 +44,7 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	): void {
 		$outputPage = $specialPage->getOutput();
 		$this->activeTab = $activeTab;
+		$this->codex = new Codex( new MediaWikiLocalization( $outputPage ) );
 		$outputPage->setPageTitleMsg( $outputPage->msg( 'wikimediacampaignevents-collaboration-list-title' ) );
 		$collaborationListContent = $this->getCollaborationListContent( $outputPage, !$specialPage->including() );
 		$header = Html::element(
@@ -103,16 +108,15 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	}
 
 	private function getEmptyStateContent( OutputPage $outputPage ): string {
-		return $this->processTemplateWithTransclusionWorkaround(
-			'Message',
-			[
-				'Classes' => 'ext-campaignevents-collaboration-list-empty-state',
-				'IconClass' => 'page',
-				'Type' => 'notice',
-				'Title' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-no-events-title' )->text(),
-				'Text' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-no-events-text' )->parse()
-			]
-		);
+		return self::removeNewlines( $this->codex->message(
+			content: new HtmlSnippet(
+				$outputPage->msg( 'wikimediacampaignevents-collaboration-list-no-events-text' )->parseAsBlock()
+			),
+			type: 'notice',
+			heading: $outputPage->msg( 'wikimediacampaignevents-collaboration-list-no-events-title' )->text(),
+			iconClass: 'cdx-css-icon--page',
+			attributes: [ 'class' => 'ext-campaignevents-collaboration-list-empty-state' ]
+		)->getHtml() );
 	}
 
 	private function getWikiProjectsHTML( MessageLocalizer $msgLocalizer, array $wikiProjects ): string {
@@ -162,15 +166,12 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 			throw new LogicException( 'Unexpected exception type: ' . get_class( $exception ) );
 		}
 
-		return $this->processTemplateWithTransclusionWorkaround(
-			'Message',
-			[
-				'Type' => 'error',
-				'Classes' => 'ext-campaignevents-collaboration-list-api-error',
-				'Title' => $outputPage->msg( 'wikimediacampaignevents-collaboration-list-api-error-title' )->text(),
-				'Text' => $outputPage->msg( $messageKey )->parse()
-			]
-		);
+		return self::removeNewlines( $this->codex->message(
+			content: new HtmlSnippet( $outputPage->msg( $messageKey )->parseAsBlock() ),
+			type: 'error',
+			heading: $outputPage->msg( 'wikimediacampaignevents-collaboration-list-api-error-title' )->text(),
+			attributes: [ 'class' => 'ext-campaignevents-collaboration-list-api-error' ]
+		)->getHtml() );
 	}
 
 	private function getNavigationBuilder(
@@ -250,7 +251,13 @@ class CollaborationListHandler implements CampaignEventsGetAllEventsTabsHook {
 	 * can be transcluded without the wikitext parser messing with it (T391109).
 	 */
 	private function processTemplateWithTransclusionWorkaround( string $templateName, array $params ): string {
-		$html = $this->templateParser->processTemplate( $templateName, $params );
+		return self::removeNewlines( $this->templateParser->processTemplate( $templateName, $params ) );
+	}
+
+	/**
+	 * Remove the newlines, because the wikitext parser changes this HTML when the page is transcluded (T391109).
+	 */
+	private static function removeNewlines( string $html ): string {
 		return str_replace( "\n", '', $html );
 	}
 }
